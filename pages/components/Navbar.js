@@ -9,7 +9,7 @@ import { MdAccountCircle } from "react-icons/md";
 import { RxCross2 } from "react-icons/rx";
 import { FaMessage } from "react-icons/fa6";
 import { FaPencilAlt } from "react-icons/fa";
-import  Logo  from '../images/survey-logo.png';
+import  Logo  from '../images/survey-logo.svg';
 import Image from "next/image";
 
 const Navbar = () => {
@@ -33,44 +33,44 @@ const Navbar = () => {
   const router = useRouter();
   const currentUrl = router.asPath;
   if (currentUrl === "/") {
-    home = "xsm:text-[---c4]  xsm:bg-[---c3]";
+    home = "sm:text-[---c4]  sm:bg-[---c3]";
   } else if (currentUrl === "/components/about") {
-    about = "xsm:text-[---c4] xsm:bg-[---c3]";
+    about = "sm:text-[---c4] sm:bg-[---c3]";
   } else if (currentUrl === "/components/blogs") {
-    blogs = "xsm:text-[---c4] xsm:bg-[---c3]";
+    blogs = "sm:text-[---c4] sm:bg-[---c3]";
   } else if (currentUrl === "/components/Login") {
-    login = "xsm:text-[---c4] xsm:bg-[---c3]";
+    login = "sm:text-[---c4] sm:bg-[---c3]";
   }
 
   return (
     <>
-      <div className="xsm:flex xsm:fixed  xsm:z-10 w-[100vw]">
+      <div className="sm:flex sm:fixed  sm:z-10 w-[100vw]">
         <div className="py-2 pl-2 grid grid-cols-2  ">
-            <div className="xsm:relative xsm:z-10">
+            <div className="sm:relative sm:z-10">
             <div
               onClick={onepresscross}
               className={`${
                 showcross ?  "inline" :"hidden" 
-              } xsm:h-[4em] xsm:w-[3rem] xsm:rounded-[2rem] xsm:cursor-pointer`}
+              } sm:h-[4em] sm:w-[3rem] sm:rounded-[2rem] sm:cursor-pointer`}
             >
-              <GiHamburgerMenu className="xsm:w-[2rem] h-[2rem] mt-[8px]" />
+              <GiHamburgerMenu className="sm:w-[2rem] sm:h-[2rem] sm:mt-[13px] mm:mt-[18px]" />
             </div>
         
             <div
               onClick={onepressmenu}
               className={`${
                 showcross ?  "hidden":"inline" 
-              } xsm:h-[4em] xsm:w-[3rem] xsm:rounded-[2rem] xsm:cursor-pointer pt-[2rem]`}
+              } sm:h-[4em] sm:w-[3rem] sm:rounded-[2rem] sm:cursor-pointer pt-[2rem]`}
             >
-              <RxCross2 className="xsm:w-[2rem] h-[2rem] mt-[8px]" />
+              <RxCross2 className="sm:w-[2rem] sm:h-[2rem] sm:mt-[13px] mm:mt-[18px]" />
             </div>
          
             </div>
           <div
             className={
               showmenu
-                ? "NAVBAR xsm:bg-[---c10] xsm:grid xsm:grid-cols-1 xsm:left-0  xsm:bottom-0  xsm:grid-rows-8 xsm:h-[100vh] xsm:w-auto  xsm:fixed xsm:duration-[2s] "
-                : "xsm:bg-[---c10] xsm:grid xsm:grid-cols-1 xsm:left-[-7rem]  xsm:bottom-0  xsm:grid-rows-8 xsm:h-[100vh] xsm:w-auto  xsm:fixed xsm:duration-[2s]"
+                ? "NAVBAR sm:bg-[---c10] sm:grid sm:grid-cols-1 sm:left-0  sm:bottom-0  sm:grid-rows-8 sm:h-[100vh] sm:w-auto  sm:fixed sm:duration-[2s] "
+                : "sm:bg-[---c10] sm:grid sm:grid-cols-1 sm:left-[-7rem]  sm:bottom-0  sm:grid-rows-8 sm:h-[100vh] sm:w-auto  sm:fixed sm:duration-[2s]"
             }
           >
             <div></div>
@@ -78,10 +78,10 @@ const Navbar = () => {
 
             <Link href="http://localhost:3000">
               <div
-                className={` xsm:cursor-pointer xsm:hover:bg-[---c3] xsm:active:bg-[---c6] xsm:h-[40px] w-[7rem] xsm:items-center xsm:hover:text-[---c4] xsm:active:text-[---c4] xsm:font-extrabold  ${home}             xsm:rounded-[2rem]  xsm:flex xsm:space-x-1`}
+                className={` sm:cursor-pointer sm:hover:bg-[---c3] sm:active:bg-[---c6] sm:h-[40px] w-[7rem] sm:items-center sm:hover:text-[---c4] sm:active:text-[---c4] sm:font-extrabold  ${home}             sm:rounded-[2rem]  sm:flex sm:space-x-1`}
               >
                 <MdHomeFilled
-                  className={`w-[2rem] h-[1.4rem] text-[---c1]  ${home} `}
+                  className={`w-[2rem] h-[1.4rem] text-[---c1]  ${home} sm:rounded-[2rem] `}
                 />
                 <p>Home</p>
               </div>
@@ -89,10 +89,10 @@ const Navbar = () => {
 
             <Link href="http://localhost:3000/components/about">
               <div
-                className={` xsm:cursor-pointer xsm:hover:bg-[---c3] xsm:active:bg-[---c6] xsm:h-[40px] w-[7rem] xsm:items-center xsm:hover:text-[---c4] xsm:active:text-[---c4] xsm:font-extrabold  ${about}             xsm:rounded-[2rem]  xsm:flex xsm:space-x-1`}
+                className={` sm:cursor-pointer sm:hover:bg-[---c3] sm:active:bg-[---c6] sm:h-[40px] w-[7rem] sm:items-center sm:hover:text-[---c4] sm:active:text-[---c4] sm:font-extrabold  ${about}             sm:rounded-[2rem]  sm:flex sm:space-x-1`}
               >
                 <FaMessage
-                  className={`w-[1.9rem] h-[1rem] text-[---c1]  ${about}`}
+                  className={`w-[1.9rem] h-[1rem] text-[---c1]  ${about} sm:rounded-[2rem]`}
                 />
                 <p>About</p>
               </div>
@@ -100,10 +100,10 @@ const Navbar = () => {
 
             <Link href="http://localhost:3000/components/blogs">
               <div
-                className={` xsm:cursor-pointer xsm:hover:bg-[---c3] xsm:active:bg-[---c6] xsm:h-[40px] w-[7rem] xsm:items-center xsm:hover:text-[---c4] xsm:active:text-[---c4] xsm:font-extrabold  ${blogs}             xsm:rounded-[2rem]  xsm:flex xsm:space-x-1`}
+                className={` sm:cursor-pointer sm:hover:bg-[---c3] sm:active:bg-[---c6] sm:h-[40px] w-[7rem] sm:items-center sm:hover:text-[---c4] sm:active:text-[---c4] sm:font-extrabold  ${blogs}             sm:rounded-[2rem]  sm:flex sm:space-x-1`}
               >
                 <FaPencilAlt
-                  className={`w-[1.9rem] h-[1rem] text-[---c1]  ${blogs}`}
+                  className={`w-[1.9rem] h-[1rem] text-[---c1]  ${blogs} sm:rounded-[2rem]`}
                 />
                 <p>Blogs</p>
               </div>
@@ -118,26 +118,26 @@ const Navbar = () => {
               href="http://localhost:3000/components/login"
             >
               <div
-                className={` xsm:cursor-pointer xsm:hover:bg-[---c3] xsm:active:bg-[---c6] xsm:h-[40px] w-[7rem] xsm:items-center xsm:hover:text-[---c4] xsm:active:text-[---c4] xsm:font-extrabold  ${login}             xsm:rounded-[2rem]  xsm:flex xsm:space-x-1`}
+                className={` sm:cursor-pointer sm:hover:bg-[---c3] sm:active:bg-[---c6] sm:h-[40px] w-[7rem] sm:items-center sm:hover:text-[---c4] sm:active:text-[---c4] sm:font-extrabold  ${login}             sm:rounded-[2rem]  sm:flex sm:space-x-1`}
               >
                 <MdAccountCircle
-                  className={`w-[2rem] xsm:active:bg-[---c6] h-[1.5rem] text-[---c2] xsm:active:text-[---c4] xsm:hover:text-[---c4] ${login}`}
+                  className={`w-[2rem] sm:active:bg-[---c6] h-[1.5rem] text-[---c2] sm:active:text-[---c4] sm:hover:text-[---c4] ${login}`}
                 />
                 <p>Account</p>
               </div>
             </Link>
             <Link href="http://localhost:3000/components/login">
               <div
-                className={` xsm:cursor-pointer xsm:hover:bg-[---c3] xsm:active:bg-[---c6] xsm:h-[40px] w-[7rem] xsm:items-center xsm:hover:text-[---c4] xsm:active:text-[---c4] xsm:font-extrabold  ${login}             xsm:rounded-[2rem]  xsm:flex xsm:space-x-1`}
+                className={` sm:cursor-pointer sm:hover:bg-[---c3] sm:active:bg-[---c6] sm:h-[40px] w-[7rem] sm:items-center sm:hover:text-[---c4] sm:active:text-[---c4] sm:font-extrabold  ${login}             sm:rounded-[2rem]  sm:flex sm:space-x-1`}
               >
                 <BsFillPlusCircleFill
-                  className={`w-[2rem] xsm:active:bg-[---c6] h-[1.5rem] text-[---c2] xsm:active:text-[---c4] xsm:hover:text-[---c4] ${login}`}
+                  className={`w-[2rem] sm:active:bg-[---c6] h-[1.5rem] text-[---c2] sm:active:text-[---c4] sm:hover:text-[---c4] ${login}`}
                 />
                 <p>Login</p>
               </div>
             </Link>
             <div className="hidden ">
-              <div className=" xsm:cursor-pointer  xsm:h-[40px] w-[7rem] xsm:items-center xsm:w-[30px] xsm:rounded-[2rem] my-2 xsm:flex ">
+              <div className=" sm:cursor-pointer  sm:h-[40px] w-[7rem] sm:items-center sm:w-[30px] sm:rounded-[2rem] my-2 sm:flex ">
                 <span className="ml-[0.4rem] mt-[0.5rem] font-extrabold">
                   Abubkar
                 </span>
@@ -146,17 +146,17 @@ const Navbar = () => {
           </div>
         </div>
             
-        <div className=" xsm:flex xsm:w-[100vw] xsm:m-2   ">
-          <div className=" absolute ">
-            <Image src={Logo} alt="logo" height={150} width={150} className=" ml-[2rem] xsm:w-[110px] xsm:mt-[10px] xsm:ml-[15px]"  />
+        <div className="sticky left-0 ">
+          <div className="">
+            <Image src={Logo} alt="logo" height={100} width={300} className="ml-[10px]"  />
           </div>
        </div>
-        <div className=" xsm:flex xsm:w-[100vw] xsm:m-2 xsm:space-x-2  ">
-          <div className="grid content-center items-center grid-cols-3 w-[8rem] h-[2rem] rounded-[2rem] border-[1.5px] border-black absolute top-4 right-2">
-            <CiSearch className="xsm:cursor-pointer xsm:w-[2rem] xsm:h-[1.5rem] xsm:place-self-start " />
+        <div className=" sm:flex sm:w-[100vw] sm:m-2 sm:space-x-2  ">
+          <div className="grid content-center items-center grid-cols-3 w-[8rem] h-[2rem] rounded-[2rem] border-[1.5px] border-black absolute top-6 right-2">
+            <CiSearch className="sm:cursor-pointer sm:w-[2rem] sm:h-[1.5rem] sm:place-self-start " />
             <input 
               type="text"
-              className=" xsm:w-[5rem] xsm:h-[1rem] xsm:place-self-between bg-transparent"
+              className=" sm:w-[5rem] sm:h-[1rem] sm:place-self-between bg-transparent"
               name="search"
               id="search"
               placeholder="search"

@@ -7,10 +7,12 @@ module.exports = {
   ],
   theme: {
     screens:{
-      xsm : '300px',
-      sm : '550px',
-      md : '800px',
-      lg : '1000px',
+      sm : '300px',
+      mm : '375px',
+      lm : '425px',
+      t : '768px',
+      l : '1024px',
+      
       'xsh': { 'raw': '(min-height: 600px)' },
       'sh': { 'raw': '(min-height: 700px)' },
       'mdh': { 'raw': '(min-height: 900px)' },
