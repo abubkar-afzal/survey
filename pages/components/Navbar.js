@@ -9,6 +9,8 @@ import { MdAccountCircle } from "react-icons/md";
 import { RxCross2 } from "react-icons/rx";
 import { FaMessage } from "react-icons/fa6";
 import { FaPencilAlt } from "react-icons/fa";
+import  Logo  from '../images/survey-logo.png';
+import Image from "next/image";
 
 const Navbar = () => {
   const [showmenu, hidemenu] = useState(true);
@@ -43,24 +45,24 @@ const Navbar = () => {
   return (
     <>
       <div className="xsm:flex xsm:fixed  xsm:z-10 w-[100vw]">
-        <div className="py-2 pl-2 grid grid-cols-2 ">
+        <div className="py-2 pl-2 grid grid-cols-2  ">
             <div className="xsm:relative xsm:z-10">
             <div
               onClick={onepresscross}
               className={`${
                 showcross ?  "inline" :"hidden" 
-              } xsm:h-[4em] xsm:w-[3rem] xsm:rounded-[2rem] xsm:cursor-pointer `}
+              } xsm:h-[4em] xsm:w-[3rem] xsm:rounded-[2rem] xsm:cursor-pointer`}
             >
-              <GiHamburgerMenu className="xsm:w-[2rem] h-[2rem]" />
+              <GiHamburgerMenu className="xsm:w-[2rem] h-[2rem] mt-[8px]" />
             </div>
         
             <div
               onClick={onepressmenu}
               className={`${
                 showcross ?  "hidden":"inline" 
-              } xsm:h-[4em] xsm:w-[3rem] xsm:rounded-[2rem] xsm:cursor-pointer `}
+              } xsm:h-[4em] xsm:w-[3rem] xsm:rounded-[2rem] xsm:cursor-pointer pt-[2rem]`}
             >
-              <RxCross2 className="xsm:w-[2rem] h-[2rem]" />
+              <RxCross2 className="xsm:w-[2rem] h-[2rem] mt-[8px]" />
             </div>
          
             </div>
@@ -113,7 +115,7 @@ const Navbar = () => {
             <div></div>
             <Link
               className="hidden"
-              href="http://localhost:3000/components/Login"
+              href="http://localhost:3000/components/login"
             >
               <div
                 className={` xsm:cursor-pointer xsm:hover:bg-[---c3] xsm:active:bg-[---c6] xsm:h-[40px] w-[7rem] xsm:items-center xsm:hover:text-[---c4] xsm:active:text-[---c4] xsm:font-extrabold  ${login}             xsm:rounded-[2rem]  xsm:flex xsm:space-x-1`}
@@ -124,7 +126,7 @@ const Navbar = () => {
                 <p>Account</p>
               </div>
             </Link>
-            <Link href="http://localhost:3000/components/Login">
+            <Link href="http://localhost:3000/components/login">
               <div
                 className={` xsm:cursor-pointer xsm:hover:bg-[---c3] xsm:active:bg-[---c6] xsm:h-[40px] w-[7rem] xsm:items-center xsm:hover:text-[---c4] xsm:active:text-[---c4] xsm:font-extrabold  ${login}             xsm:rounded-[2rem]  xsm:flex xsm:space-x-1`}
               >
@@ -144,8 +146,13 @@ const Navbar = () => {
           </div>
         </div>
             
+        <div className=" xsm:flex xsm:w-[100vw] xsm:m-2   ">
+          <div className=" absolute ">
+            <Image src={Logo} alt="logo" height={150} width={150} className=" ml-[2rem] xsm:w-[110px] xsm:mt-[10px] xsm:ml-[15px]"  />
+          </div>
+       </div>
         <div className=" xsm:flex xsm:w-[100vw] xsm:m-2 xsm:space-x-2  ">
-          <div className="grid content-center items-center grid-cols-3 w-[8rem] h-[2rem] rounded-[2rem] border-[1.5px] border-black absolute top-2 right-2">
+          <div className="grid content-center items-center grid-cols-3 w-[8rem] h-[2rem] rounded-[2rem] border-[1.5px] border-black absolute top-4 right-2">
             <CiSearch className="xsm:cursor-pointer xsm:w-[2rem] xsm:h-[1.5rem] xsm:place-self-start " />
             <input 
               type="text"
