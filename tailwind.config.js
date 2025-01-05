@@ -12,6 +12,9 @@ module.exports = {
       lm : '425px',
       t : '768px',
       l : '1024px',
+      ll : '1440px',
+      k: '2560px',
+      my:'2700px',
       
       'xsh': { 'raw': '(min-height: 600px)' },
       'sh': { 'raw': '(min-height: 700px)' },
