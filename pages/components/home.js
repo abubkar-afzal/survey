@@ -4,7 +4,7 @@ const Home = () => {
     const [input,setinput] =useState("");
   return (
     <>
-      <div className="sm:m-4 scroll-smooth">
+      <div className="sm:m-4 scroll-smooth min-h-screen">
           <div className="font-bold sm:text-[1.8rem] text-center">Hi! There it's </div><div className="font-bold sm:mb-[2rem] sm:text-[2rem] text-center"><a className="sm:text-[---c5] font-black  strocktext">Abubakar Afzal</a></div>
         <div className="sm:bg-[---c2] sm:text-[---c4] sm:font-bold p-2 sm:h-[8rem] sm:overflow-y-scroll text-center scroll-auto">
           <p>

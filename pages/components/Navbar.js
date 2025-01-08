@@ -87,7 +87,7 @@ const Navbar = () => {
   return (
     <>
       <div
-        className="sm:flex sm:fixed sm:h-[4.5rem] mm:h-[5rem] lm:h-[5.5rem] shadow-sm shadow-black 
+        className="sm:flex  sm:h-[4.5rem] mm:h-[5rem] lm:h-[5.5rem] shadow-sm shadow-black sm:fixed sm:top-0
      sm:z-10 w-[100vw] bg-[---c4]"
       >
         {/* for small screen  */}

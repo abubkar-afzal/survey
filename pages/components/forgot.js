@@ -18,7 +18,7 @@ const Forgot = () => {
   }
   return (
     <>
-      <div>
+      <div className="min-h-screen">
         <div className="sm:text-center mm:mt-[1rem]">
          
           <Link href={`http://localhost:3000/components/login`}>
@@ -34,7 +34,7 @@ const Forgot = () => {
              Forgot
             </button>
           </Link>
-          <div className=" sm:text-center sm:font- my-2 pt-[3rem] bg-[---c8] rounded-[2rem] mx-[1rem] text-[---c4] sm:h-auto sm:space-y-[2rem] font-semibold items-center place-content-start p-[2rem] ">
+          <div className=" sm:text-center sm:font- my-2 pt-[3rem] bg-[---c8] rounded-[2rem] mx-[1rem] text-[---c4] sm:h-auto sm:space-y-[2rem] font-semibold items-center place-content-start p-[2rem]  ">
             <div>
               <div className="text-[1.3rem] mb-2">Forgot Password !!</div>
               <hr className="bg-[---c4] mb-2" />

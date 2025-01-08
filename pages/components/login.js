@@ -18,7 +18,7 @@ const Login = () => {
   }
   return (
     <>
-      <div>
+      <div className="min-h-screen">
         <div className="sm:text-center mm:mt-[1rem]">
           <Link href={`http://localhost:3000/components/login`}>
             <button
