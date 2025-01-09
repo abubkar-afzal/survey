@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Link from "next/link";
 
 const Home = () => {
     const [input,setinput] =useState("");
@@ -9,7 +10,11 @@ const Home = () => {
         <div className="sm:bg-[---c2] sm:text-[---c4] sm:font-bold p-2 sm:h-[8rem] sm:overflow-y-scroll text-center scroll-auto">
           <p>
             First I want to <a className="sm:text-[---c5] font-black  stroke-black sm:text-[18px] ">Introduce</a> my self. I am a student of
-            ICS <a className="sm:text-[---c5] font-black">Statistics</a> Part_II in <a className="underline font-semibold hover:cursor-pointer">Govt Islamia College Railway road Lahore</a>.
+            ICS <a className="sm:text-[---c5] font-black">Statistics</a> Part_II in  <Link href={`https://maps.app.goo.gl/rZwTdKpLKLXEp9Jq5`}
+             className="sm:underline hover:text-[---f1]">
+              Govt, Islmaia College Railway Road, Lahore, Pakistan
+            
+          </Link>.
           </p>
           
           <p className="mt-[8px] pb-2">

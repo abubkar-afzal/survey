@@ -6,6 +6,8 @@ import { MdOutgoingMail } from "react-icons/md";
 import { SiGithub } from "react-icons/si";
 import { RiInstagramFill } from "react-icons/ri";
 import { FaLinkedin } from "react-icons/fa6";
+import Link from "next/link";
+
 const Footer = () => {
   return (
     <>
@@ -18,35 +20,50 @@ const Footer = () => {
         </div>
        
         <div className="">
+        <Link href={`http://localhost:3000/components/about`}>
           <div className=" ml-2">
             <span className="sm:flex px-2 sm:hover:underline sm:text-[---fo1] hover:text-black sm:text-[20px]">About</span><br/>
           
           </div>
+        </Link>
         </div>
+
         <div>
+        <Link href={`http://localhost:3000/components/blogs`}>
           <div className=" ml-2">
             <span className="sm:flex px-2 sm:hover:underline sm:text-[---fo1] hover:text-black sm:text-[20px]">Blogs</span><br/>
       
           </div>
+          </Link>
         </div>
         <div>
-          <div className="my-2 space-y-6 ml-2 h-auto">
-            <span className="font-bold">Contact</span><br/>
-            <span className="sm:flex px-2 sm:hover:underline sm:text-[---fo1] hover:text-black">
+          <div className="my-4 ml-2 h-auto">
+            <span className="font-bold">Contact</span>
+            <br/>
+            <br />
+          <Link href={`https://wa.me/send?phone=923144077251&text=welcome`}>
+            <span className="sm:flex px-2 sm:hover:underline sm:text-[---fo1] hover:text-[---wa]">
              <IoLogoWhatsapp className="sm:text-[22px] mr-2"/> +923144077251
-            </span><br/>
-            <span className="sm:flex px-2 sm:hover:underline sm:text-[---fo1] hover:text-black">
+            </span><br/></Link>
+            <Link href={`mailto:hafizabubakarafzal@gmail.com`}>
+            <span className="sm:flex px-2 sm:hover:underline sm:text-[---fo1] hover:text-[---em]">
              <MdOutgoingMail className="sm:text-[22px] mr-2"/> hafizabubakarafzal@gmail.com
-            </span><br/>
-            <span className="sm:flex px-2 sm:hover:underline sm:text-[---fo1] hover:text-black">
+            </span><br/></Link>
+            <Link href={`https://github.com/abubkar-afzal`}>
+            
+            <span className="sm:flex px-2 sm:hover:underline sm:text-[---fo1] hover:text-[---gh]">
               <SiGithub className="sm:text-[22px] mr-2"/>GitHub
-            </span><br/>
-            <span className="sm:flex px-2 sm:hover:underline sm:text-[---fo1] hover:text-black">
+            </span><br/></Link>
+            <Link href={`https://www.instagram.com/mr.syco.1?igsh=MWdmYXlsamozMDd0dw==`}>
+
+            <span className="sm:flex px-2 sm:hover:underline sm:text-[---fo1] hover:text-[---ig]">
              <RiInstagramFill className="sm:text-[22px] mr-2"/> Instagram
-            </span><br/>
-            <span className="sm:flex px-2 sm:hover:underline sm:text-[---fo1] hover:text-black">
+            </span><br/></Link>
+            <Link href={`/`}>
+
+            <span className="sm:flex px-2 sm:hover:underline sm:text-[---fo1] hover:text-[---ln]">
               <FaLinkedin className="sm:text-[22px] mr-2"/>Linkedin
-            </span><br/>
+            </span><br/></Link>
           </div>
         </div>
       </div>

@@ -1,6 +1,13 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { HiPencilSquare } from "react-icons/hi2";
+import { CiCalendarDate } from "react-icons/ci";
+import { FaPhone } from "react-icons/fa6";
+import { TbPasswordUser } from "react-icons/tb";
+import { FaBriefcase } from "react-icons/fa";
+import { FaHouseChimney } from "react-icons/fa6";
+import { MdOutlineMarkEmailUnread } from "react-icons/md";
 
 const SignUp = () => {
   const router = useRouter();
@@ -48,6 +55,8 @@ const SignUp = () => {
             </div>
             <div className="text-left">
               <div className="sm:text-[15px] my-2"> Name:</div>
+              <div className="flex">
+                            <HiPencilSquare className="text-white m-2"/>
               <input
                 onChange={(e) => {
                   setName(e.target.value);
@@ -59,25 +68,29 @@ const SignUp = () => {
                 id="Name"
                 htmlFor="Name"
                 className="bg-[---c4] sm:rounded-[2rem] text-black sm:h-[2rem] sm:px-3 sm:text-[11px] sm:w-[11rem]"
-              />
+              /></div>
             </div>
             <div className="text-left">
               <div className="sm:text-[15px] my-2"> Age:</div>
+              <div className="flex">
+              <CiCalendarDate className="text-white m-2"/>
               <input
                 onChange={(e) => {
                   setAge(e.target.value);
                 }}
                 placeholder="Please Enter your Age"
-                type="date"
+                type="number"
                 name="Age"
                 value={Age}
                 id="Age"
                 htmlFor="Age"
                 className="bg-[---c4] sm:rounded-[2rem] text-black sm:h-[2rem] sm:px-3 sm:text-[11px] sm:w-[11rem]"
-              />
+              /></div>
             </div>
             <div className="text-left">
               <div className="sm:text-[15px] my-2"> Phone Number:</div>
+              <div className="flex">
+              <FaPhone className="text-white m-2"/>
               <input
                 onChange={(e) => {
                   setPhone(e.target.value);
@@ -89,10 +102,12 @@ const SignUp = () => {
                 id="Phone"
                 htmlFor="Phone"
                 className="bg-[---c4] sm:rounded-[2rem] text-black sm:h-[2rem] sm:px-3 sm:text-[11px] sm:w-[11rem]"
-              />
+              /></div>
             </div>
             <div className="text-left">
               <div className="sm:text-[15px] my-2"> Email:</div>
+              <div className="flex">
+              <MdOutlineMarkEmailUnread className="text-white m-2"/>
               <input
                 onChange={(e) => {
                   setEmail(e.target.value);
@@ -104,10 +119,12 @@ const SignUp = () => {
                 id="Email"
                 htmlFor="Email"
                 className="bg-[---c4] sm:rounded-[2rem] text-black sm:h-[2rem] sm:px-3 sm:text-[11px] sm:w-[11rem]"
-              />
+              /></div>
             </div>
             <div className="text-left">
               <div className="sm:text-[15px] sm:my-2"> Password:</div>
+              <div className="flex">
+              <TbPasswordUser className="text-white m-2"/>
               <input
                 onChange={(e) => {
                   setPassword(e.target.value);
@@ -119,10 +136,12 @@ const SignUp = () => {
                 placeholder="Please Enter your Password"
                 htmlFor="Password"
                 className="bg-[---c4] text-black rounded-[2rem] sm:h-[2rem] sm:px-3 sm:text-[11px] sm:w-[11rem]"
-              />
+              /></div>
             </div>
             <div className="text-left">
               <div className="sm:text-[15px] my-2"> Occoupation:</div>
+              <div className="flex">
+              <FaBriefcase className="text-white m-2"/>
               <input
                 onChange={(e) => {
                   setOccoupation(e.target.value);
@@ -134,10 +153,12 @@ const SignUp = () => {
                 id="Occoupation"
                 htmlFor="Occoupation"
                 className="bg-[---c4] sm:rounded-[2rem] text-black sm:h-[2rem] sm:px-3 sm:text-[11px] sm:w-[11rem]"
-              />
+              /></div>
             </div>
             <div className="text-left">
               <div className="sm:text-[15px] my-2"> Address:</div>
+              <div className="flex">
+              <FaHouseChimney className="text-white text-[20px] m-2"/>
               <input
                 onChange={(e) => {
                   setAddress(e.target.value);
@@ -149,7 +170,7 @@ const SignUp = () => {
                 id="Address"
                 htmlFor="Address"
                 className="bg-[---c4] sm:rounded-[2rem] text-black sm:h-[2rem] sm:px-3 sm:text-[11px] sm:w-[11rem]"
-              />
+              /></div>
             </div>
 
             <button className="bg-[---c5] hover:bg-[---h5] p-4 mb-2 w-auto rounded-[2rem] font-bold shadow-lg text-[---c4] text-[13px]  ">

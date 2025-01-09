@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { MdOutlineMarkEmailUnread } from "react-icons/md";
+
 
 const Forgot = () => {
   const router = useRouter();
@@ -40,21 +42,23 @@ const Forgot = () => {
               <hr className="bg-[---c4] mb-2" />
               <hr className="bg-[---c4]" />
             </div>
-            <div className="text-left">
-              <div className="sm:text-[15px] my-2"> Email:</div>
-              <input
-                onChange={(e) => {
-                  setemail(e.target.value);
-                }}
-                placeholder="Please Enter your Email"
-                type="email"
-                name="Phone"
-                value={email}
-                id="Phone"
-                htmlFor="Phone"
-                className="bg-[---c4] sm:rounded-[2rem] text-black sm:h-[2rem] sm:px-3 sm:text-[11px] sm:w-[11rem]"
-              />
-            </div>
+             <div className="text-left">
+                          <div className="sm:text-[15px] my-2"> Email:</div>
+                          <div className="flex">
+                          <MdOutlineMarkEmailUnread className="text-white m-2"/>
+                          <input
+                            onChange={(e) => {
+                              setEmail(e.target.value);
+                            }}
+                            placeholder="Please Enter your Email"
+                            type="email"
+                            name="Email"
+                            value={email}
+                            id="Email"
+                            htmlFor="Email"
+                            className="bg-[---c4] sm:rounded-[2rem] text-black sm:h-[2rem] sm:px-3 sm:text-[11px] sm:w-[11rem]"
+                          /></div>
+                        </div>
            
             
             <button className="bg-[---c5] hover:bg-[---h5] p-2 mb-2 w-[8rem] rounded-[2rem] font-bold shadow-lg text-[---c4]">
