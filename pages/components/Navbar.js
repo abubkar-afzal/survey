@@ -87,8 +87,8 @@ const Navbar = () => {
   return (
     <>
       <div
-        className="sm:flex  sm:h-[4.5rem] mm:h-[5rem] lm:h-[5.5rem] shadow-sm shadow-black sm:fixed sm:top-0
-     sm:z-10 w-[100vw] bg-[---c4]"
+        className="sm:flex  sm:h-[4.5rem] mm:h-[5rem] lm:h-[5.5rem] l:h-[7rem] ll:h-[8.5rem] k:h-[13rem]  shadow-sm shadow-black sm:fixed sm:top-0
+     sm:z-10 w-[100vw] bg-[---c4] "
       >
         {/* for small screen  */}
         <div className="py-2 pl-2 grid grid-cols-2  ">
@@ -99,7 +99,7 @@ const Navbar = () => {
                 showcross ? "inline" : "hidden"
               } sm:h-[4em] sm:w-[3rem] sm:rounded-[2rem] sm:cursor-pointer `}
             >
-              <GiHamburgerMenu className="sm:w-[2rem] sm:h-[2rem] sm:mt-[13px] mm:mt-[18px] " />
+              <GiHamburgerMenu className="sm:w-[2rem] mm:w-[2.5rem] mm:h-[2.5rem] lm:w-[2.7rem] lm:h-[2.7rem] sm:h-[2rem] sm:mt-[13px] mm:mt-[13px] " />
             </div>
 
             <div
@@ -108,7 +108,7 @@ const Navbar = () => {
                 showcross ? "hidden" : "inline"
               } sm:h-[4em] sm:w-[3rem] sm:rounded-[2rem] sm:cursor-pointer pt-[2rem] `}
             >
-              <RxCross2 className="sm:w-[2rem] sm:h-[2rem] sm:mt-[13px] mm:mt-[18px] " />
+              <RxCross2 className="sm:w-[2rem] mm:w-[2.5rem] mm:h-[2.5rem] lm:w-[2.7rem] lm:h-[2.7rem] sm:h-[2rem] sm:mt-[13px] mm:mt-[13px] " />
             </div>
           </div>
           <div
@@ -182,14 +182,14 @@ const Navbar = () => {
         </div>
 
         {/* logo  */}
-        <div className="sticky left-0 ">
+        <div className="sticky ">
           <div className="">
             <Image
               src={Logo}
               alt="logo"
               height={100}
               width={300}
-              className="sm:ml-[10px] mm:ml-[20px] lm:ml-[30px] t:ml-[8px] t:w-[150px] t:h-[130px] cursor-pointer l:w-[200px] l:h-[170px] ll:w-[250px] ll:h-[210px] k:w-[400px] k:h-[320px] my:ml-[50px]"
+              className="sm:ml-[10px] mm:ml-[20px] lm:ml-[20px] t:ml-[8px] t:w-[150px] t:h-[130px] cursor-pointer l:w-[200px] l:h-[170px] ll:w-[250px] ll:h-[210px] k:w-[400px] k:h-[320px] my:ml-[50px]"
             />
           </div>
         </div>
@@ -270,7 +270,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-      <div className="h-[5rem] w-[100%] bg-[---c4] "></div>
+      <div className="h-[5rem] w-[100%] bg-[---c4] l:h-[7rem] ll:h-[8.5rem] k:h-[13rem]"></div>
     </>
   );
 };
