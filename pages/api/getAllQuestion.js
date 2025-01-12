@@ -13,10 +13,10 @@ export default async function handler(req, res) {
             await client.connect();
 
             // Choose a name for your database
-            const database = client.db("user_data_db");
+            const database = client.db("survey");
 
             // Choose a name for your collection
-            const collection = database.collection("user_data_collection");
+            const collection = database.collection("questions");
             const allData = await collection.find({}).toArray();
 
             res.status(200).json(allData);
