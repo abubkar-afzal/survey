@@ -9,7 +9,7 @@ import Link from "next/link";
 const About = () => {
   return (
     <>
-      <div className="m-4 space-y-2 ll:space-y-[1.5rem] k:space-y-[2rem]  text-justify t:p-4  k:p-10  l:text-center l:place-items-center l:p-10  k:text-center k:place-items-center">
+      <div className="m-4 space-y-2 ll:space-y-[1.5rem] k:space-y-[2rem]  text-justify t:p-4  k:p-10  l:text-center l:place-items-center l:p-10  k:text-center k:place-items-center ">
         <div className="text-center sm:text-[25px] mm:text-[30px] lm:text-[35px] t:text-[50px] l:text-[55px] ll:text-[65px] k:text-[105px]  font-sans">
           It's <a className="sm:text-[---c5] font-black ">Abubakar Afzal </a>
         </div>
@@ -67,11 +67,11 @@ const About = () => {
               <RiInstagramFill className="sm:text-[22px] mm:text-[26px] lm:text-[30px] t:text-[42px] l:text-[50px] ll:text-[45px] k:text-[80px] mr-2" />
             </span>
             <br /></Link>
-            <Link href={`/`}>
+            {/* <Link href={`/`}>
             <span className="sm:flex px-2 sm:hover:underline sm:text-[---ln] hover:scale-[1.3] duration-[1s]">
               <FaLinkedin className="sm:text-[22px] mm:text-[26px] lm:text-[30px] t:text-[42px] l:text-[50px] ll:text-[45px] k:text-[80px] mr-2" />
             </span>
-            <br /></Link>
+            <br /></Link> */}
           </div>
         </div>
       </div>

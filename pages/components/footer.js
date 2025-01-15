@@ -60,11 +60,11 @@ const Footer = () => {
             <span className="sm:flex px-2 sm:hover:underline sm:text-[---fo1] hover:text-[---ig]">
              <RiInstagramFill className="sm:text-[22px] mr-2"/> Instagram
             </span><br/></Link>
-            <Link href={`/`}>
+            {/* <Link href={`/`}>
 
             <span className="sm:flex px-2 sm:hover:underline sm:text-[---fo1] hover:text-[---ln]">
               <FaLinkedin className="sm:text-[22px] mr-2"/>Linkedin
-            </span><br/></Link>
+            </span><br/></Link> */}
             </div>
           </div>
         </div>

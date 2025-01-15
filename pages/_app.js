@@ -15,6 +15,7 @@ export default function App({ Component, pageProps }) {
     <title> Survey</title>
   </Head>
   <Navbar/>
+  
   <Component {...pageProps} />
   <Footer/>
   

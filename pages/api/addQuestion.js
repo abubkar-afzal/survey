@@ -10,14 +10,10 @@ export default async function handler(req, res) {
       useUnifiedTopology: true,
     });
     //Data
-      let question = new questionSchema({
-        question_id: req.body.question_id,
-        question_title: req.body.question_title,
-        question_label: req.body.question_label,
-      });
+      let question = new questionSchema(req.body);
       question.save()
     
-    try {
+    try { console.log(question)
       await client.connect();
 
       // Choose a name for your database
@@ -26,7 +22,7 @@ export default async function handler(req, res) {
       // Choose a name for your collection
       const collection = database.collection("questions");
 
-      await collection.insertOne({ question });
+      await collection.insertOne(question);
 
       res.status(201).json({ message: "Data saved successfully!" });
     } catch (error) {

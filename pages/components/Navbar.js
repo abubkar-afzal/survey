@@ -11,6 +11,7 @@ import { FaMessage } from "react-icons/fa6";
 import { FaPencilAlt } from "react-icons/fa";
 import Logo from "../images/survey-logo.svg";
 import Image from "next/image";
+import { RiAdminFill } from "react-icons/ri";
 
 const Navbar = () => {
   const [showmenu, hidemenu] = useState(false);
@@ -20,6 +21,7 @@ const Navbar = () => {
   const [showhome, hidehome] = useState("inline");
   const [showlogin, hidelogin] = useState("inline");
   const [showaccount, hideaccount] = useState("inline");
+  const [showadmin, hideadmin] = useState("inline");
 
   const onepressmenu = () => {
     hidemenu(!showmenu);
@@ -35,6 +37,7 @@ const Navbar = () => {
   let blogs;
   let login;
   let account;
+  let admin;
 
   const router = useRouter();
   const currentUrl = router.asPath;
@@ -45,20 +48,24 @@ const Navbar = () => {
       hideblogs("hidden");
       hidelogin("hidden");
       hideaccount("hidden");
+      hideadmin("hidden");
     } else if (currentUrl === "/components/about") {
       hideaccount("hidden");
       hidehome("hidden");
       hideabout("inline");
       hideblogs("hidden");
+      hideadmin("hidden");
       hidelogin("hidden");
     } else if (currentUrl === "/components/blogs") {
       hideaccount("hidden");
+      hideadmin("hidden");
       hidehome("hidden");
       hideabout("hidden");
       hideblogs("inline");
       hidelogin("hidden");
     } else if (currentUrl === "/components/login") {
       hideaccount("hidden");
+      hideadmin("hidden");
       hidehome("hidden");
       hideabout("hidden");
       hideblogs("hidden");
@@ -66,10 +73,19 @@ const Navbar = () => {
     } else if (currentUrl === "/components/account") {
       hideaccount("inline");
       hidehome("hidden");
+      hideadmin("hidden");
       hideabout("hidden");
       hideblogs("hidden");
       hidelogin("hidden");
     }
+   else if (currentUrl === "/admin") {
+    hideaccount("hidden");
+    hidehome("hidden");
+    hideadmin("inline");
+    hideabout("hidden");
+    hideblogs("hidden");
+    hidelogin("hidden");
+  }
   }, [router.query]);
 
   if (currentUrl === "/") {
@@ -82,6 +98,10 @@ const Navbar = () => {
     login = "sm:text-[---c4] sm:bg-[---c3]";
   } else if (currentUrl === "/components/account") {
     account = "sm:text-[---c4] sm:bg-[---c3]";
+  }else if (currentUrl === "/components/account") {
+    account = "sm:text-[---c4] sm:bg-[---c3]";
+  }else if (currentUrl === "/admin") {
+    admin = "sm:text-[---c4] sm:bg-[---c3]";
   }
 
   return (
@@ -178,6 +198,16 @@ const Navbar = () => {
                 <p>Login</p>
               </div>
             </Link>
+            <Link href={`http://localhost:3000/admin`}>
+              <div
+                className={` sm:cursor-pointer sm:hover:bg-[---c3] sm:active:bg-[---c6] sm:h-[40px] w-[7rem] sm:items-center sm:hover:text-[---c4] sm:active:text-[---c4] sm:font-extrabold   ${admin}  k:h-[110px] ll:h-[80px] l:h-[50px]   w-auto        sm:rounded-[2rem]  sm:flex sm:space-x-1`}
+              >
+                <RiAdminFill
+                  className={`l:w-[3rem] ll:w-[3.5rem] ll:h-[2.5rem] k:w-[5.3rem] k:h-[4rem]  l:h-[2rem] w-[2rem] sm:active:bg-[---c6] h-[1.5rem] text-[---c2] sm:active:text-[---c4] sm:rounded-[2rem] sm:hover:text-[---c4] ${admin}`}
+                />
+                <p>Admin</p>
+              </div>
+            </Link>
           </div>
         </div>
 
@@ -255,10 +285,20 @@ const Navbar = () => {
                 <p className={`pr-[10px] k:pr-[20px] ${showlogin}`}>Login</p>
               </div>
             </Link>
+            <Link href={`http://localhost:3000/admin`}>
+              <div
+                className={` sm:cursor-pointer sm:hover:bg-[---c3] sm:active:bg-[---c6] sm:h-[40px] w-[7rem] sm:items-center sm:hover:text-[---c4] sm:active:text-[---c4] sm:font-extrabold   ${admin}  k:h-[110px] ll:h-[80px] l:h-[50px]   w-auto        sm:rounded-[2rem]  sm:flex sm:space-x-1`}
+              >
+                <RiAdminFill
+                  className={`l:w-[3rem] ll:w-[3.5rem] ll:h-[2.5rem] k:w-[5.3rem] k:h-[4rem]  l:h-[2rem] w-[2rem] sm:active:bg-[---c6] h-[1.5rem] text-[---c2] sm:active:text-[---c4] sm:rounded-[2rem] sm:hover:text-[---c4] ${admin}`}
+                />
+                <p className={`pr-[10px] k:pr-[20px] ${showadmin}`}>Admin</p>
+              </div>
+            </Link>
           </div>
 
           {/* input tag */}
-          <div className="grid content-center items-center grid-cols-3 w-[8rem] h-[2rem] rounded-[2rem] border-[1.5px] border-black absolute sm:top-6 sm:right-2 mm:top-8 mm:right-2 lm:top-8 lm:right-2 t:top-8 t:w-[7rem] t:h-[1.8rem] l:w-[9rem] my:right-10 l:h-[2.5rem] ll:h-[3.3rem] ll:w-[12rem] k:w-[18rem] k:h-[7rem]">
+          <div className="grid content-center items-center grid-cols-3 w-[8rem] h-[2rem] rounded-[2rem] border-[1.5px] border-black absolute sm:top-6 sm:right-2 mm:top-8 mm:right-2 lm:top-8 lm:right-2 t:top-8 t:w-[7rem] t:h-[1.8rem] l:w-[9rem] my:right-12 l:right-3 ll:right-6 l:h-[2.5rem] ll:h-[3.3rem] ll:w-[12rem] k:w-[18rem] k:h-[7rem]">
             <CiSearch className="sm:cursor-pointer k:w-[4rem] k:h-[6rem] ll:w-[2.5rem] ll:h-[2.2rem] l:w-[2.2rem] l:h-[2rem] sm:w-[2rem] t:w-[1.8rem] t:h-[1.2rem] sm:h-[1.5rem] sm:place-self-start " />
             <input
               type="text"
