@@ -79,11 +79,9 @@ const AddQuestion = () => {
             </button>
           </Link>
             </div>
-      <div className="my-[2rem] t:w-[30rem] l:w-[35rem] t:mx-auto text-center shadow-sm shadow-black rounded-[2rem] p-2 t:p-6 bg-[---c8] sm:text-[---c4] space-y-[10px] mm:space-y-[15px] lm:space-y-[20px] t:space-y-[22px] l:space-y-[27px] ll:space-y-[32px] k:space-y-[40px] mx-4 ">
+      <div className="my-[2rem] t:w-[30rem] l:w-[35rem] t:mx-auto text-center shadow-sm shadow-black rounded-[2rem] p-2 t:p-6 bg-[---c8] sm:text-[---c4]  space-y-[30px] mm:space-y-[35px] lm:space-y-[40px] t:space-y-[42px] l:space-y-[47px] ll:space-y-[52px] k:space-y-[60px] mx-4 pt-[2rem]">
         <div className="sm:flex sm:flex-col">
-          <div className="sm:my-2 sm:text-[15px] mm:text-[18px] lm:text-[22px] t:text-[25px] l:text-[32px] ll:text-[37px] k:text-[45px] font-bold">
-            Enter Question Id
-          </div>
+          
           <input
             value={id}
             onChange={(e) => {
@@ -91,17 +89,16 @@ const AddQuestion = () => {
             }}
             type="number"
             htnlFor="id"
-            className="bg-[---c4] sm:rounded-[2rem] text-black h-auto  sm:px-3 w-auto m-2 sm:text-[15px] mm:text-[16px] lm:text-[19px] t:text-[21px] l:text-[24px] ll:text-[27px] k:text-[30px] py-2  "
-            placeholder="Please Enter Your Question Id"
+            className="sm:rounded-[2rem] text-white h-auto  sm:px-3 w-auto m-2 sm:text-[15px] mm:text-[16px] lm:text-[19px] t:text-[21px] l:text-[24px] ll:text-[27px] k:text-[30px]  mt-1 block px-3 py-2 bg-[---t1] border border-slate-300 rounded-md text-sm shadow-sm placeholder-white
+      focus:outline-none focus:border-black focus:ring-2 focus:ring-black focus:bg-[---c4] focus:text-black focus:placeholder-black "
+            placeholder="Please Enter Your Question Id ..."
             name="id"
             id="id"
           />
         </div>
 
         <div className="sm:flex sm:flex-col">
-          <div className="sm:my-2 sm:text-[15px] mm:text-[18px] lm:text-[22px] t:text-[25px] l:text-[32px] ll:text-[37px] k:text-[45px] font-bold">
-            Enter Question Title
-          </div>
+          
           <input
             value={title}
             onChange={(e) => {
@@ -109,16 +106,15 @@ const AddQuestion = () => {
             }}
             type="text"
             htnlFor="title"
-            className="bg-[---c4] sm:rounded-[2rem] text-black h-auto  sm:px-3 w-auto m-2 sm:text-[15px] mm:text-[16px] lm:text-[19px] t:text-[21px] l:text-[24px] ll:text-[27px] k:text-[30px] py-2   "
-            placeholder="Please Enter Your Question Title"
+            className="sm:rounded-[2rem] text-white h-auto  sm:px-3 w-auto m-2 sm:text-[15px] mm:text-[16px] lm:text-[19px] t:text-[21px] l:text-[24px] ll:text-[27px] k:text-[30px]  mt-1 block px-3 py-2 bg-[---t1] border border-slate-300 rounded-md text-sm shadow-sm placeholder-white
+      focus:outline-none focus:border-black focus:ring-2 focus:ring-black focus:bg-[---c4] focus:text-black focus:placeholder-black  "
+            placeholder="Please Enter Your Question Title ..."
             name="title"
             id="title"
           />
         </div>
         <div className="sm:flex sm:flex-col">
-          <div className="sm:my-2 sm:text-[15px] mm:text-[18px] lm:text-[22px] t:text-[25px] l:text-[32px] ll:text-[37px] k:text-[45px] font-bold">
-            Enter Question Label
-          </div>
+          
           <input
             value={label}
             onChange={(e) => {
@@ -126,8 +122,9 @@ const AddQuestion = () => {
             }}
             type="text"
             htnlFor="div"
-            className="bg-[---c4] sm:rounded-[2rem] text-black h-auto  sm:px-3 w-auto m-2 sm:text-[15px] mm:text-[16px] lm:text-[19px] t:text-[21px] l:text-[24px] ll:text-[27px] k:text-[30px] py-2   "
-            placeholder="Please Enter Your Question Label"
+            className="sm:rounded-[2rem] text-white h-auto  sm:px-3 w-auto m-2 sm:text-[15px] mm:text-[16px] lm:text-[19px] t:text-[21px] l:text-[24px] ll:text-[27px] k:text-[30px]  mt-1 block px-3 py-2 bg-[---t1] border border-slate-300 rounded-md text-sm shadow-sm placeholder-white
+      focus:outline-none focus:border-black focus:ring-2 focus:ring-black focus:bg-[---c4] focus:text-black focus:placeholder-black "
+            placeholder="Please Enter Your Question Label ..."
             name="div"
             id="div"
           />

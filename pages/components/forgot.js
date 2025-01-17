@@ -19,7 +19,7 @@ const Forgot = () => {
   }
   return (
     <>
-     <div className="min-h-screen">
+     <div className="mb-[10rem]">
         <div className="sm:text-center mm:mt-[1rem] t:mt-[2rem]">
           <Link href={`http://localhost:3000/components/login`}>
             <button
@@ -44,7 +44,7 @@ const Forgot = () => {
             </div>
             <div className=" ">
             <div className="text-left">
-              <div className=" my-2 sm:text-[15px] mm:text-[18px] lm:text-[22px] t:text-[25px] l:text-[32px] ll:text-[37px] k:text-[45px]"> Email:</div>
+              
               <div className="flex ">
                 <MdOutlineMarkEmailUnread className="text-white m-2 sm:text-[22px] mm:text-[28px] lm:text-[32px] t:text-[37px] l:text-[42px] ll:text-[47px] k:text-[55px]" />
                 <input
@@ -57,7 +57,8 @@ const Forgot = () => {
                   value={email}
                   id="Email"
                   htmlFor="Email"
-                  className="bg-[---c4] sm:rounded-[2rem] text-black h-auto  sm:px-3 w-auto m-2 sm:text-[15px] mm:text-[16px] lm:text-[19px] t:text-[21px] l:text-[24px] ll:text-[27px] k:text-[30px]  "
+                  className="sm:rounded-[2rem] text-white h-auto  sm:px-3 w-auto m-2 sm:text-[15px] mm:text-[16px] lm:text-[19px] t:text-[21px] l:text-[24px] ll:text-[27px] k:text-[30px]  mt-1 block px-3 py-2 bg-[---t1] border border-slate-300 rounded-md text-sm shadow-sm placeholder-white
+      focus:outline-none focus:border-black focus:ring-2 focus:ring-black focus:bg-[---c4] focus:text-black focus:placeholder-black "
                 />
               </div>
             </div>

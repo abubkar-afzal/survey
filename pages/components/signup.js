@@ -8,6 +8,8 @@ import { TbPasswordUser } from "react-icons/tb";
 import { FaBriefcase } from "react-icons/fa";
 import { FaHouseChimney } from "react-icons/fa6";
 import { MdOutlineMarkEmailUnread } from "react-icons/md";
+import { FaEyeSlash } from "react-icons/fa";
+import { FaEye } from "react-icons/fa";
 
 const SignUp = () => {
   const router = useRouter();
@@ -18,10 +20,19 @@ const SignUp = () => {
   const [Occoupation, setOccoupation] = useState("");
   const [Address, setAddress] = useState("");
   const [Email, setEmail] = useState("");
-  const [Age, setAge] = useState("");
+  const [Birthday, setBirthday] = useState("");
+  const [hpassword, sethpassword] = useState(true);
+  
+
 
   let login;
   let signup;
+  let hidePass;
+  if(hpassword){
+    hidePass = "password"
+  }else{
+    hidePass = "text"
+  }
   if (currentUrl === "/components/login") {
     login = "sm:text-[---c4]  sm:bg-[---c3]";
     signup = "sm:text-[---c4] sm:bg-[---c9]";
@@ -29,6 +40,37 @@ const SignUp = () => {
     signup = "sm:text-[---c4] sm:bg-[---c3]";
     login = "sm:text-[---c4]  sm:bg-[---c9]";
   }
+  const hideP =()=>{
+    sethpassword(!hpassword);
+  }
+  const onAdd = async (e) => {
+  if(Name.length>3 && Password.length>4 && Occoupation.length>4 && Address.length>4 && Phone.length>10){
+    
+      e.preventDefault();
+      let user = {
+        user_name: Name,
+        user_bd: Birthday,
+        user_phone: Phone,
+        user_email: Email,
+        user_password: Password,
+        user_occoupation: Occoupation,
+        user_address: Address
+      };
+      let res = await fetch('http://localhost:3000/api/addNewUser', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json; charset=UTF-8',
+        },
+        body: JSON.stringify(user),
+      });
+      let response = await res.json();
+      console.log(response);
+      router.push("http://localhost:3000/")
+    }else{
+      console.log("validation faild")
+    }
+  }
+
   return (
     <>
  
@@ -42,7 +84,7 @@ const SignUp = () => {
 
 
 
-      <div className="min-h-screen">
+      <div className="mb-[10rem]">
         <div className="sm:text-center mm:mt-[1rem]">
           <Link href={`http://localhost:3000/components/login`}>
             <button
@@ -72,126 +114,141 @@ const SignUp = () => {
               <hr className="bg-[---c4]" />
             </div>
             <div className="text-left">
-              <div className="my-2 sm:text-[15px] mm:text-[18px] lm:text-[22px] t:text-[25px] l:text-[32px] ll:text-[37px] k:text-[45px]"> Name:</div>
+              
               <div className="flex">
                             <HiPencilSquare className="text-white m-2 sm:text-[22px] mm:text-[28px] lm:text-[32px] t:text-[37px] l:text-[42px] ll:text-[47px] k:text-[55px]"/>
               <input
                 onChange={(e) => {
                   setName(e.target.value);
                 }}
-                placeholder="Please Enter your Name"
+                placeholder="Please Enter your Name ..."
                 type="text"
                 name="Name"
                 value={Name}
                 id="Name"
                 htmlFor="Name"
-                className="bg-[---c4] sm:rounded-[2rem] text-black h-auto  sm:px-3 w-auto m-2 sm:text-[15px] mm:text-[16px] lm:text-[19px] t:text-[21px] l:text-[24px] ll:text-[27px] k:text-[30px] "
+                className="sm:rounded-[2rem] text-white h-auto  sm:px-3 w-auto m-2 sm:text-[15px] mm:text-[16px] lm:text-[19px] t:text-[21px] l:text-[24px] ll:text-[27px] k:text-[30px]  mt-1 block px-3 py-2 bg-[---t1] border border-slate-300 rounded-md text-sm shadow-sm placeholder-white
+      focus:outline-none focus:border-black focus:ring-2 focus:ring-black focus:bg-[---c4] focus:text-black focus:placeholder-black"
               /></div>
             </div>
             <div className="text-left">
-              <div className="my-2 sm:text-[15px] mm:text-[18px] lm:text-[22px] t:text-[25px] l:text-[32px] ll:text-[37px] k:text-[45px]"> Age:</div>
+              
               <div className="flex">
-              <CiCalendarDate className="text-white m-2 sm:text-[22px] mm:text-[28px] lm:text-[32px] t:text-[37px] l:text-[42px] ll:text-[47px] k:text-[55px]"/>
+              <CiCalendarDate className="text-white ml-[-5px] m-2 sm:text-[27px] mm:text-[33px] lm:text-[37px] t:text-[39px] l:text-[45px] ll:text-[49px] k:text-[59px]"/>
               <input
                 onChange={(e) => {
-                  setAge(e.target.value);
+                  setBirthday(e.target.value);
                 }}
-                placeholder="Please Enter your Age"
-                type="number"
-                name="Age"
-                value={Age}
-                id="Age"
-                htmlFor="Age"
-                className="bg-[---c4] sm:rounded-[2rem] text-black h-auto  sm:px-3 w-auto m-2 sm:text-[15px] mm:text-[16px] lm:text-[19px] t:text-[21px] l:text-[24px] ll:text-[27px] k:text-[30px] "
+                placeholder="Please Enter your Birthday ..."
+                type="date"
+                name="Birthday"
+                value={Birthday}
+                id="Birthday"
+                htmlFor="Birthday"
+                className="sm:rounded-[2rem] text-white h-auto  sm:px-3 w-[50vw] t:w-[30vw] m-2 sm:text-[15px] mm:text-[16px] lm:text-[19px] t:text-[21px] l:text-[24px] ll:text-[27px] k:text-[30px]  mt-1 block px-3 py-2 bg-[---t1] border border-slate-300 rounded-md text-sm shadow-sm placeholder-white
+      focus:outline-none focus:border-black focus:ring-2 focus:ring-black focus:bg-[---c4] focus:text-black focus:placeholder-black "
               /></div>
             </div>
             <div className="text-left">
-              <div className="my-2 sm:text-[15px] mm:text-[18px] lm:text-[22px] t:text-[25px] l:text-[32px] ll:text-[37px] k:text-[45px]"> Phone Number:</div>
+              
               <div className="flex">
               <FaPhone className="text-white m-2 sm:text-[22px] mm:text-[28px] lm:text-[32px] t:text-[37px] l:text-[42px] ll:text-[47px] k:text-[55px]"/>
               <input
                 onChange={(e) => {
                   setPhone(e.target.value);
                 }}
-                placeholder="Please Enter your Phone Number"
+                placeholder="Please Enter your Phone ..."
                 type="phone"
                 name="Phone"
                 value={Phone}
                 id="Phone"
                 htmlFor="Phone"
-                className="bg-[---c4] sm:rounded-[2rem] text-black h-auto  sm:px-3 w-auto m-2 sm:text-[15px] mm:text-[16px] lm:text-[19px] t:text-[21px] l:text-[24px] ll:text-[27px] k:text-[30px] "
+                className="sm:rounded-[2rem] text-white h-auto  sm:px-3 w-auto m-2 sm:text-[15px] mm:text-[16px] lm:text-[19px] t:text-[21px] l:text-[24px] ll:text-[27px] k:text-[30px]  mt-1 block px-3 py-2 bg-[---t1] border border-slate-300 rounded-md text-sm shadow-sm placeholder-white
+      focus:outline-none focus:border-black focus:ring-2 focus:ring-black focus:bg-[---c4] focus:text-black focus:placeholder-black"
               /></div>
             </div>
             <div className="text-left">
-              <div className="my-2 sm:text-[15px] mm:text-[18px] lm:text-[22px] t:text-[25px] l:text-[32px] ll:text-[37px] k:text-[45px]"> Email:</div>
+              
               <div className="flex">
               <MdOutlineMarkEmailUnread className="text-white m-2 sm:text-[22px] mm:text-[28px] lm:text-[32px] t:text-[37px] l:text-[42px] ll:text-[47px] k:text-[55px]"/>
               <input
                 onChange={(e) => {
                   setEmail(e.target.value);
                 }}
-                placeholder="Please Enter your Email"
+                placeholder="Please Enter your Email ..."
                 type="email"
                 name="Email"
                 value={Email}
                 id="Email"
                 htmlFor="Email"
-                className="bg-[---c4] sm:rounded-[2rem] text-black h-auto  sm:px-3 w-auto m-2 sm:text-[15px] mm:text-[16px] lm:text-[19px] t:text-[21px] l:text-[24px] ll:text-[27px] k:text-[30px] "
+                className="sm:rounded-[2rem] text-white h-auto  sm:px-3 w-auto m-2 sm:text-[15px] mm:text-[16px] lm:text-[19px] t:text-[21px] l:text-[24px] ll:text-[27px] k:text-[30px]  mt-1 block px-3 py-2 bg-[---t1] border border-slate-300 rounded-md text-sm shadow-sm placeholder-white
+      focus:outline-none focus:border-black focus:ring-2 focus:ring-black focus:bg-[---c4] focus:text-black focus:placeholder-black"
               /></div>
             </div>
             <div className="text-left">
-              <div className="my-2 sm:text-[15px] mm:text-[18px] lm:text-[22px] t:text-[25px] l:text-[32px] ll:text-[37px] k:text-[45px]"> Password:</div>
+              
               <div className="flex">
-              <TbPasswordUser className="text-white m-2 sm:text-[22px] mm:text-[28px] lm:text-[32px] t:text-[37px] l:text-[42px] ll:text-[47px] k:text-[55px]"/>
+              <TbPasswordUser className="text-white m-2 sm:text-[26px] mm:text-[30px] lm:text-[35px] t:text-[39px] l:text-[45px] ll:text-[49px] k:text-[59px]"/>
+              <div className="flex">
               <input
                 onChange={(e) => {
                   setPassword(e.target.value);
                 }}
-                type="password"
+                type={hidePass}
                 name="Password"
                 value={Password}
                 id="Password"
-                placeholder="Please Enter your Password"
+                placeholder="Please Enter Password ..."
                 htmlFor="Password"
-                className="bg-[---c4] sm:rounded-[2rem] text-black h-auto  sm:px-3 w-auto m-2 sm:text-[15px] mm:text-[16px] lm:text-[19px] t:text-[21px] l:text-[24px] ll:text-[27px] k:text-[30px] "
-              /></div>
+                className="sm:rounded-[2rem] text-white h-auto  sm:px-3 w-auto m-2 sm:text-[15px] mm:text-[16px] lm:text-[19px] t:text-[21px] l:text-[24px] ll:text-[27px] k:text-[30px]  mt-1 block px-3 py-2 bg-[---t1] border border-slate-300 rounded-md text-sm shadow-sm placeholder-white
+      focus:outline-none focus:border-black focus:ring-2 focus:ring-black focus:bg-[---c4] focus:text-black focus:placeholder-black"
+              /> {
+                                      hpassword ? 
+                                      <FaEyeSlash onClick={hideP} className="text-white mt-[1rem] sm:text-[16px] mm:text-[18px] lm:text-[20px] t:text-[23px] l:text-[25px] ll:text-[27px] k:text-[35px]" />
+                : 
+                <FaEye onClick={hideP} className="text-white mt-[1rem] sm:text-[16px] mm:text-[18px] lm:text-[20px] t:text-[23px] l:text-[25px] ll:text-[27px] k:text-[35px]" />
+              
+                                    }
+              </div></div>
             </div>
             <div className="text-left">
-              <div className="my-2 sm:text-[15px] mm:text-[18px] lm:text-[22px] t:text-[25px] l:text-[32px] ll:text-[37px] k:text-[45px]"> Occoupation:</div>
+              
               <div className="flex">
               <FaBriefcase className="text-white m-2 sm:text-[22px] mm:text-[28px] lm:text-[32px] t:text-[37px] l:text-[42px] ll:text-[47px] k:text-[55px]"/>
               <input
                 onChange={(e) => {
                   setOccoupation(e.target.value);
                 }}
-                placeholder="Please Enter your Occoupation"
+                placeholder="Please Enter your Occoupation ..."
                 type="occoupation"
                 name="Occoupation"
                 value={Occoupation}
                 id="Occoupation"
                 htmlFor="Occoupation"
-                className="bg-[---c4] sm:rounded-[2rem] text-black h-auto  sm:px-3 w-auto m-2 sm:text-[15px] mm:text-[16px] lm:text-[19px] t:text-[21px] l:text-[24px] ll:text-[27px] k:text-[30px] "
+                className="sm:rounded-[2rem] text-white h-auto  sm:px-3 w-auto m-2 sm:text-[15px] mm:text-[16px] lm:text-[19px] t:text-[21px] l:text-[24px] ll:text-[27px] k:text-[30px]  mt-1 block px-3 py-2 bg-[---t1] border border-slate-300 rounded-md text-sm shadow-sm placeholder-white
+      focus:outline-none focus:border-black focus:ring-2 focus:ring-black focus:bg-[---c4] focus:text-black focus:placeholder-black"
               /></div>
             </div>
             <div className="text-left">
-              <div className="my-2 sm:text-[15px] mm:text-[18px] lm:text-[22px] t:text-[25px] l:text-[32px] ll:text-[37px] k:text-[45px]"> Address:</div>
+              
               <div className="flex">
               <FaHouseChimney className="text-white m-2 sm:text-[22px] mm:text-[28px] lm:text-[32px] t:text-[37px] l:text-[42px] ll:text-[47px] k:text-[55px]"/>
               <input
                 onChange={(e) => {
                   setAddress(e.target.value);
                 }}
-                placeholder="Please Enter your Address"
+                placeholder="Please Enter your Address ..."
                 type="Address"
                 name="Address"
                 value={Address}
                 id="Address"
                 htmlFor="Address"
-                className="bg-[---c4] sm:rounded-[2rem] text-black h-auto  sm:px-3 w-auto m-2 sm:text-[15px] mm:text-[16px] lm:text-[19px] t:text-[21px] l:text-[24px] ll:text-[27px] k:text-[30px] "
+                className="sm:rounded-[2rem] text-white h-auto  sm:px-3 w-auto m-2 sm:text-[15px] mm:text-[16px] lm:text-[19px] t:text-[21px] l:text-[24px] ll:text-[27px] k:text-[30px]  mt-1 block px-3 py-2 bg-[---t1] border border-slate-300 rounded-md text-sm shadow-sm placeholder-white
+      focus:outline-none focus:border-black focus:ring-2 focus:ring-black focus:bg-[---c4] focus:text-black focus:placeholder-black"
               /></div>
             </div>
 
-            <button className="bg-[---c5] hover:bg-[---h5] p-2 mb-2  rounded-[2rem] font-bold shadow-lg text-[---c4] sm:text-[16px] mm:text-[18px] lm:text-[22px] t:text-[27px] l:text-[32px] ll:text-[37px] k:text-[45px]  ">
+            <button onClick={onAdd} className="bg-[---c5] hover:bg-[---h5] p-2 mb-2  rounded-[2rem] font-bold shadow-lg text-[---c4] sm:text-[16px] mm:text-[18px] lm:text-[22px] t:text-[27px] l:text-[32px] ll:text-[37px] k:text-[45px]  ">
               Create an Account
             </button>
           </div>

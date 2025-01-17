@@ -19,11 +19,11 @@ export default async function handler(req, res) {
             // Choose a name for your collection
             const collection = database.collection("questions");
             console.log(req.body)
-            const id = req.body.question_id;
+            const id = parseInt(req.body.question_id);
             const label = req.body.question_label;
             const title = req.body.question_title;
 
-            const update = await collection.findOneAndReplace({question_id:id},{label,title},{new:true});
+            const update = await collection.findOneAndReplace({question_id:id},{question_id:id,question_label:label,question_title:title},{new:true});
             
             
             res.status(200).json(update);

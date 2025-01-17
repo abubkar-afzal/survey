@@ -9,7 +9,7 @@ import Link from "next/link";
 const About = () => {
   return (
     <>
-      <div className="m-4 space-y-2 ll:space-y-[1.5rem] k:space-y-[2rem]  text-justify t:p-4  k:p-10  l:text-center l:place-items-center l:p-10  k:text-center k:place-items-center ">
+      <div className="m-4 space-y-2 ll:space-y-[1.5rem] k:space-y-[2rem]  text-justify t:p-4  k:p-10  l:text-center l:place-items-center l:p-10  k:text-center k:place-items-center mb-[10rem]">
         <div className="text-center sm:text-[25px] mm:text-[30px] lm:text-[35px] t:text-[50px] l:text-[55px] ll:text-[65px] k:text-[105px]  font-sans">
           It's <a className="sm:text-[---c5] font-black ">Abubakar Afzal </a>
         </div>
