@@ -1,19 +1,24 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { MongoClient } from "mongodb";
+import { useRouter } from "next/router";
+import toast, { Toaster } from "react-hot-toast";
 
 const Main = ({ allData }) => {
   const [answer, setinput] = useState("");
+  const router = useRouter();
+ console.log(allData)
 
   return (
     <>
-      <div className="mb-[10rem]">
+      <div className="">
+       
         <div className="sm:m-4 scroll-smooth min-h-screen ll:space-y-[1.5rem] k:space-y-[2rem] t:p-4  k:p-10 ">
           <div className="font-bold sm:text-[25px] text-center mm:text-[22px] lm:text-[26px] t:text-[32px] l:text-[40px] ll:text-[45px] k:text-[70px]">
             Hi! There it's
           </div>
           <div className="font-bold sm:mb-[2rem] sm:text-[2rem] text-center">
-            <a className="sm:text-[---c5] font-black  strocktext mm:text-[35px] lm:text-[40px] t:text-[42px] l:text-[49px] ll:text-[57px] k:text-[80px]">
+            <a className="sm:text-[---c5] font-black  strocktext mm:text-[35px] lm:text-[40px] t:text-[42px] l:text-[49px] ll:text-[57px] k:text-[80px] typing-text typing-container">
               Abubakar Afzal
             </a>
           </div>

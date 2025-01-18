@@ -18,8 +18,9 @@ export default async function handler(req, res) {
             // Choose a name for your collection
             const collection = database.collection("questions");
             const allData = await collection.find({}).toArray();
+            res.status(201).json({allData:allData});
 
-            res.status(200).json(allData);
+            res.status(201).json({success:true});
         } catch (error) {
             res.status(500).json({ message: "Something went wrong!" });
         } finally {

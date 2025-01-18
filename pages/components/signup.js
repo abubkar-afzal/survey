@@ -10,6 +10,7 @@ import { FaHouseChimney } from "react-icons/fa6";
 import { MdOutlineMarkEmailUnread } from "react-icons/md";
 import { FaEyeSlash } from "react-icons/fa";
 import { FaEye } from "react-icons/fa";
+import toast, { Toaster } from "react-hot-toast";
 
 const SignUp = () => {
   const router = useRouter();
@@ -65,8 +66,20 @@ const SignUp = () => {
       });
       let response = await res.json();
       console.log(response);
-      router.push("http://localhost:3000/")
+      router.push("http://localhost:3000/");
+      toast("Account Created 😍", {
+        style: {
+          padding: "16px",
+          color: "#ffffff",
+          background: "#5fff59",
+        },});
     }else{
+      toast("Please Enter Correct Things 🤐", {
+        style: {
+          padding: "16px",
+          color: "#ffffff",
+          background: "#ff5959",
+        },});
       console.log("validation faild")
     }
   }
@@ -83,8 +96,9 @@ const SignUp = () => {
 
 
 
+ <Toaster position="bottom-center" reverseOrder={true} />
 
-      <div className="mb-[10rem]">
+      <div className="">
         <div className="sm:text-center mm:mt-[1rem]">
           <Link href={`http://localhost:3000/components/login`}>
             <button

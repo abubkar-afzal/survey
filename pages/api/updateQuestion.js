@@ -26,8 +26,8 @@ export default async function handler(req, res) {
             const update = await collection.findOneAndReplace({question_id:id},{question_id:id,question_label:label,question_title:title},{new:true});
             
             
-            res.status(200).json(update);
-            console.log(`The data of id:${req.body.question_id} has been updated`)
+            res.status(201).json({success:true});
+            
         } catch (error) {
             res.status(500).json({ message: "Something went wrong!" });
         } finally {

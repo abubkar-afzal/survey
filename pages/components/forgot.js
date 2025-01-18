@@ -19,7 +19,7 @@ const Forgot = () => {
   }
   return (
     <>
-     <div className="mb-[10rem]">
+     <div className="">
         <div className="sm:text-center mm:mt-[1rem] t:mt-[2rem]">
           <Link href={`http://localhost:3000/components/login`}>
             <button

@@ -9,10 +9,14 @@ import Link from "next/link";
 const About = () => {
   return (
     <>
-      <div className="m-4 space-y-2 ll:space-y-[1.5rem] k:space-y-[2rem]  text-justify t:p-4  k:p-10  l:text-center l:place-items-center l:p-10  k:text-center k:place-items-center mb-[10rem]">
-        <div className="text-center sm:text-[25px] mm:text-[30px] lm:text-[35px] t:text-[50px] l:text-[55px] ll:text-[65px] k:text-[105px]  font-sans">
-          It's <a className="sm:text-[---c5] font-black ">Abubakar Afzal </a>
-        </div>
+      <div className="m-4 space-y-2 ll:space-y-[1.5rem] k:space-y-[2rem]  text-justify t:p-4  k:p-10  l:text-center l:place-items-center l:p-10  k:text-center k:place-items-center ">
+        <div className="text-center sm:text-[25px] mm:text-[30px] lm:text-[35px] t:text-[50px] l:text-[55px] ll:text-[65px] k:text-[105px]  font-sans font-bold">
+          It's</div><div className="font-bold sm:mb-[2rem] sm:text-[2rem] text-center">
+            <a className="sm:text-[---c5] font-black strocktext sm:text-[30px] mm:text-[35px] lm:text-[40px] t:text-[42px] l:text-[49px] ll:text-[57px] k:text-[80px] typing-text typing-container">
+              Abubakar Afzal
+            </a>
+          </div>
+        
         <div className="text-center sm:text-[12px] mm:text-[15px] lm:text-[18px] t:text-[21px] l:text-[25px] ll:text-[29px] k:text-[50px] font-semibold">
           I'm the indictor of this survey.
         </div>
@@ -25,7 +29,7 @@ const About = () => {
           </Link>
           .
         </p>
-        <p className="hidebar sm:my-2 sm:h-[12rem] mm:h-[15rem] ml:h-[17rem] t:h-[12rem] l:h-[15rem] ll:h-[17rem] k:h-[20rem] k:w-[80vw] overflow-y-scroll bg-[---c8] p-2 text-[---c4] mm:text-[18px] lm:text-[20px] t:text-[25px] l:text-[30px] ll:text-[35px] k:text-[45px] text-left">
+        <p className="hidebar sm:my-2 sm:h-[12rem] mm:h-[15rem] ml:h-[17rem] t:h-[12rem] l:h-[15rem] ll:h-[17rem] k:h-[20rem] k:w-[80vw] overflow-y-scroll bg-[---c8] p-2 text-[---c4] mm:text-[18px] lm:text-[20px] t:text-[25px] l:text-[30px] ll:text-[35px] k:text-[45px] text-center">
           I took this suervy to get answers of my personal questions. There
           question as a student and as a boy I faced and I'm confused in these
           questions. So, I decided to took a survey in my college but when I

@@ -17,8 +17,8 @@ export default async function handler(req, res) {
             // Choose a name for your collection
             const collection = database.collection("questions");
             const Delete = await collection.deleteOne({question_id:req.body.question_id});
-            console.log(`The data of id:${req.body.question_id} has been delete`)
-            res.status(200).json({Deleted:`The data of id:${req.body} has been delete`});
+           
+            res.status(201).json({success:true});
         } catch (error) {
             res.status(500).json({ message: "Something went wrong!" });
         } finally {

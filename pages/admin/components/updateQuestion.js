@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import Link from "next/link";
 import { useRouter } from "next/router";
+import toast, { Toaster } from "react-hot-toast";
 
 const UpdateQuestion = () => {
   
@@ -13,24 +14,33 @@ const UpdateQuestion = () => {
      let addQuestion;
      let updateQuestion;
      let deleteQuestion;
+  let viewallQuestion;
+
      if (currentUrl === "/admin/components/addQuestion") {
        addQuestion = "sm:text-[---c4]  sm:bg-[---c3]";
        deleteQuestion = "sm:text-[---c4] sm:bg-[---c9]";
-       updateQuestion = "sm:text-[---c4] sm:bg-[---c9]";
+       updateQuestion = "sm:text-[---c4] sm:bg-[---c9]";viewallQuestion = "sm:text-[---c4] sm:bg-[---c9]"
      } else if (currentUrl === "/admin/components/updateQuestion") {
        updateQuestion = "sm:text-[---c4] sm:bg-[---c3]";
        addQuestion = "sm:text-[---c4]  sm:bg-[---c9]";
-       deleteQuestion = "sm:text-[---c4] sm:bg-[---c9]";
+       deleteQuestion = "sm:text-[---c4] sm:bg-[---c9]";viewallQuestion = "sm:text-[---c4] sm:bg-[---c9]"
  
      } else if (currentUrl === "/admin/components/deleteQuestion") {
          updateQuestion = "sm:text-[---c4] sm:bg-[---c9]";
          addQuestion = "sm:text-[---c4]  sm:bg-[---c9]";
-         deleteQuestion = "sm:text-[---c4] sm:bg-[---c3]";
+         deleteQuestion = "sm:text-[---c4] sm:bg-[---c3]";viewallQuestion = "sm:text-[---c4] sm:bg-[---c9]"
    
-     }  else{
+     } else if (currentUrl === "/admin/components/ViewAllQuestion") {
+      updateQuestion = "sm:text-[---c4] sm:bg-[---c9]";
+      addQuestion = "sm:text-[---c4]  sm:bg-[---c9]";
+      deleteQuestion = "sm:text-[---c4] sm:bg-[---c9]";
+      viewallQuestion = "sm:text-[---c4] sm:bg-[---c3]";
+  
+    } else{
        updateQuestion = "sm:text-[---c4] sm:bg-[---c9]";
        addQuestion = "sm:text-[---c4]  sm:bg-[---c9]";
        deleteQuestion = "sm:text-[---c4] sm:bg-[---c9]";
+       viewallQuestion = "sm:text-[---c4] sm:bg-[---c9]";
  
      }
   const onCheck = async (e) => {
@@ -49,13 +59,22 @@ const UpdateQuestion = () => {
     });
     let response = await res.json();
     console.log(response);
+    toast("Qestion Updated Successfully 😉", {
+      style: {
+        padding: "16px",
+        color: "#ffffff",
+        background: "#5fff59",
+      },
+    });
     setId("");
     setTitle("");
     setLabel("");
   };
   return (
     <>
-     <div className="sm:flex sm:flex-wrap sm:w-auto place-content-center my-2 ">
+     <div className="grid justify-items-center my-[2rem]">
+ <Toaster position="bottom-center" reverseOrder={true} />
+
         <Link href={`http://localhost:3000/admin/components/addQuestion`}>
             <button
               className={`${addQuestion}  p-2 px-4 m-2 w-auto rounded-[2rem] font-bold shadow-lg text-[---c4] sm:text-[16px] mm:text-[20px] lm:text-[23px] t:text-[26px] l:text-[29px] ll:text-[35px] k:text-[55px] `}
@@ -69,19 +88,9 @@ const UpdateQuestion = () => {
             >
               Update Question
             </button>
-          </Link>
-          
-          <Link href={`http://localhost:3000/admin/components/deleteQuestion`}>
-            <button
-              className={`${deleteQuestion}  p-2 px-4 m-2 w-auto rounded-[2rem] font-bold shadow-lg text-[---c4] sm:text-[16px] mm:text-[20px] lm:text-[23px] t:text-[26px] l:text-[29px] ll:text-[35px] k:text-[55px]`}
-            >
-              Delete Question
-            </button>
-          </Link>
-            </div>
-      <div className="my-[2rem] t:w-[30rem] l:w-[35rem] t:mx-auto text-center shadow-sm shadow-black rounded-[2rem] p-2 t:p-6 bg-[---c8] sm:text-[---c4] space-y-[30px] mm:space-y-[35px] lm:space-y-[40px] t:space-y-[42px] l:space-y-[47px] ll:space-y-[52px] k:space-y-[60px] mx-4 pt-[2rem]">
+          </Link><div className="my-[2rem] t:w-[30rem] l:w-[35rem] t:mx-auto text-center shadow-sm shadow-black rounded-[2rem] p-2 t:p-6 bg-[---c8] sm:text-[---c4] space-y-[30px] mm:space-y-[35px] lm:space-y-[40px] t:space-y-[42px] l:space-y-[47px] ll:space-y-[52px] k:space-y-[60px] mx-4 pt-[2rem]">
         <div className="sm:flex sm:flex-col">
-          
+        <p className=" my-[1rem] sm:text-[15px] mm:text-[18px] lm:text-[22px] t:text-[25px] l:text-[32px] ll:text-[37px] k:text-[45px] text-white font-bold  mt-[-16px] bg-transparent "> ID Of Question For Update:</p>
           <input
             value={id}
             onChange={(e) => {
@@ -98,7 +107,7 @@ const UpdateQuestion = () => {
         </div>
 
         <div className="sm:flex sm:flex-col">
-         
+        <p className=" my-[1rem] sm:text-[15px] mm:text-[18px] lm:text-[22px] t:text-[25px] l:text-[32px] ll:text-[37px] k:text-[45px] text-white font-bold  mt-[-16px] bg-transparent ">New Titile Of Question :</p>
           <input
             value={title}
             onChange={(e) => {
@@ -114,7 +123,7 @@ const UpdateQuestion = () => {
           />
         </div>
         <div className="sm:flex sm:flex-col">
-         
+        <p className=" my-[1rem] sm:text-[15px] mm:text-[18px] lm:text-[22px] t:text-[25px] l:text-[32px] ll:text-[37px] k:text-[45px] text-white font-bold  mt-[-16px] bg-transparent ">New Label Of Question :</p>
           <input
             value={label}
             onChange={(e) => {
@@ -137,6 +146,23 @@ const UpdateQuestion = () => {
           Update
         </button>
       </div>
+          
+          <Link href={`http://localhost:3000/admin/components/deleteQuestion`}>
+            <button
+              className={`${deleteQuestion}  p-2 px-4 m-2 w-auto rounded-[2rem] font-bold shadow-lg text-[---c4] sm:text-[16px] mm:text-[20px] lm:text-[23px] t:text-[26px] l:text-[29px] ll:text-[35px] k:text-[55px]`}
+            >
+              Delete Question
+            </button>
+          </Link>
+          <Link href={`http://localhost:3000/admin/components/ViewAllQuestion`}>
+          <button
+            className={`${viewallQuestion}  p-2 px-4 m-2 w-auto rounded-[2rem] font-bold shadow-lg text-[---c4] sm:text-[16px] mm:text-[20px] lm:text-[23px] t:text-[26px] l:text-[29px] ll:text-[35px] k:text-[55px]`}
+          >
+            View All Question
+          </button>
+        </Link>
+            </div>
+      
     </>
   );
 };

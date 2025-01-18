@@ -1,6 +1,7 @@
 
 
 import { MongoClient } from "mongodb";
+import toast from "react-hot-toast";
 
 export default async function handler(req, res) {
     if (req.method === "POST") {
@@ -28,10 +29,12 @@ export default async function handler(req, res) {
                     if(login.user_password===password){
                         res.status(201).json({success:true});
                     }else{
-                        console.warn("wrong entity")
+                        res.status(400).json({success:false});
+                       
                     }
-                }else{
-                    console.warn("some thing went wrong")
+                }else{                        
+                    res.status(400).json({success:false});
+
                 }
             }else{
                 console.warn("no user exisit")

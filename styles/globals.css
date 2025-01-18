@@ -7,11 +7,11 @@
     ---c1 : rgba(0,168,89,255);
     ---c2 : rgba(14,181,145,255);
     ---c3 : rgba(0,168,89,255);
-    ---c4 : white;
-    ---c5 : rgb(95, 255, 89);
+    ---c4 : #ffffff;
+    ---c5 : #5fff59;
     ---h5 : rgba(95, 255, 89, 0.732);
     ---c6 : rgb(0, 0, 0);
-    ---c7 : rgb(255, 89, 89);
+    ---c7 : #ff5959;
     ---h7 : rgba(255, 89, 89, 0.759);
     ---c8 : rgb(19, 207, 135);
     ---b8 : rgb(0, 255, 17);
@@ -40,3 +40,24 @@ input {
 .hidebar::-webkit-scrollbar {
     display: none;
   }
+  .typing-container {
+    display: inline-block;
+    border-right: 1px solid black; /* Cursor effect */
+    white-space: nowrap;
+    overflow: hidden;
+    
+}
+  .typing-text {
+    display: inline-block;
+    animation: typing 3s steps(11, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: black; }
+}

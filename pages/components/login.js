@@ -5,6 +5,7 @@ import { MdOutlineMarkEmailUnread } from "react-icons/md";
 import { TbPasswordUser } from "react-icons/tb";
 import { FaEyeSlash } from "react-icons/fa";
 import { FaEye } from "react-icons/fa";
+import toast, { Toaster } from "react-hot-toast";
 
 const Login = () => {
   const router = useRouter();
@@ -47,22 +48,40 @@ const Login = () => {
     let response = await res.json();
     console.log(response);
     if(response){
-      if(response.success){
+      if(response.success == true){
       router.push("http://localhost:3000/")    
-
+      toast("Login Successfully 🥰", {
+        style: {
+          padding: "16px",
+          color: "#ffffff",
+          background: "#5fff59",
+        },});
       }
       else{
+        toast("Something went wrong 🙄", {
+          style: {
+            padding: "16px",
+            color: "#ffffff",
+            background: "#ff5959",
+          },});
         console.log("fail to loggin")
       }
     }else{
+      toast("Something went wrong 🙄", {
+        style: {
+          padding: "16px",
+          color: "#ffffff",
+          background: "#ff5959",
+        },});
       console.log("fail to loggin")
-
     }
   };
 
   return (
     <>
-      <div className="mb-[10rem]">
+      <div className="">
+ <Toaster position="bottom-center" reverseOrder={true} />
+
         <div className="sm:text-center mm:mt-[1rem] t:mt-[2rem]">
           <Link href={`http://localhost:3000/components/login`}>
             <button
