@@ -17,26 +17,24 @@ export default async function handler(req, res) {
             const database = client.db("survey");
 
             // Choose a name for your collection
-            const collection = database.collection("users");
+            const collection = database.collection("admin");
             
-            let email = req.body.user_email;
-            let password = req.body.user_password;
-            let login = await collection.findOne({"user_email":email});
+            let password = req.body.password;
+            let admin = await collection.find().toArray();
+            let login = admin.map(p=>p.password).toString();
             
+            console.log(login)
             if(login){
-                if(login.user_email===email){
-                    if(login.user_password===password){
+                
+                    if(login===password){
                         res.status(201).json({success:true});
                     }else{
                         res.status(400).json({success:false});
                        
                     }
-                }else{                        
-                    res.status(400).json({success:false});
-
-                }
+                
             }else{
-                console.warn("no user exisit")
+                console.warn("no admin exisit")
             }
 
             
