@@ -49,7 +49,7 @@ const DeleteBlog = () => {
         headers: {
           'Content-Type': 'application/json; charset=UTF-8',
         },
-        body:JSON.stringify({Blog_id:id}),
+        body:JSON.stringify({blog_id:id}),
       });
       let response = await res.json()
       toast(`Blog ${id} has been delete 😣`, {

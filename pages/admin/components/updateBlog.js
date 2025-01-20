@@ -47,9 +47,11 @@ const UpdateBlog = () => {
   const onCheck = async (e) => {
     e.preventDefault();
     let Blog = {
-      Blog_id: id,
-      Blog_title: title,
-      Blog_label: label,
+      blog_id: id,
+      blog_title: title,
+      blog_content: Content,
+      blog_image: Image,
+
     };
     let res = await fetch('http://localhost:3000/api/updateBlog', {
       method: 'POST',
@@ -69,7 +71,9 @@ const UpdateBlog = () => {
     });
     setId("");
     setTitle("");
-    setLabel("");
+    setImage("");
+    setContent("");
+
   };
   return (
     <>
@@ -133,14 +137,11 @@ const UpdateBlog = () => {
               onChange={(e) => {
                 setImage(e.target.value);
               }}
-              type="file"
+              type="text"
               htnlFor="div"
               className="sm:rounded-[2rem] text-white h-auto  sm:px-3 w-[85%] m-2 sm:text-[15px] mm:text-[16px] lm:text-[19px] t:text-[21px] l:text-[24px] ll:text-[27px] k:text-[30px]  mt-1 block px-3 py-2 bg-[---t1] border border-slate-300 rounded-md text-sm shadow-sm placeholder-white
-      focus:outline-none focus:border-black focus:ring-2 focus:ring-black focus:bg-[---c4] focus:text-black focus:placeholder-black  file:mr-4 file:py-2 file:px-4
-      file:rounded-full file:border-0
-      file:text-sm file:font-semibold
-      file:bg-[---c4] file:text-[---c3]
-      hover:file:bg-violet-100"
+      focus:outline-none focus:border-black focus:ring-2 focus:ring-black focus:bg-[---c4] focus:text-black focus:placeholder-black
+      "
               placeholder="Please Enter Your Blog Image ..."
               name="div"
               id="div"

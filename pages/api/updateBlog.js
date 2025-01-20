@@ -1,4 +1,5 @@
 
+
 import { MongoClient } from "mongodb";
 
 export default async function handler(req, res) {
@@ -8,18 +9,26 @@ export default async function handler(req, res) {
             useUnifiedTopology: true,
         });
 
-        try {
+        try {           
+
             await client.connect();
 
             // Choose a name for your database
             const database = client.db("survey");
 
             // Choose a name for your collection
-            const collection = database.collection("questions");
-            const id = parseInt(req.body.question_id)
-            const Delete = await collection.deleteOne({question_id:id});
-           console.log(typeof(id))
+            const collection = database.collection("blogs");
+            console.log(req.body)
+            const id = parseInt(req.body.blog_id);
+            const content = req.body.blog_content;
+            const title = req.body.blog_title;
+            const image = req.body.blog_image;
+
+            const update = await collection.findOneAndReplace({blog_id:id},{blog_id:id,blog_content:content,blog_title:title,blog_image:image},{new:true});
+            
+            
             res.status(201).json({success:true});
+            
         } catch (error) {
             res.status(500).json({ message: "Something went wrong!" });
         } finally {

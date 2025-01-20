@@ -1,5 +1,5 @@
 import React from "react";
-
+import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { MongoClient } from "mongodb";
@@ -74,6 +74,7 @@ const AddBlog = ({ allData }) => {
         </Link>
         {console.log(allData)}
         {allData.map((item) => {
+          let img = item.blog_image;
           return (
             <div
               key={item._id}
@@ -84,7 +85,7 @@ const AddBlog = ({ allData }) => {
                   ID Of Blog :
                 </p>
                 <p className="text-[17px] sm:text-[18px] mm:text-[22px] lm:text-[25px] t:text-[22px] l:text-[27px] ll:text-[32px] k:text-[37px] font-semibold">
-                  {item.Blog_id}
+                  {item.blog_id}
                 </p>
               </div>
 
@@ -93,16 +94,16 @@ const AddBlog = ({ allData }) => {
                   Title Of Blog :
                 </p>
                 <p className="text-[17px] sm:text-[18px] mm:text-[22px] lm:text-[25px] t:text-[22px] l:text-[27px] ll:text-[32px] k:text-[37px] font-semibold">
-                  {item.Blog_title}
+                  {item.blog_title}
                 </p>
               </div>
               <div className="sm:flex sm:flex-col">
                 <p className=" my-[1rem] sm:text-[15px] mm:text-[18px] lm:text-[22px] t:text-[25px] l:text-[32px] ll:text-[37px] k:text-[45px] text-white font-bold  mt-[-16px] bg-transparent ">
                  Image Of Blog :
                 </p>
-                <p className="text-[17px] sm:text-[18px] mm:text-[22px] lm:text-[25px] t:text-[22px] l:text-[27px] ll:text-[32px] k:text-[37px] font-semibold">
-                  {item.blog_image}
-                </p>
+                <Image src={img} width={200} height={200} className="text-[17px] sm:text-[18px] mm:text-[22px] lm:text-[25px] t:text-[22px] l:text-[27px] ll:text-[32px] k:text-[37px] font-semibold" />
+                  
+                
               </div><div className="sm:flex sm:flex-col">
                 <p className=" my-[1rem] sm:text-[15px] mm:text-[18px] lm:text-[22px] t:text-[25px] l:text-[32px] ll:text-[37px] k:text-[45px] text-white font-bold  mt-[-16px] bg-transparent ">
                   Content Of Blog :

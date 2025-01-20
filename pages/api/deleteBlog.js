@@ -15,10 +15,9 @@ export default async function handler(req, res) {
             const database = client.db("survey");
 
             // Choose a name for your collection
-            const collection = database.collection("questions");
-            const id = parseInt(req.body.question_id)
-            const Delete = await collection.deleteOne({question_id:id});
-           console.log(typeof(id))
+            const collection = database.collection("blogs");
+            const id = parseInt(req.body.blog_id);
+            const Delete = await collection.deleteOne({blog_id:id});
             res.status(201).json({success:true});
         } catch (error) {
             res.status(500).json({ message: "Something went wrong!" });
