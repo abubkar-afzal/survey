@@ -213,6 +213,7 @@ const Navbar = () => {
 
         {/* logo  */}
         <div className="sticky ">
+        <Link href={`http://localhost:3000/`}>
           <div className="">
             <Image
               src={Logo}
@@ -222,6 +223,7 @@ const Navbar = () => {
               className="sm:ml-[10px] mm:ml-[20px] lm:ml-[20px] t:ml-[8px] t:w-[150px] t:h-[130px] cursor-pointer l:w-[200px] l:h-[170px] ll:w-[250px] ll:h-[210px] k:w-[400px] k:h-[320px] my:ml-[50px]"
             />
           </div>
+          </Link>
         </div>
 
         {/* for big screen */}

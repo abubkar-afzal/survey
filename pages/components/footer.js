@@ -12,13 +12,13 @@ const Footer = () => {
   return (
     <>
       <div className="sm:h-auto  mt-[10px] sm:content-center ml-4 t:text-center t:place-items-center mm:text-[18px] lm:text-[20px] t:text-[20px] l:text-[25px] ll:text-[30px] k:text-[35px]">
-        <hr className="h-[2px] ml-[-2rem] bg-black"/>
-        <div className="sm:flex sm:space-x-1 sm:h-[70px] sm:m-2 t:ml-[2rem] ">
-          
+        <hr className="h-[2px] t:h-[3px] ml-[-2rem] bg-black"/>
+        <Link href={`http://localhost:3000/`}>
+        <div className="cursor-pointer sm:flex sm:space-x-1 sm:h-[70px] sm:m-2 t:ml-[2rem] ">
           <Image src={logo} width={120} height={100}  className=" sm:w-[90px] mm:w-[100px] lm:w-[110px] t:w-[132px] l:w-[135px] ll:w-[140px] k:w-[155px] sm:h-[70px] mm:h-[78px] lm:h-[80px] t:h-[62px] l:h-[65px] ll:h-[70px] k:h-[85px]"/>
           
         </div>
-       
+       </Link>
         <div className="">
         <Link href={`http://localhost:3000/components/about`}>
           <div className=" ml-2">
@@ -80,7 +80,7 @@ const Footer = () => {
           <p className="text-black">&copy;2025 Survey </p>
         </div>
         <div className="t:text-center">
-        <button className="border-[2px] border-[---fo1] mx-4 mb-6 p-[4px] rounded-[2rem] hover:bg-[---c8] ">
+        <button className="border-[2px] border-[---fo1] px-3 mx-4 mb-6 p-[4px] rounded-[2rem] hover:bg-[---c8] hover:text-[---c4] ">
           English
         </button>
         </div>

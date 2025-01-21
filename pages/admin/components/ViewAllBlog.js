@@ -96,8 +96,15 @@ const AddBlog = ({ allData }) => {
                 <p className="text-[17px] sm:text-[18px] mm:text-[22px] lm:text-[25px] t:text-[22px] l:text-[27px] ll:text-[32px] k:text-[37px] font-semibold">
                   {item.blog_title}
                 </p>
+              </div><div className="sm:flex sm:flex-col">
+                <p className=" my-[1rem] sm:text-[15px] mm:text-[18px] lm:text-[22px] t:text-[25px] l:text-[32px] ll:text-[37px] k:text-[45px] text-white font-bold  mt-[-16px] bg-transparent ">
+                  Title Of Slug :
+                </p>
+                <p className="text-[17px] sm:text-[18px] mm:text-[22px] lm:text-[25px] t:text-[22px] l:text-[27px] ll:text-[32px] k:text-[37px] font-semibold">
+                  {item.blog_slug}
+                </p>
               </div>
-              <div className="sm:flex sm:flex-col">
+              <div className="sm:flex sm:flex-col items-center">
                 <p className=" my-[1rem] sm:text-[15px] mm:text-[18px] lm:text-[22px] t:text-[25px] l:text-[32px] ll:text-[37px] k:text-[45px] text-white font-bold  mt-[-16px] bg-transparent ">
                  Image Of Blog :
                 </p>

@@ -10,7 +10,7 @@ const About = () => {
   return (
     <>
       <div className="m-4 space-y-2 ll:space-y-[1.5rem] k:space-y-[2rem]  text-justify t:p-4  k:p-10  l:text-center l:place-items-center l:p-10  k:text-center k:place-items-center ">
-        <div className="text-center sm:text-[25px] mm:text-[30px] lm:text-[35px] t:text-[50px] l:text-[55px] ll:text-[65px] k:text-[105px]  font-sans font-bold">
+        <div className="text-center sm:text-[22px] mm:text-[24px] lm:text-[29px] t:text-[34px] l:text-[39px] ll:text-[44px] k:text-[64px]  font-sans font-bold">
           It's</div><div className="font-bold sm:mb-[2rem] sm:text-[2rem] text-center">
             <a className="sm:text-[---c5] font-black strocktext sm:text-[30px] mm:text-[35px] lm:text-[40px] t:text-[42px] l:text-[49px] ll:text-[57px] k:text-[80px] typing-text typing-container">
               Abubakar Afzal

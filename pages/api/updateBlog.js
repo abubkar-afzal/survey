@@ -23,8 +23,9 @@ export default async function handler(req, res) {
             const content = req.body.blog_content;
             const title = req.body.blog_title;
             const image = req.body.blog_image;
+            const slug = req.body.blog_slug;
 
-            const update = await collection.findOneAndReplace({blog_id:id},{blog_id:id,blog_content:content,blog_title:title,blog_image:image},{new:true});
+            const update = await collection.findOneAndReplace({blog_id:id},{blog_id:id,blog_content:content,blog_title:title,blog_image:image, blog_slug:slug},{new:true});
             
             
             res.status(201).json({success:true});

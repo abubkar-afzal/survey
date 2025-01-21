@@ -9,6 +9,7 @@ const AddBlog = () => {
   const [title, setTitle] = useState("");
   const [Image, setImage] = useState("");
   const [Content, setContent] = useState("");
+  const [slug, setSlug] = useState("");
   const router = useRouter();
   const currentUrl = router.asPath;
   let addBlog;
@@ -49,6 +50,7 @@ const AddBlog = () => {
       blog_title: title,
       blog_image: Image,
       blog_content: Content,
+      blog_slug: slug,
 
     };
     let res = await fetch("http://localhost:3000/api/addBlog", {
@@ -122,6 +124,23 @@ const AddBlog = () => {
               placeholder="Please Enter Your Blog Title ..."
               name="title"
               id="title"
+            />
+          </div> <div className="sm:flex sm:flex-col">
+            <p className=" my-[1rem] sm:text-[15px] mm:text-[18px] lm:text-[22px] t:text-[25px] l:text-[32px] ll:text-[37px] k:text-[45px] text-white font-bold  mt-[-16px] bg-transparent ">
+              Slug Of Blog :
+            </p>
+            <input
+              value={slug}
+              onChange={(e) => {
+                setSlug(e.target.value);
+              }}
+              type="text"
+              htnlFor="title"
+              className="sm:rounded-[2rem] text-white h-auto  sm:px-3 w-auto m-2 sm:text-[15px] mm:text-[16px] lm:text-[19px] t:text-[21px] l:text-[24px] ll:text-[27px] k:text-[30px]  mt-1 block px-3 py-2 bg-[---t1] border border-slate-300 rounded-md text-sm shadow-sm placeholder-white
+      focus:outline-none focus:border-black focus:ring-2 focus:ring-black focus:bg-[---c4] focus:text-black focus:placeholder-black  "
+              placeholder="Please Enter Your Blog Slug ..."
+              name="slug"
+              id="slug"
             />
           </div>
           <div className="sm:flex sm:flex-col">
