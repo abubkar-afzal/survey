@@ -159,7 +159,7 @@ const SignUp = () => {
                 value={Birthday}
                 id="Birthday"
                 htmlFor="Birthday"
-                className="sm:rounded-[2rem] text-white h-auto  sm:px-3 w-[50vw] t:w-[30vw] m-2 sm:text-[15px] mm:text-[16px] lm:text-[19px] t:text-[21px] l:text-[24px] ll:text-[27px] k:text-[30px]  mt-1 block px-3 py-2 bg-[---t1] border border-slate-300 rounded-md text-sm shadow-sm placeholder-white
+                className="sm:rounded-[2rem] text-white h-auto  sm:px-3 w-[50vw] t:w-[30vw] ll:w-[20vw] m-2 sm:text-[15px] mm:text-[16px] lm:text-[19px] t:text-[21px] l:text-[24px] ll:text-[27px] k:text-[30px]  mt-1 block px-3 py-2 bg-[---t1] border border-slate-300 rounded-md text-sm shadow-sm placeholder-white
       focus:outline-none focus:border-black focus:ring-2 focus:ring-black focus:bg-[---c4] focus:text-black focus:placeholder-black "
               /></div>
             </div>

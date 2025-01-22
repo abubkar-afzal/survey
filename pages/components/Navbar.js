@@ -13,7 +13,7 @@ import Logo from "../images/survey-logo.svg";
 import Image from "next/image";
 import { RiAdminFill } from "react-icons/ri";
 
-const Navbar = () => {
+const Navbar = ({ accountlogo }) => {
   const [showmenu, hidemenu] = useState(false);
   const [showcross, hidecross] = useState(true);
   const [showabout, hideabout] = useState("inline");
@@ -77,15 +77,14 @@ const Navbar = () => {
       hideabout("hidden");
       hideblogs("hidden");
       hidelogin("hidden");
+    } else if (currentUrl === "/admin") {
+      hideaccount("hidden");
+      hidehome("hidden");
+      hideadmin("inline");
+      hideabout("hidden");
+      hideblogs("hidden");
+      hidelogin("hidden");
     }
-   else if (currentUrl === "/admin") {
-    hideaccount("hidden");
-    hidehome("hidden");
-    hideadmin("inline");
-    hideabout("hidden");
-    hideblogs("hidden");
-    hidelogin("hidden");
-  }
   }, [router.query]);
 
   if (currentUrl === "/") {
@@ -98,9 +97,7 @@ const Navbar = () => {
     login = "sm:text-[---c4] sm:bg-[---c3]";
   } else if (currentUrl === "/components/account") {
     account = "sm:text-[---c4] sm:bg-[---c3]";
-  }else if (currentUrl === "/components/account") {
-    account = "sm:text-[---c4] sm:bg-[---c3]";
-  }else if (currentUrl === "/admin") {
+   } else if (currentUrl === "/admin") {
     admin = "sm:text-[---c4] sm:bg-[---c3]";
   }
 
@@ -134,8 +131,8 @@ const Navbar = () => {
           <div
             className={
               showmenu
-                ? "NAVBAR sm:bg-[---n1] sm:grid sm:grid-cols-1 sm:left-0  sm:bottom-0  sm:grid-rows-8 sm:h-[100vh] sm:w-auto  sm:fixed sm:duration-[2s] z-10 "
-                : "sm:bg-[---n1] sm:grid sm:grid-cols-1 sm:left-[-7rem]  sm:bottom-0  sm:grid-rows-8 sm:h-[100vh] sm:w-auto  sm:fixed sm:duration-[2s] z-10"
+                ? "NAVBAR sm:bg-[---n1] sm:grid sm:grid-cols-1 sm:left-0  sm:bottom-0  sm:grid-rows-8 sm:h-[100vh] sm:w-auto  sm:fixed sm:duration-[2s] z-10 t:hidden"
+                : "sm:bg-[---n1] sm:grid sm:grid-cols-1 sm:left-[-7rem]  sm:bottom-0  sm:grid-rows-8 sm:h-[100vh] sm:w-auto  sm:fixed sm:duration-[2s] z-10 "
             }
           >
             <div></div>
@@ -175,29 +172,35 @@ const Navbar = () => {
             </Link>
 
             <div></div>
-            <Link
-              className="hidden"
-              href={`http://localhost:3000/components/account`}
-            >
-              <div
-                className={` sm:cursor-pointer sm:hover:bg-[---c3] sm:active:bg-[---c6] sm:h-[40px] w-[7rem] sm:items-center sm:hover:text-[---c4] sm:active:text-[---c4] sm:font-extrabold   ${account}             sm:rounded-[2rem]  sm:flex sm:space-x-1`}
+
+            {/* account */}
+
+            {accountlogo ? (
+              <Link
+                className=""
+                href={`http://localhost:3000/components/account`}
               >
-                <MdAccountCircle
-                  className={`w-[2rem] sm:active:bg-[---c6] h-[1.5rem] text-[---c2] sm:active:text-[---c4] sm:hover:text-[---c4] ${account}`}
-                />
-                <p>Account</p>
-              </div>
-            </Link>
-            <Link href={`http://localhost:3000/components/login`}>
-              <div
-                className={` sm:cursor-pointer sm:hover:bg-[---c3] sm:active:bg-[---c6] sm:h-[40px] w-[7rem] sm:items-center sm:hover:text-[---c4] sm:active:text-[---c4] sm:font-extrabold   ${login}             sm:rounded-[2rem]  sm:flex sm:space-x-1`}
-              >
-                <BsFillPlusCircleFill
-                  className={`w-[2rem] sm:rounded-[2rem] sm:active:bg-[---c6] h-[1.5rem] text-[---c2] sm:active:text-[---c4] sm:hover:text-[---c4] ${login}`}
-                />
-                <p>Login</p>
-              </div>
-            </Link>
+                <div
+                  className={` sm:cursor-pointer sm:hover:bg-[---c3] sm:active:bg-[---c6] sm:h-[40px] w-[7rem] sm:items-center sm:hover:text-[---c4] sm:active:text-[---c4] sm:font-extrabold   ${account}             sm:rounded-[2rem]  sm:flex sm:space-x-1`}
+                >
+                  <MdAccountCircle
+                    className={`w-[2rem] sm:rounded-[2rem] sm:active:bg-[---c6] h-[1.5rem] text-[---c2] sm:active:text-[---c4] sm:hover:text-[---c4 ${account}`}
+                  />
+                  <p>Account</p>
+                </div>
+              </Link>
+            ) : (
+              <Link href={`http://localhost:3000/components/login`}>
+                <div
+                  className={` sm:cursor-pointer sm:hover:bg-[---c3] sm:active:bg-[---c6] sm:h-[40px] w-[7rem] sm:items-center sm:hover:text-[---c4] sm:active:text-[---c4] sm:font-extrabold   ${login}             sm:rounded-[2rem]  sm:flex sm:space-x-1`}
+                >
+                  <BsFillPlusCircleFill
+                    className={`w-[2rem] sm:rounded-[2rem] sm:active:bg-[---c6] h-[1.5rem] text-[---c2] sm:active:text-[---c4] sm:hover:text-[---c4] ${login}`}
+                  />
+                  <p>Login</p>
+                </div>
+              </Link>
+            )}
             <Link href={`http://localhost:3000/admin`}>
               <div
                 className={` sm:cursor-pointer sm:hover:bg-[---c3] sm:active:bg-[---c6] sm:h-[40px] w-[7rem] sm:items-center sm:hover:text-[---c4] sm:active:text-[---c4] sm:font-extrabold   ${admin}  k:h-[110px] ll:h-[80px] l:h-[50px]   w-auto        sm:rounded-[2rem]  sm:flex sm:space-x-1`}
@@ -213,16 +216,16 @@ const Navbar = () => {
 
         {/* logo  */}
         <div className="sticky ">
-        <Link href={`http://localhost:3000/`}>
-          <div className="">
-            <Image
-              src={Logo}
-              alt="logo"
-              height={100}
-              width={300}
-              className="sm:ml-[10px] mm:ml-[20px] lm:ml-[20px] t:ml-[8px] t:w-[150px] t:h-[130px] cursor-pointer l:w-[200px] l:h-[170px] ll:w-[250px] ll:h-[210px] k:w-[400px] k:h-[320px] my:ml-[50px]"
-            />
-          </div>
+          <Link href={`http://localhost:3000/`}>
+            <div className="">
+              <Image
+                src={Logo}
+                alt="logo"
+                height={100}
+                width={300}
+                className="sm:ml-[10px] mm:ml-[20px] lm:ml-[20px] t:ml-[8px] t:w-[150px] t:h-[130px] cursor-pointer l:w-[200px] l:h-[170px] ll:w-[250px] ll:h-[210px] k:w-[400px] k:h-[320px] my:ml-[50px]"
+              />
+            </div>
           </Link>
         </div>
 
@@ -262,31 +265,36 @@ const Navbar = () => {
               </div>
             </Link>
 
-            <Link
-              className="hidden"
-              href={`http://localhost:3000/components/account`}
-            >
-              <div
-                className={` sm:cursor-pointer sm:hover:bg-[---c3] sm:active:bg-[---c6] sm:h-[40px] w-[7rem] sm:items-center sm:hover:text-[---c4] sm:active:text-[---c4] sm:font-extrabold   ${account}k:h-[110px] ll:h-[80px] l:h-[50px]     w-auto        sm:rounded-[2rem]  sm:flex sm:space-x-1`}
+            {/* account */}
+
+            {accountlogo ? (
+              <Link
+                className=""
+                href={`http://localhost:3000/components/account`}
               >
-                <MdAccountCircle
-                  className={`l:w-[3rem] ll:w-[3.5rem] ll:h-[2.5rem] k:w-[5.3rem] k:h-[4rem]  l:h-[2rem] w-[2rem] sm:active:bg-[---c6] h-[1.5rem] text-[---c2] sm:active:text-[---c4] sm:rounded-[2rem] sm:hover:text-[---c4] ${account}`}
-                />
-                <p className={`pr-[10px] k:pr-[20px] ${showaccount}`}>
-                  Account
-                </p>
-              </div>
-            </Link>
-            <Link href={`http://localhost:3000/components/login`}>
-              <div
-                className={` sm:cursor-pointer sm:hover:bg-[---c3] sm:active:bg-[---c6] sm:h-[40px] w-[7rem] sm:items-center sm:hover:text-[---c4] sm:active:text-[---c4] sm:font-extrabold   ${login}  k:h-[110px] ll:h-[80px] l:h-[50px]   w-auto        sm:rounded-[2rem]  sm:flex sm:space-x-1`}
-              >
-                <BsFillPlusCircleFill
-                  className={`l:w-[3rem] ll:w-[3.5rem] ll:h-[2.5rem] k:w-[5.3rem] k:h-[4rem]  l:h-[2rem] w-[2rem] sm:active:bg-[---c6] h-[1.5rem] text-[---c2] sm:active:text-[---c4] sm:rounded-[2rem] sm:hover:text-[---c4] ${login}`}
-                />
-                <p className={`pr-[10px] k:pr-[20px] ${showlogin}`}>Login</p>
-              </div>
-            </Link>
+                <div
+                  className={` sm:cursor-pointer sm:hover:bg-[---c3] sm:active:bg-[---c6] sm:h-[40px] w-[7rem] sm:items-center sm:hover:text-[---c4] sm:active:text-[---c4] sm:font-extrabold   ${account} k:h-[110px] ll:h-[80px] l:h-[50px]     w-auto        sm:rounded-[2rem]  sm:flex sm:space-x-1`}
+                >
+                  <MdAccountCircle
+                    className={`l:w-[4rem] ll:w-[4.5rem] ll:h-[3.5rem] k:w-[6.3rem] k:h-[5rem]  l:h-[3rem] w-[3rem] sm:active:bg-[---c6] h-[1.5rem] text-[---c2] sm:active:text-[---c4] sm:rounded-[2rem] sm:hover:text-[---c4] ${account}`}
+                  />
+                  <p className={`pr-[10px] k:pr-[20px] ${showaccount}`}>
+                    Account
+                  </p>
+                </div>
+              </Link>
+            ) : (
+              <Link href={`http://localhost:3000/components/login`}>
+                <div
+                  className={` sm:cursor-pointer sm:hover:bg-[---c3] sm:active:bg-[---c6] sm:h-[40px] w-[7rem] sm:items-center sm:hover:text-[---c4] sm:active:text-[---c4] sm:font-extrabold   ${login}  k:h-[110px] ll:h-[80px] l:h-[50px]   w-auto        sm:rounded-[2rem]  sm:flex sm:space-x-1`}
+                >
+                  <BsFillPlusCircleFill
+                    className={`l:w-[3rem] ll:w-[3.5rem] ll:h-[2.5rem] k:w-[5.3rem] k:h-[4rem]  l:h-[2rem] w-[2rem] sm:active:bg-[---c6] h-[1.5rem] text-[---c2] sm:active:text-[---c4] sm:rounded-[2rem] sm:hover:text-[---c4] ${login}`}
+                  />
+                  <p className={`pr-[10px] k:pr-[20px] ${showlogin}`}>Login</p>
+                </div>
+              </Link>
+            )}
             <Link href={`http://localhost:3000/admin`}>
               <div
                 className={` sm:cursor-pointer sm:hover:bg-[---c3] sm:active:bg-[---c6] sm:h-[40px] w-[7rem] sm:items-center sm:hover:text-[---c4] sm:active:text-[---c4] sm:font-extrabold   ${admin}  k:h-[110px] ll:h-[80px] l:h-[50px]   w-auto        sm:rounded-[2rem]  sm:flex sm:space-x-1`}

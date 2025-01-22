@@ -10,9 +10,18 @@ import { useEffect, useState } from "react";
 export default function App({ Component, pageProps }) {
   const [progress, setProgress] = useState(0);
   const router = useRouter();
+  const[accountlogo,setaccountlogo] =useState(false);
+
   useEffect(()=>{
   router.events.on('routeChangeStart',()=>{setProgress(40)});
   router.events.on('routeChangeComplete',()=>{setProgress(100)});
+  const token = localStorage.getItem('token');
+  if(token){
+    setaccountlogo(true)
+  }else{
+    setaccountlogo(false)
+  }
+
 },[router.query])
   return <>
   
@@ -26,7 +35,7 @@ export default function App({ Component, pageProps }) {
   </Head>
   <LoadingBar color='rgba(0,168,89,255)' progress={progress}
     onLoaderFinished={() => setProgress(0)} />
-  <Navbar/>
+  <Navbar accountlogo={accountlogo}/>
   
   <Component {...pageProps} />
   <Footer/>

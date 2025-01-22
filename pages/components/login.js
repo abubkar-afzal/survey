@@ -49,6 +49,7 @@ const Login = () => {
     console.log(response);
     if(response){
       if(response.success == true){
+        localStorage.setItem('token',response.token);
       router.push("http://localhost:3000/")    
       toast("Login Successfully 🥰", {
         style: {

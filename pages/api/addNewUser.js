@@ -24,7 +24,7 @@ export default async function handler(req, res) {
 
       await collection.insertOne(newuser);
 
-      res.status(201).json({ success : success });
+      res.status(201).json({ success : true });
     } catch (error) {
       console.log(error);
       res.status(500).json({ message: "Something went wrong!" }, error);

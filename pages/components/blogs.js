@@ -13,7 +13,7 @@ const Blogs = ({ allBlogs }) => {
         {allBlogs.map((item) => {
           return (
             <div key={item._id} className="h-auto cursor-pointer hover:scale-[1.04] duration-[1s] my-[2rem]">
-              <Link href={item.blog_slug} >
+              <Link href={`slug/${item.blog_slug}`} >
                 <div className="sm:w-auto sm:h-auto bg-[---c4] place-items-center text-center items-center rounded-[2rem]  mt-[1rem]  sm:text-[16px] mm:text-[18px] lm:text-[20px] t:text-[22px] l:text-[29px] ll:text-[35px] k:text-[45px] sm:mt-[1rem] k:my-[2rem] m-[1rem] ">
                   <Image
                     src={item.blog_image}
