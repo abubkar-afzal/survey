@@ -10,6 +10,7 @@ const Main = ({ allData }) => {
   const [yesModal,setYesModal] =useState(false);
   const [noModal,setNoModal] =useState(false);
   const [disableOther,setDisableOther] = useState(false);
+  const [_id,set_id] = useState({});
 
   const router = useRouter();
   const greenModal =()=>{
@@ -21,7 +22,10 @@ const Main = ({ allData }) => {
     setDisableOther(!disableOther)
 
   }
-  
+  const answerofquestion =(id)=>{
+    console.log(id);
+  }
+  console.log(_id)
   return (
     <>
       <div className="">
@@ -67,6 +71,7 @@ const Main = ({ allData }) => {
           </div>
 
           {allData.map((item) => {
+              
             return (
               <div key={item._id} className="h-auto">
                 <div className="my-[2rem] t:w-[30rem] l:w-[35rem] mx-auto text-center shadow-sm shadow-black rounded-[2rem] p-2 t:p-6 bg-[---c8] sm:text-[---c4] space-y-[10px] mm:space-y-[15px] lm:space-y-[20px] t:space-y-[22px] l:space-y-[27px] ll:space-y-[32px] k:space-y-[40px] ">
@@ -82,7 +87,7 @@ const Main = ({ allData }) => {
                   </p>
                   <input
                     onChange={(e) => {
-                      setinput(e.target.name);
+                      setinput(e.target.value);
                     }}
                     type="text"
                     value={answer}
@@ -93,7 +98,7 @@ const Main = ({ allData }) => {
                   />
                   <br />
 
-                  <button className="bg-[---b8] hover:bg-[---h8] p-2 m-2 w-[8rem] rounded-[2rem] font-bold shadow-lg sm:text-[16px] mm:text-[22px] lm:text-[26px] t:text-[22px] l:text-[27px] ll:text-[32px] k:text-[37px] ">
+                  <button onClick={()=>{answerofquestion(item._id) }} className="bg-[---b8] hover:bg-[---h8] p-2 m-2 w-[8rem] rounded-[2rem] font-bold shadow-lg sm:text-[16px] mm:text-[22px] lm:text-[26px] t:text-[22px] l:text-[27px] ll:text-[32px] k:text-[37px] ">
                     Send
                   </button>
                 </div>

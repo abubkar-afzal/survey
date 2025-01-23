@@ -2,6 +2,7 @@
 
 import { MongoClient } from "mongodb";
 import newuserSchema from "@/models/NewUserSchema";
+var jwt = require("jsonwebtoken");
 
 export default async function handler(req, res) {
   if (req.method === "POST") {
@@ -10,10 +11,11 @@ export default async function handler(req, res) {
       useUnifiedTopology: true,
     });
     //Data
-      let newuser = new newuserSchema(req.body);
-      newuser.save()
-    
-    try { console.log(newuser)
+    let newuser = new newuserSchema(req.body);
+    newuser.save();
+
+    try {
+      console.log(newuser);
       await client.connect();
 
       // Choose a name for your database
@@ -22,9 +24,23 @@ export default async function handler(req, res) {
       // Choose a name for your collection
       const collection = database.collection("users");
 
-      await collection.insertOne(newuser);
-
-      res.status(201).json({ success : true });
+      const add = await collection.insertOne(newuser);
+      const newtoken = await collection.findOne({"user_email":newuser.user_email});
+      var token = jwt.sign(
+        { 
+          _id: newtoken._id,
+          email: newtoken.user_email,
+          name: newtoken.user_name,
+          password: newtoken.user_password,
+          phone: newtoken.user_phone,
+          address: newtoken.user_address,
+          occoupation: newtoken.user_occoupation,
+          bd: newtoken.user_bd,
+        },
+        process.env.JWTSECRET,
+        { expiresIn: "2d" }
+      );
+      res.status(201).json({ success: true, token });
     } catch (error) {
       console.log(error);
       res.status(500).json({ message: "Something went wrong!" }, error);

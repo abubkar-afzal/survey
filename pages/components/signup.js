@@ -65,14 +65,26 @@ const SignUp = () => {
         body: JSON.stringify(user),
       });
       let response = await res.json();
-      console.log(response);
-      router.push("http://localhost:3000/");
+      if(response){
+        if(response.success){
+          localStorage.setItem('token',response.token);
+          router.push("http://localhost:3000/");
       toast("Account Created 😍", {
         style: {
           padding: "16px",
           color: "#ffffff",
           background: "#5fff59",
         },});
+        }else{
+          toast("Please Enter Correct Things 🤐", {
+            style: {
+              padding: "16px",
+              color: "#ffffff",
+              background: "#ff5959",
+            },});
+        }
+      }
+      
     }else{
       toast("Please Enter Correct Things 🤐", {
         style: {

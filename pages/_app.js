@@ -11,6 +11,8 @@ export default function App({ Component, pageProps }) {
   const [progress, setProgress] = useState(0);
   const router = useRouter();
   const[accountlogo,setaccountlogo] =useState(false);
+  const [user,setUser] = useState({value:null})
+  const [key,setKey] =useState(0);
 
   useEffect(()=>{
   router.events.on('routeChangeStart',()=>{setProgress(40)});
@@ -18,6 +20,8 @@ export default function App({ Component, pageProps }) {
   const token = localStorage.getItem('token');
   if(token){
     setaccountlogo(true)
+    setUser({value:token})
+    setKey(Math.random);
   }else{
     setaccountlogo(false)
   }
