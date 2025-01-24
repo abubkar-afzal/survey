@@ -37,7 +37,7 @@ export default async function handler(req, res) {
           bd: bd,
         },
         process.env.JWTSECRET,
-        { expiresIn: "2d" }
+        { expiresIn: "30d" }
       );
       console.log(phone);
       await collection.findOneAndReplace(
