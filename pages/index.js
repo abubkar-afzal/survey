@@ -45,7 +45,6 @@ const Main = ({ allData, }) => {
     console.log(response);
     if(response){
       if(response.success == true){
-        localStorage.setItem('token',response.token);
       router.push("http://localhost:3000/")    
       toast("Login Successfully 🥰", {
         style: {
@@ -74,7 +73,7 @@ const Main = ({ allData, }) => {
     }
   
   };
-  const setanswerwithid = (id, e, qid, qlb) => {
+  const setanswerwithid = (id, e, qid, qlb,qt ) => {
    
     setinput([
       
@@ -82,6 +81,7 @@ const Main = ({ allData, }) => {
         id,
         question_id: qid,
         question_label : qlb,
+        question_title : qt,
         question_answer: e.target.value,
       },
     ]);
@@ -149,7 +149,7 @@ const Main = ({ allData, }) => {
                   </p>
                   <input
                     onChange={(e) => {
-                      setanswerwithid(item._id, e, item.question_id, item.question_label);
+                      setanswerwithid(item._id, e, item.question_id, item.question_label, item.question_title);
                     }}
                     type="text"
                     value={answer[item._id.qid]}

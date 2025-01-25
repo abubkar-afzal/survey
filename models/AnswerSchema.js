@@ -6,6 +6,7 @@ const answerSchema = Schema({
   user_occoupation: { type: String, index: true, required: true, default: "" },
   question_id: { type: Number, index: true, required: true },
   question_label: { type: String, index: true, required: true, default: "" },
+  question_title: { type: String, index: true, required: true, default: "" },
   question_answer: { type: String, index: true, required: true, default: "" },
   user_address: { type: String, index: true, required: true, default: "" },
   user_phone: { type: String, index: true, required: true, default: "" },

@@ -38,7 +38,7 @@ export default async function handler(req, res) {
           bd: newtoken.user_bd,
         },
         process.env.JWTSECRET,
-        { expiresIn: "2d" }
+        { expiresIn: "10d" }
       );
       res.status(201).json({ success: true, token });
     } catch (error) {

@@ -17,11 +17,12 @@ export default async function handler(req, res) {
     let userPhone = tokenData.phone;
     let userOccoupation = tokenData.occoupation;
     let userAddress = tokenData.address;
-    console.log(userEmail)
     //request body
     const questionId = req.body.QA.question_id;
     const questionAnswer = req.body.QA.question_answer;
     const questionLabel = req.body.QA.question_label;
+    const questionTitle = req.body.QA.question_title;
+    console.log(questionTitle);
 
     try {
       
@@ -38,6 +39,7 @@ export default async function handler(req, res) {
         user_occoupation: userOccoupation,
         question_id: questionId,
         question_label: questionLabel,
+        question_title: questionTitle,
         question_answer: questionAnswer,
         user_address: userAddress,
         user_phone: userPhone,

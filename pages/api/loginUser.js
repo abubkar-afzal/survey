@@ -36,7 +36,7 @@ export default async function handler(req, res) {
               bd: login.user_bd,
             },
             process.env.JWTSECRET,
-            { expiresIn: "30d" }
+            { expiresIn: "10d" }
           );
           res.status(201).json({ success: true, token });
         } else {
