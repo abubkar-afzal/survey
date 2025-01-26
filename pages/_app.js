@@ -5,27 +5,35 @@ import Footer from "./components/footer";
 import LoadingBar  from "react-top-loading-bar";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import { DotLoader } from "react-spinners";
 
 
 export default function App({ Component, pageProps }) {
   const [progress, setProgress] = useState(0);
   const router = useRouter();
   const[accountlogo,setaccountlogo] =useState(false);
+  const [loader, setLoader] = useState(true);
   const [user,setUser] = useState({value:null})
   const [key,setKey] =useState(0);
 
   useEffect(()=>{
   router.events.on('routeChangeStart',()=>{setProgress(40)});
   router.events.on('routeChangeComplete',()=>{setProgress(100)});
+  router.events.on('routeChangeStart',()=>{setLoader(true)});
+  router.events.on('routeChangeComplete',()=>{setLoader(false)});
+  
   const token = localStorage.getItem('token');
   if(token){
     setaccountlogo(true)
     setUser({value:token})
     setKey(Math.random);
   }else{
-    setaccountlogo(false)
+    setaccountlogo("")
   }
-
+ 
+    setLoader(false)
+ 
+  
 },[router.query])
   return <>
   
@@ -40,8 +48,21 @@ export default function App({ Component, pageProps }) {
   <LoadingBar color='rgba(0,168,89,255)' progress={progress}
     onLoaderFinished={() => setProgress(0)} />
   <Navbar accountlogo={accountlogo}/>
+  {loader ? 
+  <div className="mx-auto mt-[40vh] mb-[40vh] justify-items-center">
+  <DotLoader 
+  color="rgba(0,168,89,255)"
+  cssOverride={{}}
+  loading
+  size={60}
+  speedMultiplier={1}
+/>
+<br />
+<br />
+    <p className="font-bold sm:text-[18px] mm:text-[18px] lm:text-[20px] t:text-[22px] l:text-[27px] ll:text-[32px] k:text-[37px]" >INTERNET MAY BE SLOW !!</p>
+</div>: <Component {...pageProps} />}
+
   
-  <Component {...pageProps} />
   <Footer/>
   
   </>

@@ -36,10 +36,10 @@ const Answers = ({ dataofanswer }) => {
           {dataofanswer.map((item) => {
             return (
               
-                <div className="text-center" key={item._id}>
+                <div className="text-center px-4 py-2 rounded-[2rem] shadow-lg w-auto h-auto hover:scale-[1.1] hover:text-[---f1] duration-[1s]" key={item._id}>
                   <Link href={`slug/${item._id}`}>
-                    <div className="flex  hover:scale-[1.1] hover:text-[---f1] duration-[1s]">
-                      <div className="mt-[8px] pb-2 sm:text-[18px] mm:text-[18px] lm:text-[20px] t:text-[22px] l:text-[27px] ll:text-[32px] k:text-[37px] text-wrap space-x-2 font-bold w-[30vw] place-content-center overflow-x-scroll hidebar">
+                    <div className="flex  ">
+                      <div className="mt-[8px] pb-2 sm:text-[18px] mm:text-[18px] lm:text-[20px] t:text-[22px] l:text-[27px] ll:text-[32px] k:text-[37px] text-wrap space-x-2 font-bold w-[30vw] place-content-center overflow-x-scroll hidebar ">
                         {item.answerStructure.user_name}
                       </div>
                       <div className="mt-[8px] pb-2 sm:text-[18px] mm:text-[18px] lm:text-[20px] t:text-[22px] l:text-[27px] ll:text-[32px] k:text-[37px] h-auto w-[30vw] place-content-center overflow-x-scroll space-x-2 hidebar">   

@@ -23,7 +23,7 @@ const Blogs = ({ allBlogs }) => {
                     className="sm:w-[200px] sm:h-[200px] t:w-[300px] t:h-[300px]  m-2 p-2 rounded-[2rem]"
                   />
 
-                  <div className="bg-[---c6] w-full sm:h-auto font-bold font-[bold] sm:rounded-b-[2rem] text-white  p-[1rem]">
+                  <div className="bg-[---c1] w-full sm:h-auto font-bold font-[bold] sm:rounded-b-[2rem] text-white  p-[1rem]">
                     {item.blog_title}
                   </div>
                 </div>

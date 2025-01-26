@@ -23,6 +23,10 @@ const Goto =()=>{
             >
               Answer's
             </button>
+          </Link><Link href={`http://localhost:3000/admin/components/passwordChange`}>
+          <div className="hover:underline sm:text-[11px] mm:text-[13px] lm:text-[17px] t:text-[20px] l:text-[27px] ll:text-[32px] k:text-[40px] text-[---f1] mt-[1rem] ml-[6rem] t:ml-[1px]">
+                  Chnage Password !!
+                </div>
           </Link>
     </div>
     </>)
