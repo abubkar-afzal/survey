@@ -59,8 +59,8 @@ export default function App({ Component, pageProps }) {
 />
 <br />
 <br />
-    <p className="font-bold sm:text-[18px] mm:text-[18px] lm:text-[20px] t:text-[22px] l:text-[27px] ll:text-[32px] k:text-[37px]" >INTERNET MAY BE SLOW !!</p>
-</div>: <Component {...pageProps} />}
+    <p className="font-bold sm:text-[18px] mm:text-[18px] lm:text-[20px] t:text-[22px] l:text-[27px] ll:text-[32px] k:text-[37px]" >I am Sorry Please Wait !!</p>
+</div>: <Component {...pageProps} user={user} />}
 
   
   <Footer/>

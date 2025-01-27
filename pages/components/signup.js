@@ -153,7 +153,7 @@ const SignUp = () => {
                 value={Name}
                 id="Name"
                 htmlFor="Name"
-                className="sm:rounded-[2rem] text-white h-auto  sm:px-3 w-auto m-2 sm:text-[15px] mm:text-[16px] lm:text-[19px] t:text-[21px] l:text-[24px] ll:text-[27px] k:text-[30px]  mt-1 block px-3 py-2 bg-[---t1] border border-slate-300 rounded-md text-sm shadow-sm placeholder-white
+                className="sm:rounded-[2rem] text-white h-auto  sm:px-3 w-auto m-2 sm:text-[15px] mm:text-[16px] lm:text-[19px] t:text-[21px] l:text-[24px] ll:text-[27px] k:text-[30px]  mt-1 block px-3 py-2 t:py-4 bg-[---t1] border border-slate-300 rounded-md text-sm shadow-sm placeholder-white
       focus:outline-none focus:border-black focus:ring-2 focus:ring-black focus:bg-[---c4] focus:text-black focus:placeholder-black"
               /></div>
             </div>
@@ -171,8 +171,8 @@ const SignUp = () => {
                 value={Birthday}
                 id="Birthday"
                 htmlFor="Birthday"
-                className="sm:rounded-[2rem] text-white h-auto  sm:px-3 w-[50vw] t:w-[30vw] ll:w-[20vw] m-2 sm:text-[15px] mm:text-[16px] lm:text-[19px] t:text-[21px] l:text-[24px] ll:text-[27px] k:text-[30px]  mt-1 block px-3 py-2 bg-[---t1] border border-slate-300 rounded-md text-sm shadow-sm placeholder-white
-      focus:outline-none focus:border-black focus:ring-2 focus:ring-black focus:bg-[---c4] focus:text-black focus:placeholder-black "
+                className="sm:rounded-[2rem] text-white h-auto  sm:px-3 w-[50vw] t:w-[30vw] ll:w-[20vw] m-2 sm:text-[15px] mm:text-[16px] lm:text-[19px] t:text-[21px] l:text-[24px] ll:text-[27px] k:text-[30px]  mt-1 block px-3 py-2 t:py-6 bg-[---t1] border border-slate-300 rounded-md text-sm shadow-sm placeholder-white
+      focus:outline-none focus:border-black focus:ring-2 focus:ring-black focus:bg-[---c4] focus:text-black focus:placeholder-black  "
               /></div>
             </div>
             <div className="text-left">
@@ -189,7 +189,7 @@ const SignUp = () => {
                 value={Phone}
                 id="Phone"
                 htmlFor="Phone"
-                className="sm:rounded-[2rem] text-white h-auto  sm:px-3 w-auto m-2 sm:text-[15px] mm:text-[16px] lm:text-[19px] t:text-[21px] l:text-[24px] ll:text-[27px] k:text-[30px]  mt-1 block px-3 py-2 bg-[---t1] border border-slate-300 rounded-md text-sm shadow-sm placeholder-white
+                className="sm:rounded-[2rem] text-white h-auto  sm:px-3 w-auto m-2 sm:text-[15px] mm:text-[16px] lm:text-[19px] t:text-[21px] l:text-[24px] ll:text-[27px] k:text-[30px]  mt-1 block px-3 py-2 t:py-4 bg-[---t1] border border-slate-300 rounded-md text-sm shadow-sm placeholder-white
       focus:outline-none focus:border-black focus:ring-2 focus:ring-black focus:bg-[---c4] focus:text-black focus:placeholder-black"
               /></div>
             </div>
@@ -207,7 +207,7 @@ const SignUp = () => {
                 value={Email}
                 id="Email"
                 htmlFor="Email"
-                className="sm:rounded-[2rem] text-white h-auto  sm:px-3 w-auto m-2 sm:text-[15px] mm:text-[16px] lm:text-[19px] t:text-[21px] l:text-[24px] ll:text-[27px] k:text-[30px]  mt-1 block px-3 py-2 bg-[---t1] border border-slate-300 rounded-md text-sm shadow-sm placeholder-white
+                className="sm:rounded-[2rem] text-white h-auto  sm:px-3 w-auto m-2 sm:text-[15px] mm:text-[16px] lm:text-[19px] t:text-[21px] l:text-[24px] ll:text-[27px] k:text-[30px]  mt-1 block px-3 py-2 t:py-4 bg-[---t1] border border-slate-300 rounded-md text-sm shadow-sm placeholder-white
       focus:outline-none focus:border-black focus:ring-2 focus:ring-black focus:bg-[---c4] focus:text-black focus:placeholder-black"
               /></div>
             </div>
@@ -226,13 +226,13 @@ const SignUp = () => {
                 id="Password"
                 placeholder="Please Enter Password ..."
                 htmlFor="Password"
-                className="sm:rounded-[2rem] text-white h-auto  sm:px-3 w-auto m-2 sm:text-[15px] mm:text-[16px] lm:text-[19px] t:text-[21px] l:text-[24px] ll:text-[27px] k:text-[30px]  mt-1 block px-3 py-2 bg-[---t1] border border-slate-300 rounded-md text-sm shadow-sm placeholder-white
+                className="sm:rounded-[2rem] text-white h-auto  sm:px-3 w-auto m-2 sm:text-[15px] mm:text-[16px] lm:text-[19px] t:text-[21px] l:text-[24px] ll:text-[27px] k:text-[30px]  mt-1 block px-3 py-2 t:py-4 bg-[---t1] border border-slate-300 rounded-md text-sm shadow-sm placeholder-white
       focus:outline-none focus:border-black focus:ring-2 focus:ring-black focus:bg-[---c4] focus:text-black focus:placeholder-black"
               /> {
                                       hpassword ? 
-                                      <FaEyeSlash onClick={hideP} className="text-white mt-[1rem] sm:text-[16px] mm:text-[18px] lm:text-[20px] t:text-[23px] l:text-[25px] ll:text-[27px] k:text-[35px]" />
+                                      <FaEyeSlash onClick={hideP} className="text-white t:mt-[2rem] mt-[1rem] sm:text-[16px] mm:text-[18px] lm:text-[20px] t:text-[23px] l:text-[25px] ll:text-[27px] k:text-[35px]" />
                 : 
-                <FaEye onClick={hideP} className="text-white mt-[1rem] sm:text-[16px] mm:text-[18px] lm:text-[20px] t:text-[23px] l:text-[25px] ll:text-[27px] k:text-[35px]" />
+                <FaEye onClick={hideP} className="text-white t:mt-[2rem] mt-[1rem] sm:text-[16px] mm:text-[18px] lm:text-[20px] t:text-[23px] l:text-[25px] ll:text-[27px] k:text-[35px]" />
               
                                     }
               </div></div>
@@ -251,7 +251,7 @@ const SignUp = () => {
                 value={Occoupation}
                 id="Occoupation"
                 htmlFor="Occoupation"
-                className="sm:rounded-[2rem] text-white h-auto  sm:px-3 w-auto m-2 sm:text-[15px] mm:text-[16px] lm:text-[19px] t:text-[21px] l:text-[24px] ll:text-[27px] k:text-[30px]  mt-1 block px-3 py-2 bg-[---t1] border border-slate-300 rounded-md text-sm shadow-sm placeholder-white
+                className="sm:rounded-[2rem] text-white h-auto  sm:px-3 w-auto m-2 sm:text-[15px] mm:text-[16px] lm:text-[19px] t:text-[21px] l:text-[24px] ll:text-[27px] k:text-[30px]  mt-1 block px-3 py-2 t:py-4 bg-[---t1] border border-slate-300 rounded-md text-sm shadow-sm placeholder-white
       focus:outline-none focus:border-black focus:ring-2 focus:ring-black focus:bg-[---c4] focus:text-black focus:placeholder-black"
               /></div>
             </div>
@@ -269,7 +269,7 @@ const SignUp = () => {
                 value={Address}
                 id="Address"
                 htmlFor="Address"
-                className="sm:rounded-[2rem] text-white h-auto  sm:px-3 w-auto m-2 sm:text-[15px] mm:text-[16px] lm:text-[19px] t:text-[21px] l:text-[24px] ll:text-[27px] k:text-[30px]  mt-1 block px-3 py-2 bg-[---t1] border border-slate-300 rounded-md text-sm shadow-sm placeholder-white
+                className="sm:rounded-[2rem] text-white h-auto  sm:px-3 w-auto m-2 sm:text-[15px] mm:text-[16px] lm:text-[19px] t:text-[21px] l:text-[24px] ll:text-[27px] k:text-[30px]  mt-1 block px-3 py-2 t:py-4 bg-[---t1] border border-slate-300 rounded-md text-sm shadow-sm placeholder-white
       focus:outline-none focus:border-black focus:ring-2 focus:ring-black focus:bg-[---c4] focus:text-black focus:placeholder-black"
               /></div>
             </div>

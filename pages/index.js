@@ -5,23 +5,45 @@ import { useRouter } from "next/router";
 import { RxCross2 } from "react-icons/rx";
 import toast, { Toaster } from "react-hot-toast";
 
-const Main = ({ allData, }) => {
-  const [token,setToken] = useState("");
-  useEffect(()=>{
-    const tk = localStorage.getItem("token");
-    setToken(tk);
-  },[])
+const Main = ({ allData, user }) => {
+  const router = useRouter();
+  const [oldanswer, setoldanswer] = useState({});
+  const [token, setToken] = useState(user.value);
+  useEffect(() => {
+    answerchange();
+  }, [router.query]);
+  const answerchange = async () => {
+    if (token) {
+      let r = await fetch("http://localhost:3000/api/getAllAnswers", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json; charset=UTF-8",
+        },
+        body: JSON.stringify(token),
+      });
+      const a = await r.json();
+      let inputanswer = a.answer.map(({ answerStructure }) => ({
+        _id: answerStructure._id,
+        question_answer: answerStructure.question_answer,
+        question_id: answerStructure.question_id,
+      }));
+      setoldanswer(inputanswer);
+    } else {
+      console.log("no answer found according to user");
+    }
+  };
+
   const [answer, setinput] = useState([
     {
       question_id: " ",
       question_answer: " ",
     },
   ]);
+  
   const [yesModal, setYesModal] = useState(false);
   const [noModal, setNoModal] = useState(false);
   const [disableOther, setDisableOther] = useState(false);
 
-  const router = useRouter();
   const greenModal = () => {
     setYesModal(!yesModal);
     setDisableOther(!disableOther);
@@ -30,67 +52,83 @@ const Main = ({ allData, }) => {
     setNoModal(!noModal);
     setDisableOther(!disableOther);
   };
-  const answerofquestion = async (id,e) => {
-    e.preventDefault();
-    let QA = answer.find(i=>i.id == id );
-    
-    let res = await fetch('http://localhost:3000/api/giveAnswer', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json; charset=UTF-8',
-      },
-      body: JSON.stringify({QA,token}),
-    });
-    let response = await res.json();
-    console.log(response);
-    if(response){
-      if(response.success == true){
-      router.push("http://localhost:3000/")    
-      toast("Login Successfully 🥰", {
-        style: {
-          padding: "16px",
-          color: "#ffffff",
-          background: "#5fff59",
-        },});
-      }
-      else{
+  const answerofquestion = async (id, e) => {
+    if (token) {
+      e.preventDefault();
+      let QA = answer.find((i) => i.id == id);
+
+      let res = await fetch("http://localhost:3000/api/giveAnswer", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json; charset=UTF-8",
+        },
+        body: JSON.stringify({ QA, token }),
+      });
+      let response = await res.json();
+      console.log(response);
+      if (response) {
+        if (response.success == true) {
+          router.push("http://localhost:3000/");
+          toast("Login Successfully 🥰", {
+            style: {
+              padding: "16px",
+              color: "#ffffff",
+              background: "#5fff59",
+            },
+          });
+        } else {
+          toast("Something went wrong 🙄", {
+            style: {
+              padding: "16px",
+              color: "#ffffff",
+              background: "#ff5959",
+            },
+          });
+          console.log("fail to loggin");
+        }
+      } else {
         toast("Something went wrong 🙄", {
           style: {
             padding: "16px",
             color: "#ffffff",
             background: "#ff5959",
-          },});
-        console.log("fail to loggin")
+          },
+        });
+        console.log("fail to loggin");
       }
-    }else{
-      toast("Something went wrong 🙄", {
-        style: {
-          padding: "16px",
-          color: "#ffffff",
-          background: "#ff5959",
-        },});
-      console.log("fail to loggin")
+    } else {
+      setTimeout(() => {
+        toast("Please make an account first 😉", {
+          style: {
+            padding: "16px",
+            color: "#ffffff",
+            background: "#4872e4",
+          },
+        });
+      }, 2000);
+
+      setTimeout(() => {
+        router.push(`http://localhost:3000/components/signup`);
+      }, 10);
     }
-  
   };
-  const setanswerwithid = (id, e, qid, qlb,qt ) => {
-   
+  const setanswerwithid = (id, e, qid, qlb, qt) => {
     setinput([
-      
       {
         id,
         question_id: qid,
-        question_label : qlb,
-        question_title : qt,
+        question_label: qlb,
+        question_title: qt,
         question_answer: e.target.value,
       },
     ]);
   };
-  console.log(answer);
 
   return (
     <>
       <div className="">
+        <Toaster position="bottom-center" reverseOrder={true} />
+
         <div className=" m-4 space-y-2 ll:space-y-[1.5rem] k:space-y-[2rem]  text-justify t:p-4  k:p-10  l:text-center l:place-items-center l:p-10  k:text-center k:place-items-center ">
           <div className="text-center sm:text-[22px] mm:text-[24px] lm:text-[29px] t:text-[34px] l:text-[39px] ll:text-[44px] k:text-[64px]  font-sans font-bold">
             Hi! There It's
@@ -134,6 +172,7 @@ const Main = ({ allData, }) => {
           </div>
 
           {allData.map((item) => {
+            
             return (
               <div key={item._id} className="h-auto">
                 <div className="my-[2rem] t:w-[30rem] l:w-[35rem] mx-auto text-center shadow-sm shadow-black rounded-[2rem] p-2 t:p-6 bg-[---c8] sm:text-[---c4] space-y-[10px] mm:space-y-[15px] lm:space-y-[20px] t:space-y-[22px] l:space-y-[27px] ll:space-y-[32px] k:space-y-[40px] ">
@@ -149,7 +188,13 @@ const Main = ({ allData, }) => {
                   </p>
                   <input
                     onChange={(e) => {
-                      setanswerwithid(item._id, e, item.question_id, item.question_label, item.question_title);
+                      setanswerwithid(
+                        item._id,
+                        e,
+                        item.question_id,
+                        item.question_label,
+                        item.question_title
+                      );
                     }}
                     type="text"
                     value={answer[item._id.qid]}
@@ -162,7 +207,7 @@ const Main = ({ allData, }) => {
 
                   <button
                     onClick={(e) => {
-                      answerofquestion(item._id,e);
+                      answerofquestion(item._id, e);
                     }}
                     className="bg-[---b8] hover:bg-[---h8] p-2 m-2 w-[8rem] rounded-[2rem] font-bold shadow-lg sm:text-[16px] mm:text-[22px] lm:text-[26px] t:text-[22px] l:text-[27px] ll:text-[32px] k:text-[37px] "
                   >
