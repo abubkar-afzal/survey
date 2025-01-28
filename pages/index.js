@@ -4,14 +4,24 @@ import { MongoClient } from "mongodb";
 import { useRouter } from "next/router";
 import { RxCross2 } from "react-icons/rx";
 import toast, { Toaster } from "react-hot-toast";
+import { DotLoader } from "react-spinners";
 
 const Main = ({ allData, user }) => {
   const router = useRouter();
-  const [oldanswer, setoldanswer] = useState({});
+  // const [oldanswer, setoldanswer] = useState({});
   const [token, setToken] = useState(user.value);
+  const [answer, setinput] = useState([
+    {
+      question_id: " ",
+      question_answer: " ",
+    },
+  ]);
+  const [display, setdisplay] = useState(false);
+  const [thanks, setthanks] = useState(false);
   useEffect(() => {
     answerchange();
   }, [router.query]);
+
   const answerchange = async () => {
     if (token) {
       let r = await fetch("http://localhost:3000/api/getAllAnswers", {
@@ -27,19 +37,32 @@ const Main = ({ allData, user }) => {
         question_answer: answerStructure.question_answer,
         question_id: answerStructure.question_id,
       }));
-      setoldanswer(inputanswer);
+
+      let remove = [];
+      for(let i=0; inputanswer.length>=i+1; i++){
+        var j = inputanswer[i].question_id;
+        remove.push(j)
+      }
+      
+
+      // allData.filter((obj) => obj.question_id !== remove.includes(obj.question_id));
+     
+        for (let i = allData.length - 1; i >= 0; i--) {
+          if (remove.includes(allData[i].question_id)) {
+            allData.splice(i, 1);
+          }
+        }
+      console.log(allData);
+      setTimeout(()=>{setdisplay(true)},3000)
+      if(allData.length == 0){
+      setthanks(true)
+
+      }
     } else {
-      console.log("no answer found according to user");
+      setTimeout(()=>{setdisplay(true)},3000)
     }
   };
-
-  const [answer, setinput] = useState([
-    {
-      question_id: " ",
-      question_answer: " ",
-    },
-  ]);
-  
+console.log(thanks)
   const [yesModal, setYesModal] = useState(false);
   const [noModal, setNoModal] = useState(false);
   const [disableOther, setDisableOther] = useState(false);
@@ -53,8 +76,8 @@ const Main = ({ allData, user }) => {
     setDisableOther(!disableOther);
   };
   const answerofquestion = async (id, e) => {
+    e.preventDefault();
     if (token) {
-      e.preventDefault();
       let QA = answer.find((i) => i.id == id);
 
       let res = await fetch("http://localhost:3000/api/giveAnswer", {
@@ -170,8 +193,10 @@ const Main = ({ allData, user }) => {
             <a className="sm:text-[---c7] font-black">Note:</a> Give answers
             what you think your answers will very helpful for someone.
           </div>
+          {
+            display ? 
 
-          {allData.map((item) => {
+           allData.map((item) => {
             
             return (
               <div key={item._id} className="h-auto">
@@ -216,12 +241,26 @@ const Main = ({ allData, user }) => {
                 </div>
               </div>
             );
-          })}
-          {!allData && (
-            <div className="bg-[---c7] text-center text-[---c4] rounded-[2rem] p-2">
-              Please Add Question
-            </div>
-          )}
+         
+          }): <div className="mx-auto mt-[60vh] mb-[40vh] justify-items-center">
+          <DotLoader 
+          color="rgba(0,168,89,255)"
+          cssOverride={{}}
+          loading
+          size={30}
+          speedMultiplier={1}
+        />
+        <br />
+        <br />
+            <p className="font-bold sm:text-[18px] mm:text-[18px] lm:text-[20px] t:text-[22px] l:text-[27px] ll:text-[32px] k:text-[37px]" >Please Wait !!</p>
+        </div>
+          }
+
+          {thanks?<div className=" text-center text-wrap rounded-[2rem] p-2">
+             Thank You Very Much You Already Give All Answer's 🥰💖 
+            </div>:null
+           }
+            
           <div>
             <p className="text-center  mt-[25px] text-[1.4rem] font-[bold] sm:text-[16px] mm:text-[22px] lm:text-[26px] t:text-[22px] l:text-[27px] ll:text-[32px] k:text-[37px]">
               Do you give all answers !!
