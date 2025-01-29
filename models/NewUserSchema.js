@@ -10,6 +10,8 @@ const newuserSchema = Schema ({
     user_password: {type : String, index : true, required : true, default : ""},
     user_occoupation: {type : String, index : true, required : true, default : ""},
     user_address: {type : String, index : true, required : true, default : ""},
+    user_photo: {type : Number, index : true, required : true, default : ""},
+
 })
 
 

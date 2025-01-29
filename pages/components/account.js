@@ -5,6 +5,14 @@ import { BiSolidEditAlt } from "react-icons/bi";
 import toast, { Toaster } from "react-hot-toast";
 import { FaEyeSlash } from "react-icons/fa";
 import { FaEye } from "react-icons/fa";
+import Image from "next/image";
+import IMAGE1 from "../images/img1.png";
+import IMAGE2 from "../images/img2.png";
+import IMAGE3 from "../images/img3.png";
+import IMAGE4 from "../images/img4.png";
+import IMAGE5 from "../images/img5.png";
+import IMAGE6 from "../images/img6.png";
+import { MdEdit } from "react-icons/md";
 
 const Account = () => {
   const [name, setname] = useState("");
@@ -21,7 +29,10 @@ const Account = () => {
   const [doccoupation, setdoccoupation] = useState(true);
   const [id, setid] = useState("");
   const [email, setEmail] = useState("");
+  const [photo, setphoto] = useState("");
+  const [dphoto, setdphoto] = useState(null)
   const [hpassword, sethpassword] = useState(true);
+  const [album, setalbum] = useState(false);
 
   let responseofuser;
   let hidePass;
@@ -45,6 +56,7 @@ const Account = () => {
       setphone(res.login.user_phone);
       setoccoupation(res.login.user_occoupation);
       setaddress(res.login.user_address);
+      setphoto(res.login.user_photo);
       responseofuser = res;
     };
     if (localStorage.getItem("token")) {
@@ -53,6 +65,27 @@ const Account = () => {
       router.push("/");
     }
   }, []);
+  useEffect(() => {
+    if (photo == 1) {
+      setdphoto(null);
+      setdphoto(IMAGE1);
+    } else if (photo == 2) {
+      setdphoto(null);
+      setdphoto(IMAGE2);
+    } else if (photo == 3) {
+      setdphoto(null);
+      setdphoto(IMAGE3);
+    } else if (photo == 4) {
+      setdphoto(null);
+      setdphoto(IMAGE4);
+    } else if (photo == 5) {
+      setdphoto(null);
+      setdphoto(IMAGE5);
+    } else {
+      setdphoto(null);
+      setdphoto(IMAGE6);
+    } 
+  }, [photo])
   if (hpassword) {
     hidePass = "password";
   } else {
@@ -75,6 +108,8 @@ const Account = () => {
     setoccoupation(res.login.user_occoupation);
     setaddress(res.login.user_address);
     setEmail(res.login.user_email);
+    setphoto(res.login.user_photo);
+
     setdaddress(true);
     setdname(true);
     setdpassword(true);
@@ -112,7 +147,7 @@ const Account = () => {
       password.length > 4 &&
       occoupation.length > 4 &&
       address.length > 4 &&
-      phone.length > 10
+      phone.length > 10 || photo > 0
     ) {
       e.preventDefault();
       let user = {
@@ -124,6 +159,7 @@ const Account = () => {
         user_occoupation: occoupation,
         user_address: address,
         user_email: email,
+        user_photo: photo,
       };
       let r = await fetch("http://localhost:3000/api/updateUser", {
         method: "POST",
@@ -167,12 +203,117 @@ const Account = () => {
   const hideP = () => {
     sethpassword(!hpassword);
   };
+  const showphotos = () => {
+    setalbum(!album);
+  };
   return (
     <>
       <div className="text-center m-2 justify-items-center ">
         <Toaster position="bottom-center" reverseOrder={true} />
 
-        <div className="w-[150px] h-[150px] mm:w-[200px] mm:h-[200px] lm:w-[250px] lm:h-[250px] t:w-[250px] t:h-[250px] l:w-[300px] l:h-[300px] ll:w-[350px] ll:h-[350px] k:w-[400px] k:h-[400px] bg-[---c5] rounded-full m-4"></div>
+          <div
+                          onClick={showphotos}
+                          className="w-[150px] h-[150px] mm:w-[200px] mm:h-[200px] lm:w-[250px] lm:h-[250px] t:w-[250px] t:h-[250px] l:w-[300px] l:h-[300px] ll:w-[350px] ll:h-[350px] k:w-[400px] k:h-[400px] outline-1 outline-black sticky rounded-full m-4 cursor-pointer hover:scale-[1.1] duration-[1s]"
+                        >
+                          <Image
+                            src={dphoto}
+                            alt="logo"
+                            width={500}
+                            height={500}
+                            className="rounded-full "
+                          />
+                          <div className="absolute sm:right-[4vw] sm:mt-[-15vw] mm:right-[5vw] mm:mt-[-18vw] lm:right-[8vw] lm:mt-[-18vw] t:right-[4vw] t:mt-[-10vw] l:right-[3vw] l:mt-[-10vw] ll:right-[3vw] ll:mt-[-8vw] k:right-[2vw] k:mt-[-5vw]">
+                            <MdEdit className=" text-[---c4] m-2 sm:text-[22px] mm:text-[28px] lm:text-[32px] t:text-[37px] l:text-[42px] ll:text-[47px] k:text-[55px]" />
+                          </div>
+                          {album ? (
+                            <div className="bg-[---c4] rounded-[2rem] flex flex-wrap w-[90vw] t:w-[60vw] l:w-[50vw] ll:w-[30vw] k:w-[25vw] place-content-center justify-self-center m-2 ">
+                              <div
+                                onClick={() => {
+                                  setphoto(1);
+                                }}
+                                className="w-[60px] h-[60px] mm:w-[70px] mm:h-[70px] lm:w-[90px] lm:h-[90px] t:w-[90px] t:h-[90px] l:w-[100px] l:h-[100px] ll:w-[110px] ll:h-[110px] k:w-[150px] k:h-[150px] outline-1 outline-black sticky rounded-full m-4 cursor-pointer hover:scale-[1.1] duration-[1s]"
+                              >
+                                <Image
+                                  src={IMAGE1}
+                                  alt="logo"
+                                  width={500}
+                                  height={500}
+                                  className="rounded-full "
+                                />
+                              </div>
+                              <div
+                                onClick={() => {
+                                  setphoto(2);
+                                }}
+                                className="w-[60px] h-[60px] mm:w-[70px] mm:h-[70px] lm:w-[90px] lm:h-[90px] t:w-[90px] t:h-[90px] l:w-[100px] l:h-[100px] ll:w-[110px] ll:h-[110px] k:w-[150px] k:h-[150px] outline-1 outline-black sticky rounded-full m-4 cursor-pointer hover:scale-[1.1] duration-[1s]"
+                              >
+                                <Image
+                                  src={IMAGE2}
+                                  alt="logo"
+                                  width={500}
+                                  height={500}
+                                  className="rounded-full "
+                                />
+                              </div>
+                              <div
+                                onClick={() => {
+                                  setphoto(3);
+                                }}
+                                className="w-[60px] h-[60px] mm:w-[70px] mm:h-[70px] lm:w-[90px] lm:h-[90px] t:w-[90px] t:h-[90px] l:w-[100px] l:h-[100px] ll:w-[110px] ll:h-[110px] k:w-[150px] k:h-[150px] outline-1 outline-black sticky rounded-full m-4 cursor-pointer hover:scale-[1.1] duration-[1s]"
+                              >
+                                <Image
+                                  src={IMAGE3}
+                                  alt="logo"
+                                  width={500}
+                                  height={500}
+                                  className="rounded-full "
+                                />
+                              </div>
+                              <div
+                                onClick={() => {
+                                  setphoto(4);
+                                }}
+                                className="w-[60px] h-[60px] mm:w-[70px] mm:h-[70px] lm:w-[90px] lm:h-[90px] t:w-[90px] t:h-[90px] l:w-[100px] l:h-[100px] ll:w-[110px] ll:h-[110px] k:w-[150px] k:h-[150px] outline-1 outline-black sticky rounded-full m-4 cursor-pointer hover:scale-[1.1] duration-[1s]"
+                              >
+                                <Image
+                                  src={IMAGE4}
+                                  alt="logo"
+                                  width={500}
+                                  height={500}
+                                  className="rounded-full "
+                                />
+                              </div>
+                              <div
+                                onClick={() => {
+                                  setphoto(5);
+                                }}
+                                className="w-[60px] h-[60px] mm:w-[70px] mm:h-[70px] lm:w-[90px] lm:h-[90px] t:w-[90px] t:h-[90px] l:w-[100px] l:h-[100px] ll:w-[110px] ll:h-[110px] k:w-[150px] k:h-[150px] outline-1 outline-black sticky rounded-full m-4 cursor-pointer hover:scale-[1.1] duration-[1s]"
+                              >
+                                <Image
+                                  src={IMAGE5}
+                                  alt="logo"
+                                  width={500}
+                                  height={500}
+                                  className="rounded-full "
+                                />
+                              </div>
+                              <div
+                                onClick={() => {
+                                  setphoto(6);
+                                }}
+                                className="w-[60px] h-[60px] mm:w-[70px] mm:h-[70px] lm:w-[90px] lm:h-[90px] t:w-[90px] t:h-[90px] l:w-[100px] l:h-[100px] ll:w-[110px] ll:h-[110px] k:w-[150px] k:h-[150px] outline-1 outline-black sticky rounded-full m-4 cursor-pointer hover:scale-[1.1] duration-[1s]"
+                              >
+                                <Image
+                                  src={IMAGE6}
+                                  alt="logo"
+                                  width={500}
+                                  height={500}
+                                  className="rounded-full "
+                                />
+                              </div>
+                            </div>
+                          ) : null}
+                        </div>
         <div className="space-y-[1rem]">
           <div className=" ">
             <p className=" sm:text-[15px] mm:text-[18px] lm:text-[22px] t:text-[25px] l:text-[32px] ll:text-[37px] k:text-[45px]  font-bold  bg-transparent ">

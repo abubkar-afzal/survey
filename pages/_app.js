@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import { DotLoader } from "react-spinners";
 
 
+
 export default function App({ Component, pageProps }) {
   const [progress, setProgress] = useState(0);
   const router = useRouter();
@@ -23,6 +24,7 @@ export default function App({ Component, pageProps }) {
   router.events.on('routeChangeComplete',()=>{setLoader(false)});
   
   const token = localStorage.getItem('token');
+  
   if(token){
     setaccountlogo(true)
     setUser({value:token})
@@ -47,7 +49,7 @@ export default function App({ Component, pageProps }) {
   </Head>
   <LoadingBar color='rgba(0,168,89,255)' progress={progress}
     onLoaderFinished={() => setProgress(0)} />
-  <Navbar accountlogo={accountlogo}/>
+  <Navbar accountlogo={accountlogo} user={user}/>
   {loader ? 
   <div className="mx-auto mt-[40vh] mb-[40vh] justify-items-center">
   <DotLoader 

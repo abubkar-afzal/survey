@@ -12,8 +12,15 @@ import { FaPencilAlt } from "react-icons/fa";
 import Logo from "../images/survey-logo.svg";
 import Image from "next/image";
 import { RiAdminFill } from "react-icons/ri";
+import IMAGE1 from "../images/img1.png";
+import IMAGE2 from "../images/img2.png";
+import IMAGE3 from "../images/img3.png";
+import IMAGE4 from "../images/img4.png";
+import IMAGE5 from "../images/img5.png";
+import IMAGE6 from "../images/img6.png";
 
 const Navbar = ({ accountlogo }) => {
+  
   const [showmenu, hidemenu] = useState(false);
   const [showcross, hidecross] = useState(true);
   const [showabout, hideabout] = useState("inline");
@@ -22,7 +29,9 @@ const Navbar = ({ accountlogo }) => {
   const [showlogin, hidelogin] = useState("inline");
   const [showaccount, hideaccount] = useState("inline");
   const [showadmin, hideadmin] = useState("inline");
-
+   const [photo, setphoto] = useState("");
+  const [dphoto, setdphoto] = useState(null)
+  
   const onepressmenu = () => {
     hidemenu(!showmenu);
     hidecross(!showcross);
@@ -37,11 +46,26 @@ const Navbar = ({ accountlogo }) => {
   let blogs;
   let login;
   let account;
+  let laccount;
   let admin;
 
   const router = useRouter();
   const currentUrl = router.asPath;
   useEffect(() => {
+    const fetchuser = async () => {
+      let d = await fetch("http://localhost:3000/api/getAccount", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ token: localStorage.getItem("token") }),
+      });
+      let res = await d.json();
+      setphoto(res.login.user_photo);
+    };
+    if (localStorage.getItem("token")) {
+      fetchuser();
+    }
     if (currentUrl === "/") {
       hidehome("inline");
       hideabout("hidden");
@@ -84,9 +108,38 @@ const Navbar = ({ accountlogo }) => {
       hideabout("hidden");
       hideblogs("hidden");
       hidelogin("hidden");
+    }else{
+      hideaccount("hidden");
+      hidehome("hidden");
+      hideadmin("hidden");
+      hideabout("hidden");
+      hideblogs("hidden");
+      hidelogin("hidden");
     }
   }, [router.query]);
-
+ useEffect(() => {
+    if (photo == 1) {
+      setdphoto(null);
+      setdphoto(IMAGE1);
+    } else if (photo == 2) {
+      setdphoto(null);
+      setdphoto(IMAGE2);
+    } else if (photo == 3) {
+      setdphoto(null);
+      setdphoto(IMAGE3);
+    } else if (photo == 4) {
+      setdphoto(null);
+      setdphoto(IMAGE4);
+    } else if (photo == 5) {
+      setdphoto(null);
+      setdphoto(IMAGE5);
+    } else if (photo == 6) {
+      setdphoto(null);
+      setdphoto(IMAGE6);
+    } else{
+      setdphoto(null);
+    }
+  }, [photo])
   if (currentUrl === "/") {
     home = "sm:text-[---c4]  sm:bg-[---c3]";
   } else if (currentUrl === "/components/about") {
@@ -97,8 +150,17 @@ const Navbar = ({ accountlogo }) => {
     login = "sm:text-[---c4] sm:bg-[---c3]";
   } else if (currentUrl === "/components/account") {
     account = "sm:text-[---c4] sm:bg-[---c3]";
+    laccount = true;
    } else if (currentUrl === "/admin") {
     admin = "sm:text-[---c4] sm:bg-[---c3]";
+  }else{
+    home=""
+    admin =""
+    account =""
+    laccount= ""
+    login=""
+    about=""
+    blogs=""
   }
 
   return (
@@ -183,7 +245,7 @@ const Navbar = ({ accountlogo }) => {
                 <div
                   className={` sm:cursor-pointer sm:hover:bg-[---c3] sm:active:bg-[---c6] sm:h-[40px] w-[7rem] sm:items-center sm:hover:text-[---c4] sm:active:text-[---c4] sm:font-extrabold   ${account}             sm:rounded-[2rem]  sm:flex sm:space-x-1`}
                 >
-                  <MdAccountCircle
+                  <Image src={dphoto}
                     className={`w-[2rem] sm:rounded-[2rem] sm:active:bg-[---c6] h-[1.5rem] text-[---c2] sm:active:text-[---c4] sm:hover:text-[---c4 ${account}`}
                   />
                   <p>Account</p>
@@ -268,21 +330,23 @@ const Navbar = ({ accountlogo }) => {
             {/* account */}
 
             {accountlogo ? (
-              <Link
+              
+                <Link
                 className=""
                 href={`http://localhost:3000/components/account`}
               >
                 <div
-                  className={` sm:cursor-pointer sm:hover:bg-[---c3] sm:active:bg-[---c6] sm:h-[40px] w-[7rem] sm:items-center sm:hover:text-[---c4] sm:active:text-[---c4] sm:font-extrabold   ${account} k:h-[110px] ll:h-[80px] l:h-[50px]     w-auto        sm:rounded-[2rem]  sm:flex sm:space-x-1`}
+                  className={` sm:cursor-pointer sm:hover:bg-[---c3] sm:active:bg-[---c6]      sm:items-center sm:hover:text-[---c4] sm:active:text-[---c4] sm:font-extrabold   ${laccount ? "t:w-[15vw] t:h-auto t:bg-[---c3] t:text-[---c4]": "t:w-[2rem] t:h-[2rem]l:w-[3rem] ll:w-[4rem] ll:h-[4rem] l:h-[3rem] k:w-[7rem] k:h-[7rem]"}  sm:rounded-[2rem]  sm:flex sm:space-x-1`}
                 >
-                  <MdAccountCircle
-                    className={`l:w-[4rem] ll:w-[4.5rem] ll:h-[3.5rem] k:w-[6.3rem] k:h-[5rem]  l:h-[3rem] w-[3rem] sm:active:bg-[---c6] h-[1.5rem] text-[---c2] sm:active:text-[---c4] sm:rounded-[2rem] sm:hover:text-[---c4] ${account}`}
+                  <Image src={dphoto}
+                    className={` l:w-[3rem] ll:w-[4rem] ll:h-[4rem] k:w-[7rem] k:h-[7rem]  l:h-[3rem] t:w-[2rem] t:h-[2rem] sm:active:bg-[---c6] h-[1.5rem] text-[---c2] sm:active:text-[---c4] sm:rounded-[2rem] sm:hover:text-[---c4]  ${account}`}
                   />
                   <p className={`pr-[10px] k:pr-[20px] ${showaccount}`}>
                     Account
                   </p>
                 </div>
               </Link>
+              
             ) : (
               <Link href={`http://localhost:3000/components/login`}>
                 <div

@@ -23,6 +23,8 @@ export default async function handler(req, res) {
       const address = req.body.user_address;
       const occoupation = req.body.user_occoupation;
       const email = req.body.user_email;
+      const photo = req.body.user_photo;
+
       const id = req.body._id;
       var token = jwt.sign(
         {
@@ -35,9 +37,10 @@ export default async function handler(req, res) {
           address: address,
           occoupation: occoupation,
           bd: bd,
+          photo: photo,
         },
         process.env.JWTSECRET,
-        { expiresIn: "10d" }
+        { expiresIn: "30d" }
       );
       console.log(phone);
       await collection.findOneAndReplace(
@@ -51,6 +54,7 @@ export default async function handler(req, res) {
           user_phone: phone,
           user_address: address,
           user_occoupation: occoupation,
+          user_photo: photo,
         },
         { new: true }
       );

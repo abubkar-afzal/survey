@@ -34,9 +34,10 @@ export default async function handler(req, res) {
               address: login.user_address,
               occoupation: login.user_occoupation,
               bd: login.user_bd,
+              photo: login.user_photo,
             },
             process.env.JWTSECRET,
-            { expiresIn: "10d" }
+            { expiresIn: "30d" }
           );
           res.status(201).json({ success: true, token });
         } else {
