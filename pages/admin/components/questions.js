@@ -38,28 +38,28 @@ const QuestionsAdmin = () => {
     <>
       <div className="grid justify-items-center my-[2rem]">
         <Link href={`http://localhost:3000/admin/components/addQuestion`}>
-          <button
+          <button spellcheck="true"
             className={`${addQuestion}  p-2 px-4 m-2 w-auto rounded-[2rem] font-bold shadow-lg text-[---c4] sm:text-[16px] mm:text-[20px] lm:text-[23px] t:text-[26px] l:text-[29px] ll:text-[35px] k:text-[55px] `}
           >
             Add Question
           </button>
         </Link>
         <Link href={`http://localhost:3000/admin/components/updateQuestion`}>
-          <button
+          <button spellcheck="true"
             className={`${updateQuestion}  p-2 px-4 m-2 w-auto rounded-[2rem] font-bold shadow-lg text-[---c4] sm:text-[16px] mm:text-[20px] lm:text-[23px] t:text-[26px] l:text-[29px] ll:text-[35px] k:text-[55px]`}
           >
             Update Question
           </button>
         </Link>
         <Link href={`http://localhost:3000/admin/components/deleteQuestion`}>
-          <button
+          <button spellcheck="true"
             className={`${deleteQuestion}  p-2 px-4 m-2 w-auto rounded-[2rem] font-bold shadow-lg text-[---c4] sm:text-[16px] mm:text-[20px] lm:text-[23px] t:text-[26px] l:text-[29px] ll:text-[35px] k:text-[55px]`}
           >
             Delete Question
           </button>
         </Link>{" "}
         <Link href={`http://localhost:3000/admin/components/ViewAllQuestion`}>
-          <button
+          <button spellcheck="true"
             className={`${viewallQuestion}  p-2 px-4 m-2 w-auto rounded-[2rem] font-bold shadow-lg text-[---c4] sm:text-[16px] mm:text-[20px] lm:text-[23px] t:text-[26px] l:text-[29px] ll:text-[35px] k:text-[55px]`}
           >
             View All Question

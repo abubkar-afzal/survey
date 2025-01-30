@@ -208,10 +208,10 @@ const Account = () => {
   };
   return (
     <>
-      <div className="text-center m-2 justify-items-center ">
+      <div spellcheck="true" className="text-center m-2 justify-items-center ">
         <Toaster position="bottom-center" reverseOrder={true} />
 
-          <div
+          <div spellcheck="true"
                           onClick={showphotos}
                           className="w-[150px] h-[150px] mm:w-[200px] mm:h-[200px] lm:w-[250px] lm:h-[250px] t:w-[250px] t:h-[250px] l:w-[300px] l:h-[300px] ll:w-[350px] ll:h-[350px] k:w-[400px] k:h-[400px] outline-1 outline-black sticky rounded-full m-4 cursor-pointer hover:scale-[1.1] duration-[1s]"
                         >
@@ -222,12 +222,12 @@ const Account = () => {
                             height={500}
                             className="rounded-full "
                           />
-                          <div className="absolute sm:right-[4vw] sm:mt-[-15vw] mm:right-[5vw] mm:mt-[-18vw] lm:right-[8vw] lm:mt-[-18vw] t:right-[4vw] t:mt-[-10vw] l:right-[3vw] l:mt-[-10vw] ll:right-[3vw] ll:mt-[-8vw] k:right-[2vw] k:mt-[-5vw]">
+                          <div spellcheck="true" className="absolute sm:right-[4vw] sm:mt-[-15vw] mm:right-[5vw] mm:mt-[-18vw] lm:right-[8vw] lm:mt-[-18vw] t:right-[4vw] t:mt-[-10vw] l:right-[3vw] l:mt-[-10vw] ll:right-[3vw] ll:mt-[-8vw] k:right-[2vw] k:mt-[-5vw]">
                             <MdEdit className=" text-[---c4] m-2 sm:text-[22px] mm:text-[28px] lm:text-[32px] t:text-[37px] l:text-[42px] ll:text-[47px] k:text-[55px]" />
                           </div>
                           {album ? (
-                            <div className="bg-[---c4] rounded-[2rem] flex flex-wrap w-[90vw] t:w-[60vw] l:w-[50vw] ll:w-[30vw] k:w-[25vw] place-content-center justify-self-center m-2 ">
-                              <div
+                            <div spellcheck="true" className="bg-[---c4] rounded-[2rem] flex flex-wrap w-[90vw] t:w-[60vw] l:w-[50vw] ll:w-[30vw] k:w-[25vw] place-content-center justify-self-center m-2 ">
+                              <div spellcheck="true"
                                 onClick={() => {
                                   setphoto(1);
                                 }}
@@ -241,7 +241,7 @@ const Account = () => {
                                   className="rounded-full "
                                 />
                               </div>
-                              <div
+                              <div spellcheck="true"
                                 onClick={() => {
                                   setphoto(2);
                                 }}
@@ -255,7 +255,7 @@ const Account = () => {
                                   className="rounded-full "
                                 />
                               </div>
-                              <div
+                              <div spellcheck="true"
                                 onClick={() => {
                                   setphoto(3);
                                 }}
@@ -269,7 +269,7 @@ const Account = () => {
                                   className="rounded-full "
                                 />
                               </div>
-                              <div
+                              <div spellcheck="true"
                                 onClick={() => {
                                   setphoto(4);
                                 }}
@@ -283,7 +283,7 @@ const Account = () => {
                                   className="rounded-full "
                                 />
                               </div>
-                              <div
+                              <div spellcheck="true"
                                 onClick={() => {
                                   setphoto(5);
                                 }}
@@ -297,7 +297,7 @@ const Account = () => {
                                   className="rounded-full "
                                 />
                               </div>
-                              <div
+                              <div spellcheck="true"
                                 onClick={() => {
                                   setphoto(6);
                                 }}
@@ -314,13 +314,13 @@ const Account = () => {
                             </div>
                           ) : null}
                         </div>
-        <div className="space-y-[1rem]">
-          <div className=" ">
-            <p className=" sm:text-[15px] mm:text-[18px] lm:text-[22px] t:text-[25px] l:text-[32px] ll:text-[37px] k:text-[45px]  font-bold  bg-transparent ">
+        <div spellcheck="true" className="space-y-[1rem]">
+          <div spellcheck="true" className=" ">
+            <p spellcheck="true" className=" sm:text-[15px] mm:text-[18px] lm:text-[22px] t:text-[25px] l:text-[32px] ll:text-[37px] k:text-[45px]  font-bold  bg-transparent ">
               : Name :
             </p>
-            <div className="flex items-center place-content-center ml-[2rem] ">
-              <input
+            <div spellcheck="true" className="flex items-center place-content-center ml-[2rem] ">
+              <input spellcheck="true"
                 onChange={(e) => {
                   setname(e.target.value);
                 }}
@@ -339,12 +339,12 @@ const Account = () => {
             </div>
           </div>
 
-          <div>
-            <p className=" sm:text-[15px] mm:text-[18px] lm:text-[22px] t:text-[25px] l:text-[32px] ll:text-[37px] k:text-[45px]  font-bold  bg-transparent ">
+          <div spellcheck="true">
+            <p spellcheck="true" className=" sm:text-[15px] mm:text-[18px] lm:text-[22px] t:text-[25px] l:text-[32px] ll:text-[37px] k:text-[45px]  font-bold  bg-transparent ">
               : Birth Date :
             </p>
-            <div className="flex items-center place-content-center ml-[2rem] mb-[1rem">
-              <input
+            <div spellcheck="true" className="flex items-center place-content-center ml-[2rem] mb-[1rem">
+              <input spellcheck="true"
                 onChange={(e) => {
                   setbd(e.target.value);
                 }}
@@ -362,12 +362,12 @@ const Account = () => {
               />
             </div>
           </div>
-          <div>
-            <p className=" sm:text-[15px] mm:text-[18px] lm:text-[22px] t:text-[25px] l:text-[32px] ll:text-[37px] k:text-[45px]  font-bold  bg-transparent ">
+          <div spellcheck="true">
+            <p spellcheck="true" className=" sm:text-[15px] mm:text-[18px] lm:text-[22px] t:text-[25px] l:text-[32px] ll:text-[37px] k:text-[45px]  font-bold  bg-transparent ">
               : Password :
             </p>
-            <div className="flex items-center place-content-center ml-[2rem] mb-[1rem">
-              <input
+            <div spellcheck="true" className="flex items-center place-content-center ml-[2rem] mb-[1rem">
+              <input spellcheck="true"
                 onChange={(e) => {
                   setpassword(e.target.value);
                 }}
@@ -397,12 +397,12 @@ const Account = () => {
               />
             </div>
           </div>
-          <div>
-            <p className=" sm:text-[15px] mm:text-[18px] lm:text-[22px] t:text-[25px] l:text-[32px] ll:text-[37px] k:text-[45px]  font-bold  bg-transparent ">
+          <div spellcheck="true">
+            <p spellcheck="true" className=" sm:text-[15px] mm:text-[18px] lm:text-[22px] t:text-[25px] l:text-[32px] ll:text-[37px] k:text-[45px]  font-bold  bg-transparent ">
               : Phone :
             </p>
-            <div className="flex items-center place-content-center ml-[2rem] mb-[1rem">
-              <input
+            <div spellcheck="true" className="flex items-center place-content-center ml-[2rem] mb-[1rem">
+              <input spellcheck="true"
                 onChange={(e) => {
                   setphone(e.target.value);
                 }}
@@ -420,12 +420,12 @@ const Account = () => {
               />
             </div>
           </div>
-          <div>
-            <p className=" sm:text-[15px] mm:text-[18px] lm:text-[22px] t:text-[25px] l:text-[32px] ll:text-[37px] k:text-[45px]  font-bold  bg-transparent ">
+          <div spellcheck="true">
+            <p spellcheck="true" className=" sm:text-[15px] mm:text-[18px] lm:text-[22px] t:text-[25px] l:text-[32px] ll:text-[37px] k:text-[45px]  font-bold  bg-transparent ">
               : Address :
             </p>
-            <div className="flex items-center place-content-center ml-[2rem] mb-[1rem">
-              <input
+            <div spellcheck="true" className="flex items-center place-content-center ml-[2rem] mb-[1rem">
+              <input spellcheck="true"
                 onChange={(e) => {
                   setaddress(e.target.value);
                 }}
@@ -443,12 +443,12 @@ const Account = () => {
               />
             </div>
           </div>
-          <div>
-            <p className=" sm:text-[15px] mm:text-[18px] lm:text-[22px] t:text-[25px] l:text-[32px] ll:text-[37px] k:text-[45px]  font-bold  bg-transparent ">
+          <div spellcheck="true">
+            <p spellcheck="true" className=" sm:text-[15px] mm:text-[18px] lm:text-[22px] t:text-[25px] l:text-[32px] ll:text-[37px] k:text-[45px]  font-bold  bg-transparent ">
               : Occoupation :
             </p>
-            <div className="flex items-center place-content-center ml-[2rem] mb-[1rem">
-              <input
+            <div spellcheck="true" className="flex items-center place-content-center ml-[2rem] mb-[1rem">
+              <input spellcheck="true"
                 onChange={(e) => {
                   setoccoupation(e.target.value);
                 }}
@@ -467,8 +467,8 @@ const Account = () => {
             </div>
           </div>
         </div>
-        <div>
-          <button
+        <div spellcheck="true">
+          <button spellcheck="true"
             onClick={SaveChanges}
             className="bg-[---c2] hover:bg-[---h2] p-4 m-2 w-auto px-[1rem] rounded-[2rem] font-bold shadow-lg text-[---c4]"
           >
@@ -476,16 +476,16 @@ const Account = () => {
           </button>
         </div>
 
-        <div>
-          <button
+        <div spellcheck="true">
+          <button spellcheck="true"
             onClick={DisableChanges}
             className="bg-[---c9] hover:bg-[---h9] p-4 m-2 w-auto px-[1rem] rounded-[2rem] font-bold shadow-lg text-[---c4]"
           >
             Disable Changes
           </button>
         </div>
-        <div>
-          <button
+        <div spellcheck="true">
+          <button spellcheck="true"
             onClick={logOut}
             className="bg-[---c7] hover:bg-[---h7] p-4 m-2 w-auto px-[1rem] rounded-[2rem] font-bold shadow-lg text-[---c4]"
           >

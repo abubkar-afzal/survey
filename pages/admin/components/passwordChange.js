@@ -28,21 +28,21 @@ const PasswordChange = ({admin})=>{
         
     }
 return(<>
-     <div className="t:w-auto t:place-items-center t:mx-auto t:mt-[4rem]">
+     <div spellcheck="true" className="t:w-auto t:place-items-center t:mx-auto t:mt-[4rem]">
  <Toaster position="bottom-center" reverseOrder={true} />
 
-              <div className=" sm:text-center sm:font- my-2 pt-[3rem] bg-[---c8] rounded-[2rem] mx-[1rem] text-[---c4] sm:h-auto sm:space-y-[2rem] font-semibold items-center place-items-center place-content-start p-[2rem]   ">
-                <div>
-                  <div className=" sm:text-[22px] mm:text-[26px] lm:text-[30px] t:text-[42px] l:text-[49px] ll:text-[55px] k:text-[85px] mb-2">What's the Secret !!</div>
+              <div spellcheck="true" className=" sm:text-center sm:font- my-2 pt-[3rem] bg-[---c8] rounded-[2rem] mx-[1rem] text-[---c4] sm:h-auto sm:space-y-[2rem] font-semibold items-center place-items-center place-content-start p-[2rem]   ">
+                <div spellcheck="true">
+                  <div spellcheck="true" className=" sm:text-[22px] mm:text-[26px] lm:text-[30px] t:text-[42px] l:text-[49px] ll:text-[55px] k:text-[85px] mb-2">What's the Secret !!</div>
                   <hr className="bg-[---c4] mb-2" />
                   <hr className="bg-[---c4]" />
                 </div>
-                <div className=" ">
-                <div className="text-left">
+                <div spellcheck="true" className=" ">
+                <div spellcheck="true" className="text-left">
                   
-                  <div className="flex ">
+                  <div spellcheck="true" className="flex ">
                     <FaUserSecret className="text-white m-2 sm:text-[22px] mm:text-[28px] lm:text-[32px] t:text-[37px] l:text-[42px] ll:text-[47px] k:text-[55px]" />
-                    <input
+                    <input spellcheck="true"
                       onChange={(e) => {
                         setSecretkey(e.target.value);
                       }}
@@ -60,11 +60,11 @@ return(<>
               
                 </div>
                
-                <button onClick={checkandchange} className="bg-[---c5] hover:bg-[---h5] p-2 mb-2 w-[8rem] rounded-[2rem] font-bold shadow-lg text-[---c4] sm:text-[16px] mm:text-[18px] lm:text-[22px] t:text-[27px] l:text-[32px] ll:text-[37px] k:text-[45px]">
+                <button spellcheck="true" onClick={checkandchange} className="bg-[---c5] hover:bg-[---h5] p-2 mb-2 w-[8rem] rounded-[2rem] font-bold shadow-lg text-[---c4] sm:text-[16px] mm:text-[18px] lm:text-[22px] t:text-[27px] l:text-[32px] ll:text-[37px] k:text-[45px]">
                     Check
                   </button>
                   
-                  <button onClick={back} className="bg-[---c5] hover:bg-[---h5] p-2 mb-2 w-[8rem] rounded-[2rem] font-bold shadow-lg text-[---c4] sm:text-[16px] mm:text-[18px] lm:text-[22px] t:text-[27px] l:text-[32px] ll:text-[37px] k:text-[45px]">
+                  <button spellcheck="true" onClick={back} className="bg-[---c5] hover:bg-[---h5] p-2 mb-2 w-[8rem] rounded-[2rem] font-bold shadow-lg text-[---c4] sm:text-[16px] mm:text-[18px] lm:text-[22px] t:text-[27px] l:text-[32px] ll:text-[37px] k:text-[45px]">
                     Back
                   </button>
               </div>

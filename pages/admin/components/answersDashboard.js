@@ -4,14 +4,14 @@ import React from "react";
 const AnswersDashboard=({allQuestions})=>{
    
     return(<>
-        <div className="text-center justify-items-center">
-            <div className="mt-[2rem] text-[2rem] font-semibold mb-[1rem]">QUESTIONS</div>
+        <div spellcheck="true" className="text-center justify-items-center">
+            <div spellcheck="true" className="mt-[2rem] text-[2rem] font-semibold mb-[1rem]">QUESTIONS</div>
             {allQuestions.map((item)=>{
                 return(
-            <Link href={`${String(item.question_id)}`} className="cursor-pointer"><div className="flex text-[20px] space-x-2 hover:scale-[1.2] hover:text-[---f1] duration-[1s] w-auto px-4 rounded-[2rem] h-auto py-2 shadow-lg" key={item.question_id}>
-            <span className="flex">Question # <p className="font-bold ">{item.question_id}</p></span>
-            <p>|</p>
-            <p>{item.question_title}</p>
+            <Link href={`${String(item.question_id)}`} className="cursor-pointer"><div spellcheck="true" className="flex text-[20px] space-x-2 hover:scale-[1.2] hover:text-[---f1] duration-[1s] w-auto px-4 rounded-[2rem] h-auto py-2 shadow-lg" key={item.question_id}>
+            <span spellcheck="true" className="flex">Question # <p spellcheck="true" className="font-bold ">{item.question_id}</p></span>
+            <p spellcheck="true">|</p>
+            <p spellcheck="true">{item.question_title}</p>
         </div></Link>
         )
 

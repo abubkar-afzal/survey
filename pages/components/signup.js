@@ -77,13 +77,7 @@ useEffect(() => {
     sethpassword(!hpassword);
   };
   const onAdd = async (e) => {
-    if (
-      Name.length > 3 &&
-      Password.length >= 4 &&
-      Occoupation.length > 4 &&
-      Address.length > 4 &&
-      Phone.length > 10
-    ) {
+    
       e.preventDefault();
       let user = {
         user_name: Name,
@@ -95,6 +89,22 @@ useEffect(() => {
         user_address: Address,
         user_photo: Photo,
       };
+      let r = await fetch("http://localhost:3000/api/checkUser", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json; charset=UTF-8",
+        },
+        body: JSON.stringify(user),
+      });
+      let unique = await r.json();
+      if (unique.success == false) {
+        if (
+          Name.length > 3 &&
+          Password.length >= 4 &&
+          Occoupation.length > 4 &&
+          Address.length > 4 &&
+          Phone.length > 10
+        ) {
       let res = await fetch("http://localhost:3000/api/addNewUser", {
         method: "POST",
         headers: {
@@ -125,16 +135,25 @@ useEffect(() => {
         }
       }
     } else {
-      toast("Please Enter Correct Things 🤐", {
+      toast("Please enter correct things 🤨", {
         style: {
           padding: "16px",
           color: "#ffffff",
           background: "#ff5959",
         },
       });
-      console.log("validation faild");
-    }
-  };
+    }}else{
+      toast("User already have account 😳", {
+        style: {
+          padding: "16px",
+          color: "#ffffff",
+          background: "#5fff59",
+        },
+      });
+      setTimeout(()=>{
+        router.push("http://localhost:3000/components/login");
+      },3000)
+    }}
   const showphotos = () => {
     setalbum(!album);
   };

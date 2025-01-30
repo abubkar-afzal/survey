@@ -72,26 +72,26 @@ const UpdateQuestion = () => {
   };
   return (
     <>
-     <div className="grid justify-items-center my-[2rem]">
+     <div spellcheck="true" className="grid justify-items-center my-[2rem]">
  <Toaster position="bottom-center" reverseOrder={true} />
 
         <Link href={`http://localhost:3000/admin/components/addQuestion`}>
-            <button
+            <button spellcheck="true"
               className={`${addQuestion}  p-2 px-4 m-2 w-auto rounded-[2rem] font-bold shadow-lg text-[---c4] sm:text-[16px] mm:text-[20px] lm:text-[23px] t:text-[26px] l:text-[29px] ll:text-[35px] k:text-[55px] `}
             >
               Add Question
             </button>
           </Link>
           <Link href={`http://localhost:3000/admin/components/updateQuestion`}>
-            <button
+            <button spellcheck="true"
               className={`${updateQuestion}  p-2 px-4 m-2 w-auto rounded-[2rem] font-bold shadow-lg text-[---c4] sm:text-[16px] mm:text-[20px] lm:text-[23px] t:text-[26px] l:text-[29px] ll:text-[35px] k:text-[55px]`}
             >
               Update Question
             </button>
-          </Link><div className="my-[2rem] t:w-[30rem] l:w-[35rem] t:mx-auto text-center shadow-sm shadow-black rounded-[2rem] p-2 t:p-6 bg-[---c8] sm:text-[---c4] space-y-[30px] mm:space-y-[35px] lm:space-y-[40px] t:space-y-[42px] l:space-y-[47px] ll:space-y-[52px] k:space-y-[60px] mx-4 pt-[2rem]">
-        <div className="sm:flex sm:flex-col">
-        <p className=" my-[1rem] sm:text-[15px] mm:text-[18px] lm:text-[22px] t:text-[25px] l:text-[32px] ll:text-[37px] k:text-[45px] text-white font-bold  mt-[-16px] bg-transparent "> ID Of Question For Update:</p>
-          <input
+          </Link><div spellcheck="true" className="my-[2rem] t:w-[30rem] l:w-[35rem] t:mx-auto text-center shadow-sm shadow-black rounded-[2rem] p-2 t:p-6 bg-[---c8] sm:text-[---c4] space-y-[30px] mm:space-y-[35px] lm:space-y-[40px] t:space-y-[42px] l:space-y-[47px] ll:space-y-[52px] k:space-y-[60px] mx-4 pt-[2rem]">
+        <div spellcheck="true" className="sm:flex sm:flex-col">
+        <p  spellcheck="true" className=" my-[1rem] sm:text-[15px] mm:text-[18px] lm:text-[22px] t:text-[25px] l:text-[32px] ll:text-[37px] k:text-[45px] text-white font-bold  mt-[-16px] bg-transparent "> ID Of Question For Update:</p>
+          <input spellcheck="true"
             value={id}
             onChange={(e) => {
               setId(e.target.value);
@@ -106,9 +106,9 @@ const UpdateQuestion = () => {
           />
         </div>
 
-        <div className="sm:flex sm:flex-col">
-        <p className=" my-[1rem] sm:text-[15px] mm:text-[18px] lm:text-[22px] t:text-[25px] l:text-[32px] ll:text-[37px] k:text-[45px] text-white font-bold  mt-[-16px] bg-transparent ">New Titile Of Question :</p>
-          <input
+        <div spellcheck="true" className="sm:flex sm:flex-col">
+        <p  spellcheck="true" className=" my-[1rem] sm:text-[15px] mm:text-[18px] lm:text-[22px] t:text-[25px] l:text-[32px] ll:text-[37px] k:text-[45px] text-white font-bold  mt-[-16px] bg-transparent ">New Titile Of Question :</p>
+          <input spellcheck="true"
             value={title}
             onChange={(e) => {
               setTitle(e.target.value);
@@ -122,9 +122,9 @@ const UpdateQuestion = () => {
             id="title"
           />
         </div>
-        <div className="sm:flex sm:flex-col">
-        <p className=" my-[1rem] sm:text-[15px] mm:text-[18px] lm:text-[22px] t:text-[25px] l:text-[32px] ll:text-[37px] k:text-[45px] text-white font-bold  mt-[-16px] bg-transparent ">New Label Of Question :</p>
-          <input
+        <div spellcheck="true" className="sm:flex sm:flex-col">
+        <p  spellcheck="true" className=" my-[1rem] sm:text-[15px] mm:text-[18px] lm:text-[22px] t:text-[25px] l:text-[32px] ll:text-[37px] k:text-[45px] text-white font-bold  mt-[-16px] bg-transparent ">New Label Of Question :</p>
+          <input spellcheck="true"
             value={label}
             onChange={(e) => {
               setLabel(e.target.value);
@@ -138,7 +138,7 @@ const UpdateQuestion = () => {
             id="div"
           />
         </div>
-        <button
+        <button spellcheck="true"
           onClick={onCheck}
           className="bg-[---b8] hover:bg-[---h8] p-2 m-2 w-[8rem] rounded-[2rem] font-bold shadow-lg sm:text-[16px] mm:text-[22px] lm:text-[26px] t:text-[22px] l:text-[27px] ll:text-[32px] k:text-[37px]"
           type="submit"
@@ -148,14 +148,14 @@ const UpdateQuestion = () => {
       </div>
           
           <Link href={`http://localhost:3000/admin/components/deleteQuestion`}>
-            <button
+            <button spellcheck="true"
               className={`${deleteQuestion}  p-2 px-4 m-2 w-auto rounded-[2rem] font-bold shadow-lg text-[---c4] sm:text-[16px] mm:text-[20px] lm:text-[23px] t:text-[26px] l:text-[29px] ll:text-[35px] k:text-[55px]`}
             >
               Delete Question
             </button>
           </Link>
           <Link href={`http://localhost:3000/admin/components/ViewAllQuestion`}>
-          <button
+          <button spellcheck="true"
             className={`${viewallQuestion}  p-2 px-4 m-2 w-auto rounded-[2rem] font-bold shadow-lg text-[---c4] sm:text-[16px] mm:text-[20px] lm:text-[23px] t:text-[26px] l:text-[29px] ll:text-[35px] k:text-[55px]`}
           >
             View All Question

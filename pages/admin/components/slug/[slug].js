@@ -8,39 +8,39 @@ const AnswerDetails = ({ dataofanswer }) => {
   const data = dataofanswer;
   return (
     <>
-      <div className=" flex-col flex-wrap p-4 space-y-[1rem] mt-[1rem] m-[2rem]">
-        <div className="font-bold sm:text-[25px]  mm:text-[22px] lm:text-[26px] t:text-[32px] l:text-[40px] ll:text-[45px] k:text-[70px] text-center">
+      <div spellcheck="true" className=" flex-col flex-wrap p-4 space-y-[1rem] mt-[1rem] m-[2rem]">
+        <div spellcheck="true" className="font-bold sm:text-[25px]  mm:text-[22px] lm:text-[26px] t:text-[32px] l:text-[40px] ll:text-[45px] k:text-[70px] text-center">
           DETAILS
         </div>
         <hr className="" />
         <hr className="" />
-        <div className="mt-[8px] pb-2 sm:text-[18px] mm:text-[18px] lm:text-[20px] t:text-[22px] l:text-[27px] ll:text-[32px] k:text-[37px] flex flex-wrap space-x-2 ">
-          <p className="font-bold"> NAME:</p>
-          <p className="overflow-x-scroll hidebar">{data.answerStructure.user_name}</p>
+        <div spellcheck="true" className="mt-[8px] pb-2 sm:text-[18px] mm:text-[18px] lm:text-[20px] t:text-[22px] l:text-[27px] ll:text-[32px] k:text-[37px] flex flex-wrap space-x-2 ">
+          <p spellcheck="true" className="font-bold"> NAME:</p>
+          <p spellcheck="true" className="overflow-x-scroll hidebar">{data.answerStructure.user_name}</p>
         </div>
-        <div className="mt-[8px] pb-2 sm:text-[18px] mm:text-[18px] lm:text-[20px] t:text-[22px] l:text-[27px] ll:text-[32px] k:text-[37px] flex flex-wrap space-x-2  ">
-          <p className="font-bold"> Occoupation:</p>
-          <p className="overflow-x-scroll hidebar">{data.answerStructure.user_occoupation}</p>
+        <div spellcheck="true" className="mt-[8px] pb-2 sm:text-[18px] mm:text-[18px] lm:text-[20px] t:text-[22px] l:text-[27px] ll:text-[32px] k:text-[37px] flex flex-wrap space-x-2  ">
+          <p spellcheck="true" className="font-bold"> Occoupation:</p>
+          <p spellcheck="true" className="overflow-x-scroll hidebar">{data.answerStructure.user_occoupation}</p>
         </div>
-        <div className="mt-[8px] pb-2 sm:text-[18px] mm:text-[18px] lm:text-[20px] t:text-[22px] l:text-[27px] ll:text-[32px] k:text-[37px] flex flex-wrap space-x-2 ">
-          <p className="font-bold">Question:</p>
-          <p className="overflow-x-scroll hidebar">{data.answerStructure.question_label}</p>
+        <div spellcheck="true" className="mt-[8px] pb-2 sm:text-[18px] mm:text-[18px] lm:text-[20px] t:text-[22px] l:text-[27px] ll:text-[32px] k:text-[37px] flex flex-wrap space-x-2 ">
+          <p spellcheck="true" className="font-bold">Question:</p>
+          <p spellcheck="true" className="overflow-x-scroll hidebar">{data.answerStructure.question_label}</p>
         </div>
-        <div className="mt-[8px] pb-2 sm:text-[18px] mm:text-[18px] lm:text-[20px] t:text-[22px] l:text-[27px] ll:text-[32px] k:text-[37px] flex flex-wrap space-x-2 ">
-          <p className="font-bold">Answer:</p>
-          <p className="overflow-x-scroll hidebar">{data.answerStructure.question_answer}</p>
+        <div spellcheck="true" className="mt-[8px] pb-2 sm:text-[18px] mm:text-[18px] lm:text-[20px] t:text-[22px] l:text-[27px] ll:text-[32px] k:text-[37px] flex flex-wrap space-x-2 ">
+          <p spellcheck="true" className="font-bold">Answer:</p>
+          <p spellcheck="true" className="overflow-x-scroll hidebar">{data.answerStructure.question_answer}</p>
         </div>
-        <div className="mt-[8px] pb-2 sm:text-[18px] mm:text-[18px] lm:text-[20px] t:text-[22px] l:text-[27px] ll:text-[32px] k:text-[37px] flex flex-wrap space-x-2 ">
-          <p className="font-bold"> Address:</p>
-          <p className="overflow-x-scroll hidebar">{data.answerStructure.user_address}</p>
+        <div spellcheck="true" className="mt-[8px] pb-2 sm:text-[18px] mm:text-[18px] lm:text-[20px] t:text-[22px] l:text-[27px] ll:text-[32px] k:text-[37px] flex flex-wrap space-x-2 ">
+          <p spellcheck="true" className="font-bold"> Address:</p>
+          <p spellcheck="true" className="overflow-x-scroll hidebar">{data.answerStructure.user_address}</p>
         </div>
-        <div className="mt-[8px] pb-2 sm:text-[18px] mm:text-[18px] lm:text-[20px] t:text-[22px] l:text-[27px] ll:text-[32px] k:text-[37px] flex flex-wrap space-x-2 ">
-          <p className="font-bold"> Phone:</p>
-          <p className="overflow-x-scroll hidebar">{data.answerStructure.user_phone}</p>
+        <div spellcheck="true" className="mt-[8px] pb-2 sm:text-[18px] mm:text-[18px] lm:text-[20px] t:text-[22px] l:text-[27px] ll:text-[32px] k:text-[37px] flex flex-wrap space-x-2 ">
+          <p spellcheck="true" className="font-bold"> Phone:</p>
+          <p spellcheck="true" className="overflow-x-scroll hidebar">{data.answerStructure.user_phone}</p>
         </div>
-        <div className="mt-[8px] pb-2 sm:text-[18px] mm:text-[18px] lm:text-[20px] t:text-[22px] l:text-[27px] ll:text-[32px] k:text-[37px] flex flex-wrap space-x-2 ">
-          <p className="font-bold"> Email:</p>
-          <p className="overflow-x-scroll hidebar">{data.answerStructure.user_email}</p>
+        <div spellcheck="true" className="mt-[8px] pb-2 sm:text-[18px] mm:text-[18px] lm:text-[20px] t:text-[22px] l:text-[27px] ll:text-[32px] k:text-[37px] flex flex-wrap space-x-2 ">
+          <p spellcheck="true" className="font-bold"> Email:</p>
+          <p spellcheck="true" className="overflow-x-scroll hidebar">{data.answerStructure.user_email}</p>
         </div>
       </div>
     </>

@@ -9,10 +9,10 @@ const blogPage =({allBlogs})=>{
     // console.log(allBlogs)
     return(<> 
             
-            <div className="text-center flex-col p-4 space-y-[1rem] mt-[1rem]">
-                <div><Image src={data.blog_image} width={500} height={500} className="sm:w-[300px] sm:h-[300px] t:w-[500px] t:h-[500px] rounded-[2rem] mx-auto"/></div>
-                <div className="font-bold sm:text-[25px] text-center mm:text-[22px] lm:text-[26px] t:text-[32px] l:text-[40px] ll:text-[45px] k:text-[70px]">{data.blog_title}</div>
-                <div className="mt-[8px] pb-2 sm:text-[18px] mm:text-[18px] lm:text-[20px] t:text-[22px] l:text-[27px] ll:text-[32px] k:text-[37px]"><p>{data.blog_content}</p></div>
+            <div spellcheck="true" className="text-center flex-col p-4 space-y-[1rem] mt-[1rem]">
+                <div spellcheck="true"><Image src={data.blog_image} width={500} height={500} className="sm:w-[300px] sm:h-[300px] t:w-[500px] t:h-[500px] rounded-[2rem] mx-auto"/></div>
+                <div spellcheck="true" className="font-bold sm:text-[25px] text-center mm:text-[22px] lm:text-[26px] t:text-[32px] l:text-[40px] ll:text-[45px] k:text-[70px]">{data.blog_title}</div>
+                <div spellcheck="true" className="mt-[8px] pb-2 sm:text-[18px] mm:text-[18px] lm:text-[20px] t:text-[22px] l:text-[27px] ll:text-[32px] k:text-[37px]"><p spellcheck="true">{data.blog_content}</p></div>
             </div>
             <hr className=""/>
             <hr className=""/>

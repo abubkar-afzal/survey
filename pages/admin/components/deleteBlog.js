@@ -63,18 +63,18 @@ const DeleteBlog = () => {
     }
   return (
     <>
-     <div className="grid justify-items-center my-[2rem]">
+     <div spellcheck="true" className="grid justify-items-center my-[2rem]">
  <Toaster position="bottom-center" reverseOrder={true} />
 
         <Link href={`http://localhost:3000/admin/components/addBlog`}>
-            <button
+            <button spellcheck="true"
               className={`${addBlog}  p-2 px-4 m-2 w-auto rounded-[2rem] font-bold shadow-lg text-[---c4] sm:text-[16px] mm:text-[20px] lm:text-[23px] t:text-[26px] l:text-[29px] ll:text-[35px] k:text-[55px] `}
             >
               Add Blog
             </button>
           </Link>
           <Link href={`http://localhost:3000/admin/components/updateBlog`}>
-            <button
+            <button spellcheck="true"
               className={`${updateBlog}  p-2 px-4 m-2 w-auto rounded-[2rem] font-bold shadow-lg text-[---c4] sm:text-[16px] mm:text-[20px] lm:text-[23px] t:text-[26px] l:text-[29px] ll:text-[35px] k:text-[55px]`}
             >
               Update Blog
@@ -82,17 +82,17 @@ const DeleteBlog = () => {
           </Link>
           
           <Link href={`http://localhost:3000/admin/components/deleteBlog`}>
-            <button
+            <button spellcheck="true"
               className={`${deleteBlog}  p-2 px-4 m-2 w-auto rounded-[2rem] font-bold shadow-lg text-[---c4] sm:text-[16px] mm:text-[20px] lm:text-[23px] t:text-[26px] l:text-[29px] ll:text-[35px] k:text-[55px]`}
             >
               Delete Blog
             </button>
           </Link>
-          <div className="my-[2rem] t:w-[30rem] l:w-[35rem] t:mx-auto text-center shadow-sm shadow-black rounded-[2rem] p-2 t:p-6 bg-[---c8] sm:text-[---c4]  space-y-[30px] mm:space-y-[35px] lm:space-y-[40px] t:space-y-[42px] l:space-y-[47px] ll:space-y-[52px] k:space-y-[60px] mx-4 pt-[2rem]">
-        <div className="sm:flex sm:flex-col">
-        <p className=" my-[1rem] sm:text-[15px] mm:text-[18px] lm:text-[22px] t:text-[25px] l:text-[32px] ll:text-[37px] k:text-[45px] text-white font-bold  mt-[-16px] bg-transparent "> ID For Delte Blog :</p>
+          <div spellcheck="true" className="my-[2rem] t:w-[30rem] l:w-[35rem] t:mx-auto text-center shadow-sm shadow-black rounded-[2rem] p-2 t:p-6 bg-[---c8] sm:text-[---c4]  space-y-[30px] mm:space-y-[35px] lm:space-y-[40px] t:space-y-[42px] l:space-y-[47px] ll:space-y-[52px] k:space-y-[60px] mx-4 pt-[2rem]">
+        <div spellcheck="true" className="sm:flex sm:flex-col">
+        <p spellcheck="true" className=" my-[1rem] sm:text-[15px] mm:text-[18px] lm:text-[22px] t:text-[25px] l:text-[32px] ll:text-[37px] k:text-[45px] text-white font-bold  mt-[-16px] bg-transparent "> ID For Delte Blog :</p>
                        
-          <input
+          <input spellcheck="true"
             value={id}
             onChange={(e) => {
               setId(e.target.value);
@@ -109,7 +109,7 @@ const DeleteBlog = () => {
         </div>
 
     
-        <button
+        <button spellcheck="true"
           onClick={onDelete}
           className="bg-[---b8] hover:bg-[---h8] p-2 m-2 w-[8rem] rounded-[2rem] font-bold shadow-lg sm:text-[16px] mm:text-[22px] lm:text-[26px] t:text-[22px] l:text-[27px] ll:text-[32px] k:text-[37px]"
           type="submit"
@@ -118,7 +118,7 @@ const DeleteBlog = () => {
         </button>
       </div>
       <Link href={`http://localhost:3000/admin/components/ViewAllBlog`}>
-          <button
+          <button spellcheck="true"
             className={`${viewallBlog}  p-2 px-4 m-2 w-auto rounded-[2rem] font-bold shadow-lg text-[---c4] sm:text-[16px] mm:text-[20px] lm:text-[23px] t:text-[26px] l:text-[29px] ll:text-[35px] k:text-[55px]`}
           >
             View All Blog
