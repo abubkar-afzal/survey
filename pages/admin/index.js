@@ -4,6 +4,7 @@ import { TbPasswordUser } from "react-icons/tb";
 import { FaEyeSlash } from "react-icons/fa";
 import { FaEye } from "react-icons/fa";
 import toast, { Toaster } from "react-hot-toast";
+import { Slide } from "react-awesome-reveal";
 
 
 const Admin= ()=>{
@@ -29,7 +30,7 @@ const Admin= ()=>{
       let p = {
         password : password
       }
-      let res = await fetch('http://localhost:3000/api/loginAdmin', {
+      let res = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/loginAdmin`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json; charset=UTF-8',
@@ -40,7 +41,7 @@ const Admin= ()=>{
       console.log(response);
       if(response){
         if(response.success == true){
-        router.push("http://localhost:3000/admin/components/goto")    
+        router.push(`${process.env.NEXT_PUBLIC_HOST}/admin/components/goto`)    
         toast("Welxome Admin 🕵🏻‍♀️", {
           style: {
             padding: "16px",
@@ -69,7 +70,7 @@ const Admin= ()=>{
     };
   
     return (
-      <>
+      <><Slide triggerOnce duration={1500} direction="down">
         <div className="">
    <Toaster position="bottom-center" reverseOrder={true} />
   
@@ -121,7 +122,7 @@ const Admin= ()=>{
               </div>
             </div>
           </div>
-        </div>
+        </div></Slide>
       </>
     );
   };

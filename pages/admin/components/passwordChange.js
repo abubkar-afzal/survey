@@ -2,6 +2,7 @@ import { MongoClient } from "mongodb";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
+import {  Slide } from "react-awesome-reveal";
 import toast, { Toaster } from "react-hot-toast";
 import { FaUserSecret } from "react-icons/fa";
 
@@ -12,7 +13,7 @@ const PasswordChange = ({admin})=>{
         let [secret] = admin;
         console.log(secret.secret)
         if(secret.secret == secretkey){
-            router.push(`http://localhost:3000/admin/components/changepass/${secretkey}`)
+            router.push(`${process.env.NEXT_PUBLIC_HOST}/admin/components/changepass/${secretkey}`)
         }else{
             toast("Wrong secert 🙄", {
                 style: {
@@ -24,25 +25,25 @@ const PasswordChange = ({admin})=>{
     }
     const back =()=>{
         
-            router.push("http://localhost:3000/admin/components/goto")
+            router.push(`${process.env.NEXT_PUBLIC_HOST}/admin/components/goto`)
         
     }
-return(<>
-     <div spellcheck="true" className="t:w-auto t:place-items-center t:mx-auto t:mt-[4rem]">
+return(<><Slide duration={1500} direction="left" triggerOnce>
+     <div spellCheck="true" className="t:w-auto t:place-items-center t:mx-auto t:mt-[4rem]">
  <Toaster position="bottom-center" reverseOrder={true} />
 
-              <div spellcheck="true" className=" sm:text-center sm:font- my-2 pt-[3rem] bg-[---c8] rounded-[2rem] mx-[1rem] text-[---c4] sm:h-auto sm:space-y-[2rem] font-semibold items-center place-items-center place-content-start p-[2rem]   ">
-                <div spellcheck="true">
-                  <div spellcheck="true" className=" sm:text-[22px] mm:text-[26px] lm:text-[30px] t:text-[42px] l:text-[49px] ll:text-[55px] k:text-[85px] mb-2">What's the Secret !!</div>
+              <div spellCheck="true" className=" sm:text-center sm:font- my-2 pt-[3rem] bg-[---c8] rounded-[2rem] mx-[1rem] text-[---c4] sm:h-auto sm:space-y-[2rem] font-semibold items-center place-items-center place-content-start p-[2rem]   ">
+                <div spellCheck="true">
+                  <div spellCheck="true" className=" sm:text-[22px] mm:text-[26px] lm:text-[30px] t:text-[42px] l:text-[49px] ll:text-[55px] k:text-[85px] mb-2">What's the Secret !!</div>
                   <hr className="bg-[---c4] mb-2" />
                   <hr className="bg-[---c4]" />
                 </div>
-                <div spellcheck="true" className=" ">
-                <div spellcheck="true" className="text-left">
+                <div spellCheck="true" className=" ">
+                <div spellCheck="true" className="text-left">
                   
-                  <div spellcheck="true" className="flex ">
+                  <div spellCheck="true" className="flex ">
                     <FaUserSecret className="text-white m-2 sm:text-[22px] mm:text-[28px] lm:text-[32px] t:text-[37px] l:text-[42px] ll:text-[47px] k:text-[55px]" />
-                    <input spellcheck="true"
+                    <input spellCheck="true"
                       onChange={(e) => {
                         setSecretkey(e.target.value);
                       }}
@@ -60,15 +61,15 @@ return(<>
               
                 </div>
                
-                <button spellcheck="true" onClick={checkandchange} className="bg-[---c5] hover:bg-[---h5] p-2 mb-2 w-[8rem] rounded-[2rem] font-bold shadow-lg text-[---c4] sm:text-[16px] mm:text-[18px] lm:text-[22px] t:text-[27px] l:text-[32px] ll:text-[37px] k:text-[45px]">
+                <button spellCheck="true" onClick={checkandchange} className="bg-[---c5] hover:bg-[---h5] p-2 mb-2 w-[8rem] rounded-[2rem] font-bold shadow-lg text-[---c4] sm:text-[16px] mm:text-[18px] lm:text-[22px] t:text-[27px] l:text-[32px] ll:text-[37px] k:text-[45px] t:mx-2">
                     Check
                   </button>
                   
-                  <button spellcheck="true" onClick={back} className="bg-[---c5] hover:bg-[---h5] p-2 mb-2 w-[8rem] rounded-[2rem] font-bold shadow-lg text-[---c4] sm:text-[16px] mm:text-[18px] lm:text-[22px] t:text-[27px] l:text-[32px] ll:text-[37px] k:text-[45px]">
+                  <button spellCheck="true" onClick={back} className="bg-[---c5] hover:bg-[---h5] p-2 mb-2 w-[8rem] rounded-[2rem] font-bold shadow-lg text-[---c4] sm:text-[16px] mm:text-[18px] t:mx-2 lm:text-[22px] t:text-[27px] l:text-[32px] ll:text-[37px] k:text-[45px]">
                     Back
                   </button>
               </div>
-            </div>
+            </div></Slide>
     </>)
 }
 export async function getServerSideProps(context) {

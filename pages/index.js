@@ -5,6 +5,8 @@ import { useRouter } from "next/router";
 import { RxCross2 } from "react-icons/rx";
 import toast, { Toaster } from "react-hot-toast";
 import { DotLoader } from "react-spinners";
+import Head from "next/head";
+import { Fade, Slide } from "react-awesome-reveal";
 
 const Main = ({ allData, user }) => {
   const router = useRouter();
@@ -24,7 +26,7 @@ const Main = ({ allData, user }) => {
 
   const answerchange = async () => {
     if (token) {
-      let r = await fetch("http://localhost:3000/api/getAllAnswers", {
+      let r = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/getAllAnswers`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json; charset=UTF-8",
@@ -80,7 +82,7 @@ console.log(thanks)
     if (token) {
       let QA = answer.find((i) => i.id == id);
 
-      let res = await fetch("http://localhost:3000/api/giveAnswer", {
+      let res = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/giveAnswer`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json; charset=UTF-8",
@@ -91,7 +93,7 @@ console.log(thanks)
       console.log(response);
       if (response) {
         if (response.success == true) {
-          router.push("http://localhost:3000/");
+          router.push(`${process.env.NEXT_PUBLIC_HOST}/`);
           toast("Login Successfully 🥰", {
             style: {
               padding: "16px",
@@ -131,7 +133,7 @@ console.log(thanks)
       }, 2000);
 
       setTimeout(() => {
-        router.push(`http://localhost:3000/components/signup`);
+        router.push(`${process.env.NEXT_PUBLIC_HOST}/components/signup`);
       }, 10);
     }
   };
@@ -149,20 +151,30 @@ console.log(thanks)
 
   return (
     <>
-      <div spellcheck="true" className="">
+      <Head>
+    <meta name="keywords" content="Public survey website"/>
+    <meta name="description" content="These you got some questions which you can give answer and making public awearness"/>
+    <meta name="author" content="Abubakar Afzal"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+    <meta name="theme-color" content="#5fff59bb" />
+    <link rel="icon" href="./survey-logo.png" />
+    <title>Home</title>
+  </Head>
+      <Fade cascade>
+        <div spellCheck="true" className="">
         <Toaster position="bottom-center" reverseOrder={true} />
 
-        <div spellcheck="true" className=" m-4 space-y-2 ll:space-y-[1.5rem] k:space-y-[2rem]  text-justify t:p-4  k:p-10  l:text-center l:place-items-center l:p-10  k:text-center k:place-items-center ">
-          <div spellcheck="true" className="text-center sm:text-[22px] mm:text-[24px] lm:text-[29px] t:text-[34px] l:text-[39px] ll:text-[44px] k:text-[64px]  font-sans font-bold">
+        <div spellCheck="true" className=" m-4 space-y-2 ll:space-y-[1.5rem] k:space-y-[2rem]  text-justify t:p-4  k:p-10  l:text-center l:place-items-center l:p-10  k:text-center k:place-items-center ">
+          <div spellCheck="true" className="text-center sm:text-[22px] mm:text-[24px] lm:text-[29px] t:text-[34px] l:text-[39px] ll:text-[44px] k:text-[64px]  font-sans font-bold">
             HI! There It's
           </div>
-          <div spellcheck="true" className="font-bold sm:mb-[2rem] sm:text-[2rem] text-center">
+          <div spellCheck="true" className="font-bold sm:mb-[2rem] sm:text-[2rem] text-center">
             <a className="sm:text-[---c5] font-black strocktext sm:text-[30px] mm:text-[35px] lm:text-[40px] t:text-[42px] l:text-[49px] ll:text-[57px] k:text-[80px] typing-text typing-container">
               Abubakar Afzal
             </a>
           </div>
-          <div spellcheck="true" className="sm:bg-[---c2] sm:text-[---c4] sm:font-bold p-2 sm:h-[8rem] sm:overflow-y-scroll text-center scroll-auto mm:text-[18px] lm:text-[20px] t:text-[20px] l:text-[25px] ll:text-[30px] k:text-[35px] ll:w-[70rem] t:mx-auto hidebar">
-            <p spellcheck="true">
+          <div spellCheck="true" className="sm:bg-[---c2] sm:text-[---c4] sm:font-bold p-2 sm:h-[8rem] sm:overflow-y-scroll text-center scroll-auto mm:text-[18px] lm:text-[20px] t:text-[20px] l:text-[25px] ll:text-[30px] k:text-[35px] ll:w-[70rem] t:mx-auto hidebar">
+            <p spellCheck="true">
               First I want to .
               <a className="sm:text-[---c5] font-black  stroke-black sm:text-[18px] mm:text-[18px] lm:text-[20px] t:text-[22px] l:text-[27px] ll:text-[32px] k:text-[37px] ">
                 Introduce
@@ -179,17 +191,17 @@ console.log(thanks)
               .
             </p>
 
-            <p spellcheck="true" className="mt-[8px] pb-2 sm:text-[18px] mm:text-[18px] lm:text-[20px] t:text-[22px] l:text-[27px] ll:text-[32px] k:text-[37px]">
+            <p spellCheck="true" className="mt-[8px] pb-2 sm:text-[18px] mm:text-[18px] lm:text-[20px] t:text-[22px] l:text-[27px] ll:text-[32px] k:text-[37px]">
               This is a <a className="sm:text-[---c7] font-black">Survey</a> by
               which I got some answers of common questions. These questions
               always make somes problems in every one life.
             </p>
           </div>
-          <div spellcheck="true" className="sm:text-[24px] sm:text-center sm:font-[bold] mt-6 mm:text-[28px] lm:text-[30px] t:text-[35px] l:text-[38px] ll:text-[42px] k:text-[50px]">
+          <div spellCheck="true" className="sm:text-[24px] sm:text-center sm:font-[bold] mt-6 mm:text-[28px] lm:text-[30px] t:text-[35px] l:text-[38px] ll:text-[42px] k:text-[50px]">
             So let's <a className="sm:text-[---c5] font-black">start</a> it!
           </div>
 
-          <div spellcheck="true" className="sm:text-[17px] sm:text-center sm:font- my-2 mm:text-[16px] lm:text-[18px] t:text-[22px] l:text-[27px] ll:text-[32px] k:text-[37px]">
+          <div spellCheck="true" className="sm:text-[17px] sm:text-center sm:font- my-2 mm:text-[16px] lm:text-[18px] t:text-[22px] l:text-[27px] ll:text-[32px] k:text-[37px]">
             <a className="sm:text-[---c7] font-black">Note:</a> Give answers
             what you think your answers will very helpful for someone.
           </div>
@@ -199,50 +211,50 @@ console.log(thanks)
            allData.map((item) => {
             
             return (
-              <div spellcheck="true" key={item._id} className="h-auto">
-                <div spellcheck="true" className="my-[2rem] t:w-[30rem] l:w-[35rem] mx-auto text-center shadow-sm shadow-black rounded-[2rem] p-2 t:p-6 bg-[---c8] sm:text-[---c4] space-y-[10px] mm:space-y-[15px] lm:space-y-[20px] t:space-y-[22px] l:space-y-[27px] ll:space-y-[32px] k:space-y-[40px] ">
-                  <div spellcheck="true" className="font-bold sm:text-[20px] mm:text-[27px] lm:text-[30px] t:text-[28px] l:text-[33px] ll:text-[38px] k:text-[47px] ">
-                    {item.question_title}
-                  </div>
-                  <div spellcheck="true">
-                    <hr className="text-[---c4] my-[2px]" />
-                    <hr className="text-[---c4] my-[4px]" />
-                  </div>
-                  <p spellcheck="true" className="text-[17px] sm:text-[18px] mm:text-[22px] lm:text-[25px] t:text-[22px] l:text-[27px] ll:text-[32px] k:text-[37px] font-semibold">
-                    {item.question_label}
-                  </p>
-                  <input spellcheck="true"
-                    onChange={(e) => {
-                      setanswerwithid(
-                        item._id,
-                        e,
-                        item.question_id,
-                        item.question_label,
-                        item.question_title
-                      );
-                    }}
-                    type="text"
-                    value={answer[item._id.qid]}
-                    id="question"
-                    name="question"
-                    placeholder="Please Enter your Answer"
-                    className="h-[2rem] bg-[---c4] rounded-[2rem] mt-2 p-2 px-4 text-[---c6] sm:text-[16px] mm:text-[22px] lm:text-[26px] t:text-[22px] l:text-[27px] ll:text-[32px] k:text-[37px]"
-                  />
-                  <br />
+              <Slide triggerOnce duration={3000}><div spellCheck="true" key={item._id} className="h-auto">
+             <div spellCheck="true" className="my-[2rem] t:w-[30rem] l:w-[35rem] mx-auto text-center shadow-sm shadow-black rounded-[2rem] p-2 t:p-6 bg-[---c8] sm:text-[---c4] space-y-[10px] mm:space-y-[15px] lm:space-y-[20px] t:space-y-[22px] l:space-y-[27px] ll:space-y-[32px] k:space-y-[40px] ">
+               <div spellCheck="true" className="font-bold sm:text-[20px] mm:text-[27px] lm:text-[30px] t:text-[28px] l:text-[33px] ll:text-[38px] k:text-[47px] ">
+                 {item.question_title}
+               </div>
+               <div spellCheck="true">
+                 <hr className="text-[---c4] my-[2px]" />
+                 <hr className="text-[---c4] my-[4px]" />
+               </div>
+               <p spellCheck="true" className="text-[17px] sm:text-[18px] mm:text-[22px] lm:text-[25px] t:text-[22px] l:text-[27px] ll:text-[32px] k:text-[37px] font-semibold">
+                 {item.question_label}
+               </p>
+               <input spellCheck="true"
+                 onChange={(e) => {
+                   setanswerwithid(
+                     item._id,
+                     e,
+                     item.question_id,
+                     item.question_label,
+                     item.question_title
+                   );
+                 }}
+                 type="text"
+                 value={answer[item._id.qid]}
+                 id="question"
+                 name="question"
+                 placeholder="Please Enter your Answer"
+                 className="h-[2rem] bg-[---c4] rounded-[2rem] mt-2 p-2 px-4 text-[---c6] sm:text-[16px] mm:text-[22px] lm:text-[26px] t:text-[22px] l:text-[27px] ll:text-[32px] k:text-[37px]"
+               />
+               <br />
 
-                  <button spellcheck="true"
-                    onClick={(e) => {
-                      answerofquestion(item._id, e);
-                    }}
-                    className="bg-[---b8] hover:bg-[---h8] p-2 m-2 w-[8rem] rounded-[2rem] font-bold shadow-lg sm:text-[16px] mm:text-[22px] lm:text-[26px] t:text-[22px] l:text-[27px] ll:text-[32px] k:text-[37px] "
-                  >
-                    Send
-                  </button>
-                </div>
-              </div>
+               <button spellCheck="true"
+                 onClick={(e) => {
+                   answerofquestion(item._id, e);
+                 }}
+                 className="bg-[---b8] hover:bg-[---h8] p-2 m-2 w-[8rem] rounded-[2rem] font-bold shadow-lg sm:text-[16px] mm:text-[22px] lm:text-[26px] t:text-[22px] l:text-[27px] ll:text-[32px] k:text-[37px] "
+               >
+                 Send
+               </button>
+             </div>
+           </div></Slide> 
             );
          
-          }): <div spellcheck="true" className="mx-auto mt-[60vh] mb-[40vh] justify-items-center">
+          }): <div spellCheck="true" className="mx-auto mt-[60vh] mb-[40vh] justify-items-center">
           <DotLoader 
           color="rgba(0,168,89,255)"
           cssOverride={{}}
@@ -252,27 +264,27 @@ console.log(thanks)
         />
         <br />
         <br />
-            <p spellcheck="true" className="font-bold sm:text-[18px] mm:text-[18px] lm:text-[20px] t:text-[22px] l:text-[27px] ll:text-[32px] k:text-[37px]" >Please Wait !!</p>
+            <p spellCheck="true" className="font-bold sm:text-[18px] mm:text-[18px] lm:text-[20px] t:text-[22px] l:text-[27px] ll:text-[32px] k:text-[37px]" >Please Wait !!</p>
         </div>
           }
 
-          {thanks?<div spellcheck="true" className=" text-center text-wrap rounded-[2rem] p-2">
+          {thanks?<div spellCheck="true" className=" text-center text-wrap rounded-[2rem] p-2">
              Thank You Very Much You Already Give All Answer's 🥰💖 
             </div>:null
            }
             
-          <div spellcheck="true">
-            <p spellcheck="true" className="text-center  mt-[25px] text-[1.4rem] font-[bold] sm:text-[16px] mm:text-[22px] lm:text-[26px] t:text-[22px] l:text-[27px] ll:text-[32px] k:text-[37px]">
+          <div spellCheck="true">
+            <p spellCheck="true" className="text-center  mt-[25px] text-[1.4rem] font-[bold] sm:text-[16px] mm:text-[22px] lm:text-[26px] t:text-[22px] l:text-[27px] ll:text-[32px] k:text-[37px]">
               Do you give all answers !!
             </p>
-            <div spellcheck="true" className="text-center sm:text-[16px] mm:text-[20px] lm:text-[24px] t:text-[22px] l:text-[27px] ll:text-[32px] k:text-[37px]">
-              <button spellcheck="true"
+            <div spellCheck="true" className="text-center sm:text-[16px] mm:text-[20px] lm:text-[24px] t:text-[22px] l:text-[27px] ll:text-[32px] k:text-[37px]">
+              <button spellCheck="true"
                 onClick={greenModal}
                 className="bg-[---c5] hover:bg-[---h5] p-2 m-2 w-[8rem] rounded-[2rem] font-bold shadow-lg text-[---c4] "
               >
                 Yes
               </button>
-              <button spellcheck="true"
+              <button spellCheck="true"
                 onClick={redModal}
                 className="bg-[---c7] hover:bg-[---h7] p-2 m-2 w-[8rem] rounded-[2rem] font-bold shadow-lg text-[---c4]"
               >
@@ -284,26 +296,26 @@ console.log(thanks)
 
         {/*yes modal */}
         {yesModal ? (
-          <div spellcheck="true" className="m-4 sm:mt-[-8rem] mm:mt-[-8.5rem] lm:mt-[-9rem] t:mt-[-10rem] l:mt-[-12rem] ll:mt-[-13rem] relative">
-            <div spellcheck="true" className="h-auto">
-              <div spellcheck="true" className="my-[2rem] t:w-[30rem] l:w-[35rem] mx-auto text-center shadow-sm shadow-black rounded-[2rem] p-2 t:p-6 bg-[---c8] sm:text-[---c4] space-y-[10px] mm:space-y-[15px] lm:space-y-[20px] t:space-y-[22px] l:space-y-[27px] ll:space-y-[32px] k:space-y-[40px] ">
-                <div spellcheck="true" className="font-bold sm:text-[20px] mm:text-[27px] lm:text-[30px] t:text-[28px] l:text-[33px] ll:text-[38px] k:text-[47px] ">
+          <div spellCheck="true" className="m-4 sm:mt-[-8rem] mm:mt-[-8.5rem] lm:mt-[-9rem] t:mt-[-10rem] l:mt-[-12rem] ll:mt-[-13rem] relative">
+            <div spellCheck="true" className="h-auto">
+              <div spellCheck="true" className="my-[2rem] t:w-[30rem] l:w-[35rem] mx-auto text-center shadow-sm shadow-black rounded-[2rem] p-2 t:p-6 bg-[---c8] sm:text-[---c4] space-y-[10px] mm:space-y-[15px] lm:space-y-[20px] t:space-y-[22px] l:space-y-[27px] ll:space-y-[32px] k:space-y-[40px] ">
+                <div spellCheck="true" className="font-bold sm:text-[20px] mm:text-[27px] lm:text-[30px] t:text-[28px] l:text-[33px] ll:text-[38px] k:text-[47px] ">
                   <RxCross2
                     onClick={greenModal}
                     className="hover:scale-[1.2] cursor-pointer duration-[1s] ml-auto mr-3"
                   />
                 </div>
-                <div spellcheck="true">
+                <div spellCheck="true">
                   <hr className="text-[---c4] mb-[2px]" />
                   <hr className="text-[---c4] mb-[4px]" />
                 </div>
-                <p spellcheck="true" className="text-[17px] sm:text-[18px] mm:text-[22px] lm:text-[25px] t:text-[22px] l:text-[27px] ll:text-[32px] k:text-[37px] font-semibold">
+                <p spellCheck="true" className="text-[17px] sm:text-[18px] mm:text-[22px] lm:text-[25px] t:text-[22px] l:text-[27px] ll:text-[32px] k:text-[37px] font-semibold">
                   THANK YOU VERY MUCH 😊
                 </p>
 
                 <br />
 
-                <button spellcheck="true"
+                <button spellCheck="true"
                   onClick={greenModal}
                   className="bg-[---b8] hover:bg-[---h8] p-2 m-2 w-[8rem] rounded-[2rem] font-bold shadow-lg sm:text-[16px] mm:text-[22px] lm:text-[26px] t:text-[22px] l:text-[27px] ll:text-[32px] k:text-[37px] "
                 >
@@ -316,26 +328,26 @@ console.log(thanks)
 
         {/*no modal */}
         {noModal ? (
-          <div spellcheck="true" className="m-4 sm:mt-[-8rem] mm:mt-[-8.5rem] lm:mt-[-9rem] t:mt-[-10rem] l:mt-[-12rem] ll:mt-[-13rem] relative">
-            <div spellcheck="true" className="h-auto">
-              <div spellcheck="true" className="my-[2rem] t:w-[30rem] l:w-[35rem] mx-auto text-center shadow-sm shadow-black rounded-[2rem] p-2 t:p-6 bg-[---c7] sm:text-[---c4] space-y-[10px] mm:space-y-[15px] lm:space-y-[20px] t:space-y-[22px] l:space-y-[27px] ll:space-y-[32px] k:space-y-[40px] ">
-                <div spellcheck="true" className="font-bold sm:text-[20px] mm:text-[27px] lm:text-[30px] t:text-[28px] l:text-[33px] ll:text-[38px] k:text-[47px] ">
+          <div spellCheck="true" className="m-4 sm:mt-[-8rem] mm:mt-[-8.5rem] lm:mt-[-9rem] t:mt-[-10rem] l:mt-[-12rem] ll:mt-[-13rem] relative">
+            <div spellCheck="true" className="h-auto">
+              <div spellCheck="true" className="my-[2rem] t:w-[30rem] l:w-[35rem] mx-auto text-center shadow-sm shadow-black rounded-[2rem] p-2 t:p-6 bg-[---c7] sm:text-[---c4] space-y-[10px] mm:space-y-[15px] lm:space-y-[20px] t:space-y-[22px] l:space-y-[27px] ll:space-y-[32px] k:space-y-[40px] ">
+                <div spellCheck="true" className="font-bold sm:text-[20px] mm:text-[27px] lm:text-[30px] t:text-[28px] l:text-[33px] ll:text-[38px] k:text-[47px] ">
                   <RxCross2
                     onClick={redModal}
                     className="hover:scale-[1.2] cursor-pointer duration-[1s] ml-auto mr-3"
                   />
                 </div>
-                <div spellcheck="true">
+                <div spellCheck="true">
                   <hr className="text-[---c4] mb-[2px]" />
                   <hr className="text-[---c4] mb-[4px]" />
                 </div>
-                <p spellcheck="true" className="text-[17px] sm:text-[18px] mm:text-[22px] lm:text-[25px] t:text-[22px] l:text-[27px] ll:text-[32px] k:text-[37px] font-semibold">
+                <p spellCheck="true" className="text-[17px] sm:text-[18px] mm:text-[22px] lm:text-[25px] t:text-[22px] l:text-[27px] ll:text-[32px] k:text-[37px] font-semibold">
                   PLEASE GIVE ALL ANSWERS 😳
                 </p>
 
                 <br />
 
-                <button spellcheck="true"
+                <button spellCheck="true"
                   onClick={redModal}
                   className="bg-[---b7] hover:bg-[---bh7] p-2 m-2 w-[8rem] rounded-[2rem] font-bold shadow-lg sm:text-[16px] mm:text-[22px] lm:text-[26px] t:text-[22px] l:text-[27px] ll:text-[32px] k:text-[37px] "
                 >
@@ -346,6 +358,7 @@ console.log(thanks)
           </div>
         ) : null}
       </div>
+      </Fade>
     </>
   );
 };

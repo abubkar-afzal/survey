@@ -6,6 +6,7 @@ import LoadingBar  from "react-top-loading-bar";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { DotLoader } from "react-spinners";
+import { Fade } from "react-awesome-reveal";
 
 
 
@@ -38,19 +39,21 @@ export default function App({ Component, pageProps }) {
   
 },[router.query])
   return <>
-  
   <Head>
     <meta name="keywords" content="Public survey website"/>
     <meta name="description" content="These you got some questions which you can give answer and making public awearness"/>
     <meta name="author" content="Abubakar Afzal"/>
     <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+    <meta name="theme-color" content="#5fff59bb" />
     <link rel="icon" href="./survey-logo.png" />
     <title> Survey</title>
   </Head>
+
   <LoadingBar color='rgba(0,168,89,255)' progress={progress}
     onLoaderFinished={() => setProgress(0)} />
   <Navbar accountlogo={accountlogo} user={user}/>
   {loader ? 
+  <Fade>
   <div className="mx-auto mt-[40vh] mb-[40vh] justify-items-center">
   <DotLoader 
   color="rgba(0,168,89,255)"
@@ -62,7 +65,7 @@ export default function App({ Component, pageProps }) {
 <br />
 <br />
     <p className="font-bold sm:text-[18px] mm:text-[18px] lm:text-[20px] t:text-[22px] l:text-[27px] ll:text-[32px] k:text-[37px]" >I am Sorry Please Wait !!</p>
-</div>: <Component {...pageProps} user={user} />}
+</div></Fade>: <Component {...pageProps} user={user} />}
 
   
   <Footer/>

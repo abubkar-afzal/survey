@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
+import { Fade, Slide } from "react-awesome-reveal";
 
 const QuestionsAdmin = () => {
   const router = useRouter();
@@ -35,37 +36,38 @@ const QuestionsAdmin = () => {
   }
 
   return (
-    <>
+    <><Fade cascade>
       <div className="grid justify-items-center my-[2rem]">
-        <Link href={`http://localhost:3000/admin/components/addQuestion`}>
-          <button spellcheck="true"
+        <Slide direction="left"><Link href={`${process.env.NEXT_PUBLIC_HOST}/admin/components/addQuestion`}>
+          <button spellCheck="true"
             className={`${addQuestion}  p-2 px-4 m-2 w-auto rounded-[2rem] font-bold shadow-lg text-[---c4] sm:text-[16px] mm:text-[20px] lm:text-[23px] t:text-[26px] l:text-[29px] ll:text-[35px] k:text-[55px] `}
           >
             Add Question
           </button>
-        </Link>
-        <Link href={`http://localhost:3000/admin/components/updateQuestion`}>
-          <button spellcheck="true"
+        </Link></Slide>
+
+        <Slide direction="right"><Link href={`${process.env.NEXT_PUBLIC_HOST}/admin/components/updateQuestion`}>
+          <button spellCheck="true"
             className={`${updateQuestion}  p-2 px-4 m-2 w-auto rounded-[2rem] font-bold shadow-lg text-[---c4] sm:text-[16px] mm:text-[20px] lm:text-[23px] t:text-[26px] l:text-[29px] ll:text-[35px] k:text-[55px]`}
           >
             Update Question
           </button>
-        </Link>
-        <Link href={`http://localhost:3000/admin/components/deleteQuestion`}>
-          <button spellcheck="true"
+        </Link></Slide>
+        <Slide direction="left"><Link href={`${process.env.NEXT_PUBLIC_HOST}/admin/components/deleteQuestion`}>
+          <button spellCheck="true"
             className={`${deleteQuestion}  p-2 px-4 m-2 w-auto rounded-[2rem] font-bold shadow-lg text-[---c4] sm:text-[16px] mm:text-[20px] lm:text-[23px] t:text-[26px] l:text-[29px] ll:text-[35px] k:text-[55px]`}
           >
             Delete Question
           </button>
-        </Link>{" "}
-        <Link href={`http://localhost:3000/admin/components/ViewAllQuestion`}>
-          <button spellcheck="true"
+        </Link> </Slide>
+        <Slide direction="right"><Link href={`${process.env.NEXT_PUBLIC_HOST}/admin/components/ViewAllQuestion`}>
+          <button spellCheck="true"
             className={`${viewallQuestion}  p-2 px-4 m-2 w-auto rounded-[2rem] font-bold shadow-lg text-[---c4] sm:text-[16px] mm:text-[20px] lm:text-[23px] t:text-[26px] l:text-[29px] ll:text-[35px] k:text-[55px]`}
           >
             View All Question
           </button>
-        </Link>
-      </div>
+        </Link></Slide>
+      </div></Fade>
     </>
   );
 };

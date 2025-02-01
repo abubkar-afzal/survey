@@ -3,6 +3,7 @@ import React from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { MongoClient } from "mongodb";
+import { Fade, Slide } from "react-awesome-reveal";
 
 const AddQuestion = ({allData}) => {
   const router = useRouter();
@@ -40,33 +41,33 @@ const AddQuestion = ({allData}) => {
   }
 
   return (
-    <>
-      <div spellcheck="true" className="grid justify-items-center my-[2rem]">
-        <Link href={`http://localhost:3000/admin/components/addQuestion`}>
-          <button spellcheck="true"
+    <><Fade cascade>
+      <div spellCheck="true" className="grid justify-items-center my-[2rem]">
+        <Link href={`${process.env.NEXT_PUBLIC_HOST}/admin/components/addQuestion`}>
+          <button spellCheck="true"
             className={`${addQuestion}  p-2 px-4 m-2 w-auto rounded-[2rem] font-bold shadow-lg text-[---c4] sm:text-[16px] mm:text-[20px] lm:text-[23px] t:text-[26px] l:text-[29px] ll:text-[35px] k:text-[55px] `}
           >
             Add Question
           </button>
         </Link>
 
-        <Link href={`http://localhost:3000/admin/components/updateQuestion`}>
-          <button spellcheck="true"
-            className={`${updateQuestion}  p-2 px-4 m-2 w-auto rounded-[2rem] font-bold shadow-lg text-[---c4] sm:text-[16px] mm:text-[20px] lm:text-[23px] t:text-[26px] l:text-[29px] ll:text-[35px] k:text-[55px]`}
+        <Link href={`${process.env.NEXT_PUBLIC_HOST}/admin/components/updateQuestion`}>
+          <button spellCheck="true"
+            className={`${updateQuestion}  p-2 px-4 m-2 w-auto rounded-[2rem] font-bold shadow-lg text-[---c4] sm:text-[16px] mm:text-[20px] lm:text-[23px] t:text-[26px] l:text-[29px] ll:text-[35px] k:text-[55px] `}
           >
             Update Question
           </button>
         </Link>
 
-        <Link href={`http://localhost:3000/admin/components/deleteQuestion`}>
-          <button spellcheck="true"
+        <Link href={`${process.env.NEXT_PUBLIC_HOST}/admin/components/deleteQuestion`}>
+          <button spellCheck="true"
             className={`${deleteQuestion}  p-2 px-4 m-2 w-auto rounded-[2rem] font-bold shadow-lg text-[---c4] sm:text-[16px] mm:text-[20px] lm:text-[23px] t:text-[26px] l:text-[29px] ll:text-[35px] k:text-[55px]`}
           >
             Delete Question
           </button>
         </Link>
-        <Link href={`http://localhost:3000/admin/components/ViewAllQuestion`}>
-          <button spellcheck="true"
+        <Link href={`${process.env.NEXT_PUBLIC_HOST}/admin/components/ViewAllQuestion`}>
+          <button spellCheck="true"
             className={`${viewallQuestion}  p-2 px-4 m-2 w-auto rounded-[2rem] font-bold shadow-lg text-[---c4] sm:text-[16px] mm:text-[20px] lm:text-[23px] t:text-[26px] l:text-[29px] ll:text-[35px] k:text-[55px]`}
           >
             View All Question
@@ -75,41 +76,42 @@ const AddQuestion = ({allData}) => {
             {console.log(allData)}
         {allData.map ((item) => {
           return (
-            <div spellcheck="true"
+            <Slide triggerOnce duration={1500} direction="right">
+               <div spellCheck="true"
             key={item._id}
-              className="my-[2rem] t:w-[30rem] l:w-[35rem] t:mx-auto text-center shadow-sm shadow-black rounded-[2rem] p-2 t:p-6 bg-[---c8] sm:text-[---c4]  space-y-[30px] mm:space-y-[35px] lm:space-y-[40px] t:space-y-[42px] l:space-y-[47px] ll:space-y-[52px] k:space-y-[60px] mx-4 pt-[2rem]"
+              className="my-[2rem] sm:w-[12rem] mm:w-[15rem] lm:w-[18rem] t:w-[30rem] l:w-[35rem] t:mx-auto text-center shadow-sm shadow-black rounded-[2rem] p-2 t:p-6 bg-[---c8] sm:text-[---c4]  space-y-[30px] mm:space-y-[35px] lm:space-y-[40px] t:space-y-[42px] l:space-y-[47px] ll:space-y-[52px] k:space-y-[60px] mx-4 pt-[2rem] break-all"
             >
-              <div spellcheck="true" className="sm:flex sm:flex-col">
-                <p spellcheck="true" className=" my-[1rem] sm:text-[15px] mm:text-[18px] lm:text-[22px] t:text-[25px] l:text-[32px] ll:text-[37px] k:text-[45px] text-white font-bold  mt-[-16px] bg-transparent ">
+              <div spellCheck="true" className="sm:flex sm:flex-col">
+                <p spellCheck="true" className=" my-[1rem] sm:text-[15px] mm:text-[18px] lm:text-[22px] t:text-[25px] l:text-[32px] ll:text-[37px] k:text-[45px] text-white font-bold  mt-[-16px] bg-transparent ">
                   
                   ID Of Question :
                 </p>
-                <p spellcheck="true" className="text-[17px] sm:text-[18px] mm:text-[22px] lm:text-[25px] t:text-[22px] l:text-[27px] ll:text-[32px] k:text-[37px] font-semibold">{item.question_id}</p>
+                <p spellCheck="true" className="text-[17px] sm:text-[18px] mm:text-[22px] lm:text-[25px] t:text-[22px] l:text-[27px] ll:text-[32px] k:text-[37px] font-semibold">{item.question_id}</p>
               </div>
 
-              <div spellcheck="true" className="sm:flex sm:flex-col">
-                <p spellcheck="true" className=" my-[1rem] sm:text-[15px] mm:text-[18px] lm:text-[22px] t:text-[25px] l:text-[32px] ll:text-[37px] k:text-[45px] text-white font-bold  mt-[-16px] bg-transparent ">
+              <div spellCheck="true" className="sm:flex sm:flex-col">
+                <p spellCheck="true" className=" my-[1rem] sm:text-[15px] mm:text-[18px] lm:text-[22px] t:text-[25px] l:text-[32px] ll:text-[37px] k:text-[45px] text-white font-bold  mt-[-16px] bg-transparent ">
                   Title Of Question :
                 </p>
-                <p spellcheck="true" className="text-[17px] sm:text-[18px] mm:text-[22px] lm:text-[25px] t:text-[22px] l:text-[27px] ll:text-[32px] k:text-[37px] font-semibold">{item.question_title}</p>
+                <p spellCheck="true" className="text-[17px] sm:text-[18px] mm:text-[22px] lm:text-[25px] t:text-[22px] l:text-[27px] ll:text-[32px] k:text-[37px] font-semibold">{item.question_title}</p>
               </div>
-              <div spellcheck="true" className="sm:flex sm:flex-col">
-                <p spellcheck="true" className=" my-[1rem] sm:text-[15px] mm:text-[18px] lm:text-[22px] t:text-[25px] l:text-[32px] ll:text-[37px] k:text-[45px] text-white font-bold  mt-[-16px] bg-transparent ">
+              <div spellCheck="true" className="sm:flex sm:flex-col">
+                <p spellCheck="true" className=" my-[1rem] sm:text-[15px] mm:text-[18px] lm:text-[22px] t:text-[25px] l:text-[32px] ll:text-[37px] k:text-[45px] text-white font-bold  mt-[-16px] bg-transparent ">
                   
                   Label Of Question :
                 </p>
-                <p spellcheck="true" className="text-[17px] sm:text-[18px] mm:text-[22px] lm:text-[25px] t:text-[22px] l:text-[27px] ll:text-[32px] k:text-[37px] font-semibold">{item.question_label}</p>
+                <p spellCheck="true" className="text-[17px] sm:text-[18px] mm:text-[22px] lm:text-[25px] t:text-[22px] l:text-[27px] ll:text-[32px] k:text-[37px] font-semibold">{item.question_label}</p>
               </div>
-            </div>
+            </div></Slide>
           );
         })}
         {!allData && (
-          <div spellcheck="true" className="bg-[---c7] text-center text-[---c4] rounded-[2rem] p-2">
+          <Slide triggerOnce duration={1500} direction="right"><div spellCheck="true" className="bg-[---c7] text-center text-[---c4] rounded-[2rem] p-2">
             Please Add Question
-          </div>
+          </div></Slide>
         )}
       </div>
-    </>
+    </Fade></>
   );
 };
 export async function getServerSideProps(context) {
