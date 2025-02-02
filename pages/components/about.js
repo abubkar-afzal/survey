@@ -3,14 +3,13 @@ import { IoLogoWhatsapp } from "react-icons/io";
 import { MdOutgoingMail } from "react-icons/md";
 import { SiGithub } from "react-icons/si";
 import { RiInstagramFill } from "react-icons/ri";
-import { FaLinkedin } from "react-icons/fa6";
 import Link from "next/link";
 import { Fade } from "react-awesome-reveal";
 
 const About = () => {
   return (
     <><Fade cascade>
-      <div spellCheck="true" className="m-4 space-y-2 ll:space-y-[1.5rem] k:space-y-[2rem]  text-justify t:p-4  k:p-10  l:text-center l:place-items-center l:p-10  k:text-center k:place-items-center ">
+      <div spellCheck="true" className="min-h-screen content-center m-4 space-y-2 ll:space-y-[1.5rem] k:space-y-[2rem]  text-justify t:p-4  k:p-10  l:text-center l:place-items-center l:p-10  k:text-center k:place-items-center ">
         <div spellCheck="true" className="text-center sm:text-[22px] mm:text-[24px] lm:text-[29px] t:text-[34px] l:text-[39px] ll:text-[44px] k:text-[64px]  font-sans font-bold">
           It's</div><div spellCheck="true" className="font-bold sm:mb-[2rem] sm:text-[2rem] text-center">
             <a className="sm:text-[---c5] font-black strocktext sm:text-[30px] mm:text-[35px] lm:text-[40px] t:text-[42px] l:text-[49px] ll:text-[57px] k:text-[80px] typing-text typing-container">
@@ -42,7 +41,7 @@ const About = () => {
         </p>
         <p spellCheck="true" className="sm:my-2 font-thin mm:text-[18px] lm:text-[20px] t:text-[25px] l:text-[30px] ll:text-[35px] k:text-[45px]">
           If you give me your personal opinion as you thing it will very helpful
-          for me and some of more like me.
+          for me and some more likes me.
         </p>
         <p spellCheck="true" className="sm:my-2 font-serif mm:text-[18px]lm:text-[20px] t:text-[25px] l:text-[30px] ll:text-[35px] k:text-[45px]">
           If I got a large data then I will make it publish by making a new

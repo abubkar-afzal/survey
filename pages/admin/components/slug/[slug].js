@@ -17,31 +17,31 @@ const AnswerDetails = ({ dataofanswer }) => {
         <hr className="" />
         <div spellCheck="true" className="mt-[8px] pb-2 sm:text-[18px] mm:text-[18px] lm:text-[20px] t:text-[22px] l:text-[27px] ll:text-[32px] k:text-[37px] flex flex-wrap space-x-2 ">
           <p spellCheck="true" className="font-bold"> NAME:</p>
-          <p spellCheck="true" className="overflow-x-scroll hidebar">{data.answerStructure.user_name}</p>
+          <p spellCheck="true" className="break-all">{data.answerStructure.user_name}</p>
         </div>
         <div spellCheck="true" className="mt-[8px] pb-2 sm:text-[18px] mm:text-[18px] lm:text-[20px] t:text-[22px] l:text-[27px] ll:text-[32px] k:text-[37px] flex flex-wrap space-x-2  ">
           <p spellCheck="true" className="font-bold"> Occoupation:</p>
-          <p spellCheck="true" className="overflow-x-scroll hidebar">{data.answerStructure.user_occoupation}</p>
+          <p spellCheck="true" className="break-all">{data.answerStructure.user_occoupation}</p>
         </div>
         <div spellCheck="true" className="mt-[8px] pb-2 sm:text-[18px] mm:text-[18px] lm:text-[20px] t:text-[22px] l:text-[27px] ll:text-[32px] k:text-[37px] flex flex-wrap space-x-2 ">
           <p spellCheck="true" className="font-bold">Question:</p>
-          <p spellCheck="true" className="overflow-x-scroll hidebar">{data.answerStructure.question_label}</p>
+          <p spellCheck="true" className="break-all">{data.answerStructure.question_label}</p>
         </div>
         <div spellCheck="true" className="mt-[8px] pb-2 sm:text-[18px] mm:text-[18px] lm:text-[20px] t:text-[22px] l:text-[27px] ll:text-[32px] k:text-[37px] flex flex-wrap space-x-2 ">
           <p spellCheck="true" className="font-bold">Answer:</p>
-          <p spellCheck="true" className="overflow-x-scroll hidebar">{data.answerStructure.question_answer}</p>
+          <p spellCheck="true" className="break-all">{data.answerStructure.question_answer}</p>
         </div>
         <div spellCheck="true" className="mt-[8px] pb-2 sm:text-[18px] mm:text-[18px] lm:text-[20px] t:text-[22px] l:text-[27px] ll:text-[32px] k:text-[37px] flex flex-wrap space-x-2 ">
           <p spellCheck="true" className="font-bold"> Address:</p>
-          <p spellCheck="true" className="overflow-x-scroll hidebar">{data.answerStructure.user_address}</p>
+          <p spellCheck="true" className="break-all">{data.answerStructure.user_address}</p>
         </div>
         <div spellCheck="true" className="mt-[8px] pb-2 sm:text-[18px] mm:text-[18px] lm:text-[20px] t:text-[22px] l:text-[27px] ll:text-[32px] k:text-[37px] flex flex-wrap space-x-2 ">
           <p spellCheck="true" className="font-bold"> Phone:</p>
-          <p spellCheck="true" className="overflow-x-scroll hidebar">{data.answerStructure.user_phone}</p>
+          <p spellCheck="true" className="break-all">{data.answerStructure.user_phone}</p>
         </div>
         <div spellCheck="true" className="mt-[8px] pb-2 sm:text-[18px] mm:text-[18px] lm:text-[20px] t:text-[22px] l:text-[27px] ll:text-[32px] k:text-[37px] flex flex-wrap space-x-2 ">
           <p spellCheck="true" className="font-bold"> Email:</p>
-          <p spellCheck="true" className="overflow-x-scroll hidebar">{data.answerStructure.user_email}</p>
+          <p spellCheck="true" className="break-all">{data.answerStructure.user_email}</p>
         </div>
       </div></Fade>
     </>

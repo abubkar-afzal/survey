@@ -108,7 +108,7 @@ const SignUp = () => {
         Password.length >= 4 &&
         Occoupation.length > 4 &&
         Address.length > 4 &&
-        Phone.length > 10
+        Phone.length >= 10
       ) {
         let res = await fetch(
           "${process.env.NEXT_PUBLIC_HOST}/api/addNewUser",
@@ -124,7 +124,7 @@ const SignUp = () => {
         if (response) {
           if (response.success) {
             localStorage.setItem("token", response.token);
-            router.push("${process.env.NEXT_PUBLIC_HOST}/");
+            router.push(`${process.env.NEXT_PUBLIC_HOST}/`);
             toast("Account Created 😍", {
               style: {
                 padding: "16px",
@@ -160,7 +160,7 @@ const SignUp = () => {
         },
       });
       setTimeout(() => {
-        router.push("${process.env.NEXT_PUBLIC_HOST}/components/login");
+        router.push(`${process.env.NEXT_PUBLIC_HOST}/components/login`);
       }, 3000);
       setLoader(false);
     }
@@ -171,11 +171,11 @@ const SignUp = () => {
 
   return (
     <>
+      <Toaster position="bottom-center" reverseOrder={true} />
       <Fade cascade>
-        <Toaster position="bottom-center" reverseOrder={true} />
         {loader ? (
           <Fade>
-            <div className="mx-auto mt-[40vh] mb-[40vh] justify-items-center">
+            <div className=" mx-auto mt-[40vh] mb-[40vh] justify-items-center">
               <DotLoader
                 color="rgba(0,168,89,255)"
                 cssOverride={{}}
@@ -191,7 +191,7 @@ const SignUp = () => {
             </div>
           </Fade>
         ) : (
-          <div spellCheck="true" className="">
+          <div spellCheck="true" className="min-h-screen content-center">
             <div spellCheck="true" className="sm:text-center mm:mt-[1rem]">
               <Link href={`${process.env.NEXT_PUBLIC_HOST}/components/login`}>
                 <button
@@ -215,7 +215,6 @@ const SignUp = () => {
                 className="t:w-auto t:place-items-center t:mx-auto t:mt-[4rem]"
               >
                 <Slide triggerOnce duration={800} direction="right">
-                  {" "}
                   <div
                     spellCheck="true"
                     className=" sm:text-center sm:font- my-2 pt-[3rem] bg-[---c8] rounded-[2rem] mx-[1rem] text-[---c4] sm:h-auto sm:space-y-[2rem] font-semibold items-center place-items-center place-content-start p-[2rem]  "
@@ -404,6 +403,15 @@ const SignUp = () => {
       focus:outline-none focus:border-black focus:ring-2 focus:ring-black focus:bg-[---c4] focus:text-black focus:placeholder-black"
                         />
                       </div>
+                      <div className="t:w-[40vw] mb-[-1rem] ll:w-[20vw] ml-[1rem] ll:ml-[2rem]">
+                        <p className="sm:text-[---c7] font-black  stroke-black sm:text-[15px] mm:text-[16px] lm:text-[17px] t:text-[18px] l:text-[19px] ll:text-[20px] k:text-[21px]">
+                          Note:
+                        </p>
+                        <p className="sm:text-[---c6] font-thin sm:text-[13px] mm:text-[14px] lm:text-[15px] t:text-[16px] l:text-[17px] ll:text-[18px] k:text-[19px] text-wrap">
+                          Please Enter Your Country Code Also Otherwise You Face
+                          Errors.
+                        </p>
+                      </div>
                     </div>
                     <div spellCheck="true" className="text-left">
                       <div spellCheck="true" className="flex">
@@ -441,7 +449,7 @@ const SignUp = () => {
                             htmlFor="Password"
                             className="sm:rounded-[2rem] text-white h-auto  sm:px-3 w-auto m-2 sm:text-[15px] mm:text-[16px] lm:text-[19px] t:text-[21px] l:text-[24px] ll:text-[27px] k:text-[30px]  mt-1 block px-3 py-2 t:py-4 bg-[---t1] border border-slate-300 rounded-md text-sm shadow-sm placeholder-white
       focus:outline-none focus:border-black focus:ring-2 focus:ring-black focus:bg-[---c4] focus:text-black focus:placeholder-black"
-                          />{" "}
+                          />
                           {hpassword ? (
                             <FaEyeSlash
                               onClick={hideP}

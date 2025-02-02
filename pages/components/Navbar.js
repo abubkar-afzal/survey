@@ -159,7 +159,8 @@ const Navbar = ({ accountlogo }) => {
   } else if (
     currentUrl === "/components/login" ||
     currentUrl.includes("login") ||
-    currentUrl.includes("signup")
+    currentUrl.includes("signup") ||
+    currentUrl.includes("forgot")
   ) {
     login = "sm:text-[---c4] sm:bg-[---c3]";
   } else if (
@@ -260,7 +261,7 @@ const Navbar = ({ accountlogo }) => {
             <div spellCheck="true"></div>
 
             {/* account */}
-            {loader ? (
+            {accountlogo ? (loader ? (
               <div className="mt-[0.8rem]">
                 
                 <DotLoader
@@ -272,7 +273,7 @@ const Navbar = ({ accountlogo }) => {
                 />
               </div>
             ):
-            accountlogo ? (
+            
               <Link
                 className=""
                 href={`${process.env.NEXT_PUBLIC_HOST}/components/account`}
@@ -283,6 +284,7 @@ const Navbar = ({ accountlogo }) => {
                 >
                   <Image
                     src={dphoto}
+                    alt="account image"
                     className={`w-[2rem] sm:rounded-[2rem] sm:active:bg-[---c6] h-[1.5rem] text-[---c2] sm:active:text-[---c4] sm:hover:text-[---c4 ${account}`}
                   />
                   <p spellCheck="true">Account</p>
@@ -333,11 +335,11 @@ const Navbar = ({ accountlogo }) => {
         {/* for big screen */}
         <div
           spellCheck="true"
-          className=" sm:flex sm:w-[100vw] t:w-auto sm:m-2 sm:space-x-2  "
+          className=" sm:flex sm:w-[100vw] t:w-auto sm:m-2 sm:space-x-2 "
         >
           <div
             spellCheck="true"
-            className="t:flex pl-[6rem] w-[10] hidden space-x-[20px] l:space-x-[30px] ll:space-x-[50px] mt-[20px] ll:pl-[14rem] l:pl-[10rem] l:text-[1.5rem] ll:text-[2rem] k:space-x-[100px] k:pl-[30rem] k:text-[4rem] k:pt-[2rem] ml-auto my:pl-[70rem] my:space-x-[200px]"
+            className="t:flex pl-[6rem] w-[10] hidden space-x-[20px] l:space-x-[30px] ll:space-x-[50px] mt-[20px] ll:pl-[14rem] l:pl-[10rem] l:text-[1.5rem] ll:text-[2rem] k:space-x-[100px] k:pl-[30rem] k:text-[4rem] k:pt-[2rem] ml-auto my:pl-[70rem] my:space-x-[200px] items-center t:"
           >
             <Link href={`${process.env.NEXT_PUBLIC_HOST}/`}>
               <div
@@ -391,7 +393,8 @@ const Navbar = ({ accountlogo }) => {
             </Link>
 
             {/* account */}
-            {loader ? (
+            { accountlogo ?
+             (loader ? (
               <div className="mt-[0.8rem]">
                 
                 <DotLoader
@@ -402,7 +405,7 @@ const Navbar = ({ accountlogo }) => {
                   speedMultiplier={1}
                 />
               </div>
-            ) : accountlogo ? (
+            ) :
               <Link
                 className=""
                 href={`${process.env.NEXT_PUBLIC_HOST}/components/account`}
@@ -465,6 +468,7 @@ const Navbar = ({ accountlogo }) => {
           </div>
 
           {/* input tag */}
+          <Link href={`${process.env.NEXT_PUBLIC_HOST}/404`}>
           <div
             spellCheck="true"
             className="grid content-center items-center grid-cols-3 w-[8rem] h-[2rem] rounded-[2rem] border-[1.5px] border-black absolute sm:top-6 sm:right-2 mm:top-8 mm:right-2 lm:top-8 lm:right-2 t:top-8 t:w-[7rem] t:h-[1.8rem] l:w-[9rem] my:right-12 l:right-3 ll:right-6 l:h-[2.5rem] ll:h-[3.3rem] ll:w-[12rem] k:w-[18rem] k:h-[7rem]"
@@ -478,7 +482,7 @@ const Navbar = ({ accountlogo }) => {
               id="search"
               placeholder="search"
             />
-          </div>
+          </div></Link>
         </div>
       </div>
       <div

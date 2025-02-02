@@ -37,7 +37,7 @@ const BlogAdmin = () => {
 
   return (
     <><Fade cascade>
-      <div spellCheck="true" className="grid justify-items-center my-[2rem]">
+      <div spellCheck="true" className="min-h-screen content-center grid justify-items-center my-[2rem]">
          <Slide direction="left"> <Link href={`${process.env.NEXT_PUBLIC_HOST}/admin/components/addBlog`}>
           <button spellCheck="true"
             className={`${addBlog}  p-2 px-4 m-2 w-auto rounded-[2rem] font-bold shadow-lg text-[---c4] sm:text-[16px] mm:text-[20px] lm:text-[23px] t:text-[26px] l:text-[29px] ll:text-[35px] k:text-[55px] `}

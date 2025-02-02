@@ -99,12 +99,13 @@ const changePassAdmin = () => {
       setLoader(false);
     }
   return (
-    <><Slide duration={1500} direction="right" triggerOnce>
+    <>
  <Toaster position="bottom-center" reverseOrder={true} />
+ <Slide duration={1500} direction="right" triggerOnce>
  {loader ? (
              <Fade>
                <Toaster position="bottom-center" reverseOrder={true} />
-             <div className="mx-auto mt-[40vh] mb-[40vh] justify-items-center">
+             <div className=" mx-auto mt-[40vh] mb-[40vh] justify-items-center">
              <DotLoader 
              color="rgba(0,168,89,255)"
              cssOverride={{}}
@@ -117,7 +118,7 @@ const changePassAdmin = () => {
                <p className="font-bold sm:text-[18px] mm:text-[18px] lm:text-[20px] t:text-[22px] l:text-[27px] ll:text-[32px] k:text-[37px]" >Changing Password Please Wait !!</p>
            </div></Fade>
             ):
-       <div spellCheck="true" className="t:w-auto t:place-items-center t:mx-auto t:mt-[4rem]">
+       <div spellCheck="true" className="min-h-screen content-center t:w-auto t:place-items-center t:mx-auto t:mt-[4rem]">
             
             <div spellCheck="true" className=" sm:text-center sm:font- my-2 pt-[3rem] bg-[---c8] rounded-[2rem] mx-[1rem] text-[---c4] sm:h-auto sm:space-y-[2rem] font-semibold items-center place-items-center place-content-start p-[2rem]   ">
               <div spellCheck="true">

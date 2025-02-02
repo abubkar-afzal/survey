@@ -42,7 +42,7 @@ const AddBlog = ({ allData }) => {
 
   return (
     <><Fade cascade>
-      <div spellCheck="true" className="grid justify-items-center my-[2rem]">
+      <div spellCheck="true" className="min-h-screen content-center grid justify-items-center my-[2rem]">
         <Link href={`${process.env.NEXT_PUBLIC_HOST}/admin/components/addBlog`}>
           <button spellCheck="true"
             className={`${addBlog}  p-2 px-4 m-2 w-auto rounded-[2rem] font-bold shadow-lg text-[---c4] sm:text-[16px] mm:text-[20px] lm:text-[23px] t:text-[26px] l:text-[29px] ll:text-[35px] k:text-[55px] `}
@@ -109,7 +109,7 @@ const AddBlog = ({ allData }) => {
                 <p spellCheck="true" className=" my-[1rem] sm:text-[15px] mm:text-[18px] lm:text-[22px] t:text-[25px] l:text-[32px] ll:text-[37px] k:text-[45px] text-white font-bold  mt-[-16px] bg-transparent text-wrap p-2">
                  Image Of Blog :
                 </p>
-                <Image src={img} width={200} height={200} className="text-[17px] sm:text-[18px] mm:text-[22px] lm:text-[25px] t:text-[22px] l:text-[27px] ll:text-[32px] k:text-[37px] font-semibold text-wrap p-2" />
+                <Image src={img} alt="blog image" width={200} height={200} className="text-[17px] sm:text-[18px] mm:text-[22px] lm:text-[25px] t:text-[22px] l:text-[27px] ll:text-[32px] k:text-[37px] font-semibold text-wrap p-2" />
                   
                 
               </div><div spellCheck="true" className="sm:flex sm:flex-col">

@@ -7,10 +7,10 @@ const blogPage =({allBlogs})=>{
     const router = useRouter();
     const { slug } = router.query;
     const data = allBlogs;
-    // console.log(allBlogs)
+    
     return(<> 
             <Fade cascade duration={3000}>
-            <div spellCheck="true" className="text-center flex-col p-4 space-y-[1rem] mt-[1rem]">
+            <div spellCheck="true" className="min-h-screen content-center text-center flex-col p-4 space-y-[1rem] mt-[1rem]">
                 <div spellCheck="true"><Image src={data.blog_image} width={500} height={500} className="sm:w-[300px] sm:h-[300px] t:w-[500px] t:h-[500px] rounded-[2rem] mx-auto"/></div>
                 <div spellCheck="true" className="font-bold sm:text-[25px] text-center mm:text-[22px] lm:text-[26px] t:text-[32px] l:text-[40px] ll:text-[45px] k:text-[70px]">{data.blog_title}</div>
                 <div spellCheck="true" className="mt-[8px] pb-2 sm:text-[18px] mm:text-[18px] lm:text-[20px] t:text-[22px] l:text-[27px] ll:text-[32px] k:text-[37px]"><p spellCheck="true">{data.blog_content}</p></div>

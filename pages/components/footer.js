@@ -73,16 +73,17 @@ const Footer = () => {
       <div spellCheck="true" className="sm:mb-[10px] ml-2 mm:text-[18px] lm:text-[20px] t:text-[20px] l:text-[25px] ll:text-[30px] k:text-[35px] ">
         <div spellCheck="true" className="sm:flex my-4 space-x-[10px] text-center mx-2 flex-wrap t:place-content-center t:space-x-[2rem]">
           <p spellCheck="true"></p>
-          <p spellCheck="true" className="sm:hover:underline sm:text-[---fo1] hover:text-black">Legal</p>
-          <p spellCheck="true" className="sm:hover:underline sm:text-[---fo1] hover:text-black">Safety&PrivacyCenter</p>
-          <p spellCheck="true" className="sm:hover:underline sm:text-[---fo1] hover:text-black">PrivacyPolicy</p>
-          <p spellCheck="true" className="sm:hover:underline sm:text-[---fo1] hover:text-black">Accessibility</p>
-          <p spellCheck="true" className="text-black">&copy;2025 Survey </p>
+          <Link href={`${process.env.NEXT_PUBLIC_HOST}/components/legal`}><p spellCheck="true" className="sm:hover:underline sm:text-[---fo1] hover:text-black">Legal</p></Link>
+          <Link href={`${process.env.NEXT_PUBLIC_HOST}/components/safety`}><p spellCheck="true" className="sm:hover:underline sm:text-[---fo1] hover:text-black">Safety&PrivacyCenter</p></Link>
+          <Link href={`${process.env.NEXT_PUBLIC_HOST}/components/privacy`}><p spellCheck="true" className="sm:hover:underline sm:text-[---fo1] hover:text-black">PrivacyPolicy</p></Link>
+          <Link href={`${process.env.NEXT_PUBLIC_HOST}/404`}><p spellCheck="true" className="sm:hover:underline sm:text-[---fo1] hover:text-black">Accessibility</p></Link>
+          <Link href={`${process.env.NEXT_PUBLIC_HOST}/`}><p spellCheck="true" className="text-black">&copy;2025 Survey </p></Link>
         </div>
         <div spellCheck="true" className="t:text-center">
+        <Link href={`${process.env.NEXT_PUBLIC_HOST}/404`}>
         <button className="border-[2px] border-[---fo1] px-3 mx-4 mb-6 p-[4px] rounded-[2rem] hover:bg-[---c8] hover:text-[---c4] ">
           English
-        </button>
+        </button></Link>
         </div>
       </div>
     </>

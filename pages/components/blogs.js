@@ -8,7 +8,7 @@ const Blogs = ({ allBlogs }) => {
   console.log(allBlogs)
   return (
     <><Fade cascade>
-      <div spellCheck="true" className="justify-items-center ">
+      <div spellCheck="true" className="min-h-screen content-center justify-items-center ">
         <div spellCheck="true" className="sm:font-bold sm:text-[24px] mm:text-[28px] lm:text-[30px] t:text-[32px] l:text-[39px] ll:text-[45px] k:text-[65px] sm:mt-[1rem] k:my-[2rem]">
           BLOGS
         </div>
@@ -20,7 +20,7 @@ const Blogs = ({ allBlogs }) => {
                 <div spellCheck="true" className="sm:w-auto sm:h-auto bg-[---c4] place-items-center text-center items-center rounded-[2rem]  mt-[1rem]  sm:text-[16px] mm:text-[18px] lm:text-[20px] t:text-[22px] l:text-[29px] ll:text-[35px] k:text-[45px] sm:mt-[1rem] k:my-[2rem] m-[1rem] ">
                   <Image
                     src={item.blog_image}
-                    alt="blogImage"
+                    alt="blog Image"
                     width={300}
                     height={300}
                     className="sm:w-[200px] sm:h-[200px] t:w-[300px] t:h-[300px]  m-2 p-2 rounded-[2rem]"

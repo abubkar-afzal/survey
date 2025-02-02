@@ -20,11 +20,15 @@ const Main = ({ allData, user }) => {
   ]);
   const [display, setdisplay] = useState(false);
   const [thanks, setthanks] = useState(false);
+  const [dyes,setdyes] = useState(true);
+  const [dno,setdno] = useState(false);
+  
   useEffect(() => {
     answerchange();
   }, [router.query]);
 
   const answerchange = async () => {
+   
     if (token) {
       let r = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/getAllAnswers`, {
         method: "POST",
@@ -54,17 +58,17 @@ const Main = ({ allData, user }) => {
             allData.splice(i, 1);
           }
         }
-      console.log(allData);
       setTimeout(()=>{setdisplay(true)},3000)
       if(allData.length == 0){
-      setthanks(true)
+      setthanks(true);
+      setdyes(false);
+      setdno(true);
 
       }
     } else {
       setTimeout(()=>{setdisplay(true)},3000)
     }
   };
-console.log(thanks)
   const [yesModal, setYesModal] = useState(false);
   const [noModal, setNoModal] = useState(false);
   const [disableOther, setDisableOther] = useState(false);
@@ -90,11 +94,10 @@ console.log(thanks)
         body: JSON.stringify({ QA, token }),
       });
       let response = await res.json();
-      console.log(response);
       if (response) {
         if (response.success == true) {
           router.push(`${process.env.NEXT_PUBLIC_HOST}/`);
-          toast("Login Successfully 🥰", {
+          toast("Answer Has Been Send 🥰", {
             style: {
               padding: "16px",
               color: "#ffffff",
@@ -109,7 +112,6 @@ console.log(thanks)
               background: "#ff5959",
             },
           });
-          console.log("fail to loggin");
         }
       } else {
         toast("Something went wrong 🙄", {
@@ -119,7 +121,6 @@ console.log(thanks)
             background: "#ff5959",
           },
         });
-        console.log("fail to loggin");
       }
     } else {
       setTimeout(() => {
@@ -151,18 +152,9 @@ console.log(thanks)
 
   return (
     <>
-      <Head>
-    <meta name="keywords" content="Public survey website"/>
-    <meta name="description" content="These you got some questions which you can give answer and making public awearness"/>
-    <meta name="author" content="Abubakar Afzal"/>
-    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-    <meta name="theme-color" content="#5fff59bb" />
-    <link rel="icon" href="./survey-logo.png" />
-    <title>Home</title>
-  </Head>
-      <Fade cascade>
-        <div spellCheck="true" className="">
         <Toaster position="bottom-center" reverseOrder={true} />
+        <Fade cascade>
+        <div spellCheck="true" className="">
 
         <div spellCheck="true" className=" m-4 space-y-2 ll:space-y-[1.5rem] k:space-y-[2rem]  text-justify t:p-4  k:p-10  l:text-center l:place-items-center l:p-10  k:text-center k:place-items-center ">
           <div spellCheck="true" className="text-center sm:text-[22px] mm:text-[24px] lm:text-[29px] t:text-[34px] l:text-[39px] ll:text-[44px] k:text-[64px]  font-sans font-bold">
@@ -213,14 +205,14 @@ console.log(thanks)
             return (
               <Slide triggerOnce duration={3000}><div spellCheck="true" key={item._id} className="h-auto">
              <div spellCheck="true" className="my-[2rem] t:w-[30rem] l:w-[35rem] mx-auto text-center shadow-sm shadow-black rounded-[2rem] p-2 t:p-6 bg-[---c8] sm:text-[---c4] space-y-[10px] mm:space-y-[15px] lm:space-y-[20px] t:space-y-[22px] l:space-y-[27px] ll:space-y-[32px] k:space-y-[40px] ">
-               <div spellCheck="true" className="font-bold sm:text-[20px] mm:text-[27px] lm:text-[30px] t:text-[28px] l:text-[33px] ll:text-[38px] k:text-[47px] ">
+               <div spellCheck="true" className="font-bold sm:text-[20px] mm:text-[27px] lm:text-[30px] t:text-[28px] l:text-[33px] ll:text-[38px] k:text-[47px] break-all">
                  {item.question_title}
                </div>
                <div spellCheck="true">
                  <hr className="text-[---c4] my-[2px]" />
                  <hr className="text-[---c4] my-[4px]" />
                </div>
-               <p spellCheck="true" className="text-[17px] sm:text-[18px] mm:text-[22px] lm:text-[25px] t:text-[22px] l:text-[27px] ll:text-[32px] k:text-[37px] font-semibold">
+               <p spellCheck="true" className="text-[17px] sm:text-[18px] mm:text-[22px] lm:text-[25px] t:text-[22px] l:text-[27px] ll:text-[32px] k:text-[37px] font-semibold break-all">
                  {item.question_label}
                </p>
                <input spellCheck="true"
@@ -238,7 +230,7 @@ console.log(thanks)
                  id="question"
                  name="question"
                  placeholder="Please Enter your Answer"
-                 className="h-[2rem] bg-[---c4] rounded-[2rem] mt-2 p-2 px-4 text-[---c6] sm:text-[16px] mm:text-[22px] lm:text-[26px] t:text-[22px] l:text-[27px] ll:text-[32px] k:text-[37px]"
+                 className="h-[2rem] bg-[---c4] rounded-[2rem] mt-2 p-2 px-4 text-[---c6] sm:text-[16px] mm:text-[22px] lm:text-[26px] t:text-[22px] l:text-[27px] ll:text-[32px] k:text-[37px] break-all"
                />
                <br />
 
@@ -279,14 +271,16 @@ console.log(thanks)
             </p>
             <div spellCheck="true" className="text-center sm:text-[16px] mm:text-[20px] lm:text-[24px] t:text-[22px] l:text-[27px] ll:text-[32px] k:text-[37px]">
               <button spellCheck="true"
+              disabled={dyes}
                 onClick={greenModal}
-                className="bg-[---c5] hover:bg-[---h5] p-2 m-2 w-[8rem] rounded-[2rem] font-bold shadow-lg text-[---c4] "
+                className="disabled:bg-[---h5] bg-[---c5] hover:bg-[---h5] p-2 m-2 w-[8rem] rounded-[2rem] font-bold shadow-lg text-[---c4] "
               >
                 Yes
               </button>
               <button spellCheck="true"
                 onClick={redModal}
-                className="bg-[---c7] hover:bg-[---h7] p-2 m-2 w-[8rem] rounded-[2rem] font-bold shadow-lg text-[---c4]"
+              disabled={dno}
+                className="disabled:bg-[---bh7] bg-[---c7] hover:bg-[---h7] p-2 m-2 w-[8rem] rounded-[2rem] font-bold shadow-lg text-[---c4]"
               >
                 No
               </button>
@@ -296,7 +290,8 @@ console.log(thanks)
 
         {/*yes modal */}
         {yesModal ? (
-          <div spellCheck="true" className="m-4 sm:mt-[-8rem] mm:mt-[-8.5rem] lm:mt-[-9rem] t:mt-[-10rem] l:mt-[-12rem] ll:mt-[-13rem] relative">
+          <Fade cascade>
+            <div spellCheck="true" className="m-4 sm:mt-[-8rem] mm:mt-[-8.5rem] lm:mt-[-9rem] t:mt-[-10rem] l:mt-[-12rem] ll:mt-[-13rem] relative">
             <div spellCheck="true" className="h-auto">
               <div spellCheck="true" className="my-[2rem] t:w-[30rem] l:w-[35rem] mx-auto text-center shadow-sm shadow-black rounded-[2rem] p-2 t:p-6 bg-[---c8] sm:text-[---c4] space-y-[10px] mm:space-y-[15px] lm:space-y-[20px] t:space-y-[22px] l:space-y-[27px] ll:space-y-[32px] k:space-y-[40px] ">
                 <div spellCheck="true" className="font-bold sm:text-[20px] mm:text-[27px] lm:text-[30px] t:text-[28px] l:text-[33px] ll:text-[38px] k:text-[47px] ">
@@ -323,11 +318,12 @@ console.log(thanks)
                 </button>
               </div>
             </div>
-          </div>
+          </div></Fade>
         ) : null}
 
         {/*no modal */}
         {noModal ? (
+          <Fade cascade>
           <div spellCheck="true" className="m-4 sm:mt-[-8rem] mm:mt-[-8.5rem] lm:mt-[-9rem] t:mt-[-10rem] l:mt-[-12rem] ll:mt-[-13rem] relative">
             <div spellCheck="true" className="h-auto">
               <div spellCheck="true" className="my-[2rem] t:w-[30rem] l:w-[35rem] mx-auto text-center shadow-sm shadow-black rounded-[2rem] p-2 t:p-6 bg-[---c7] sm:text-[---c4] space-y-[10px] mm:space-y-[15px] lm:space-y-[20px] t:space-y-[22px] l:space-y-[27px] ll:space-y-[32px] k:space-y-[40px] ">
@@ -342,7 +338,7 @@ console.log(thanks)
                   <hr className="text-[---c4] mb-[4px]" />
                 </div>
                 <p spellCheck="true" className="text-[17px] sm:text-[18px] mm:text-[22px] lm:text-[25px] t:text-[22px] l:text-[27px] ll:text-[32px] k:text-[37px] font-semibold">
-                  PLEASE GIVE ALL ANSWERS 😳
+                  PLEASE GIVE ALL ANSWERS 🥺
                 </p>
 
                 <br />
@@ -355,7 +351,7 @@ console.log(thanks)
                 </button>
               </div>
             </div>
-          </div>
+          </div></Fade>
         ) : null}
       </div>
       </Fade>

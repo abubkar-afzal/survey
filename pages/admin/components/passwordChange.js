@@ -28,9 +28,10 @@ const PasswordChange = ({admin})=>{
             router.push(`${process.env.NEXT_PUBLIC_HOST}/admin/components/goto`)
         
     }
-return(<><Slide duration={1500} direction="left" triggerOnce>
-     <div spellCheck="true" className="t:w-auto t:place-items-center t:mx-auto t:mt-[4rem]">
+return(<>
  <Toaster position="bottom-center" reverseOrder={true} />
+ <Slide duration={1500} direction="left" triggerOnce>
+     <div spellCheck="true" className="min-h-screen content-center t:w-auto t:place-items-center t:mx-auto t:mt-[4rem]">
 
               <div spellCheck="true" className=" sm:text-center sm:font- my-2 pt-[3rem] bg-[---c8] rounded-[2rem] mx-[1rem] text-[---c4] sm:h-auto sm:space-y-[2rem] font-semibold items-center place-items-center place-content-start p-[2rem]   ">
                 <div spellCheck="true">

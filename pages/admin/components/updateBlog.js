@@ -89,12 +89,13 @@ const UpdateBlog = () => {
   }setLoader(false);
   };
   return (
-    <><Fade cascade>
+    <>
  <Toaster position="bottom-center" reverseOrder={true} />
+ <Fade cascade>
  {loader ? (
              <Fade>
                <Toaster position="bottom-center" reverseOrder={true} />
-             <div className="mx-auto mt-[40vh] mb-[40vh] justify-items-center">
+             <div className=" mx-auto mt-[40vh] mb-[40vh] justify-items-center">
              <DotLoader 
              color="rgba(0,168,89,255)"
              cssOverride={{}}
@@ -107,7 +108,7 @@ const UpdateBlog = () => {
                <p className="font-bold sm:text-[18px] mm:text-[18px] lm:text-[20px] t:text-[22px] l:text-[27px] ll:text-[32px] k:text-[37px]" >Updating Blog Please Wait !!</p>
            </div></Fade>
             ):
- <div spellCheck="true" className="grid justify-items-center my-[2rem]">
+ <div spellCheck="true" className="min-h-screen content-center grid justify-items-center my-[2rem]">
 
         <Link href={`${process.env.NEXT_PUBLIC_HOST}/admin/components/addBlog`}>
             <button spellCheck="true"

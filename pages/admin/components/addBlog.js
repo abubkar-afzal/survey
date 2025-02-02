@@ -123,11 +123,11 @@ const AddBlog = () => {
 
   return (
     <>
-      <Fade cascade>
         <Toaster position="bottom-center" reverseOrder={true} />
+        <Fade cascade>
         {loader ? (
           <Fade>
-            <div className="mx-auto mt-[40vh] mb-[40vh] justify-items-center">
+            <div className=" mx-auto mt-[40vh] mb-[40vh] justify-items-center">
               <DotLoader
                 color="rgba(0,168,89,255)"
                 cssOverride={{}}
@@ -145,7 +145,7 @@ const AddBlog = () => {
         ) : (
           <div
             spellCheck="true"
-            className="grid justify-items-center my-[2rem]"
+            className="min-h-screen content-center grid justify-items-center my-[2rem]"
           >
             <Link
               href={`${process.env.NEXT_PUBLIC_HOST}/admin/components/addBlog`}

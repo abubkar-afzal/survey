@@ -42,9 +42,9 @@ const Account = () => {
 
   const router = useRouter();
   useEffect(() => {
-    const fetchuser = async (e) => {
+    const fetchuser = async () => {
       setLoader(true);
-      e.preventDefault();
+      
       let d = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/getAccount`, {
         method: "POST",
         headers: {
@@ -97,9 +97,9 @@ const Account = () => {
   } else {
     hidePass = "text";
   }
-  const DisableChanges = async (e) => {
+  const DisableChanges = async () => {
     setLoader(true);
-    e.preventDefault();
+    
     let d = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/getAccount`, {
       method: "POST",
       headers: {
@@ -126,9 +126,9 @@ const Account = () => {
     setdbd(true);
     setLoader(false);
   };
-  const logOut = (e) => {
+  const logOut = () => {
     setLoader(true);
-    e.preventDefault();
+    
     localStorage.removeItem("token");
     window.location.reload();
     router.push("/");
@@ -155,7 +155,7 @@ const Account = () => {
   };
   const SaveChanges = async (e) => {
     setLoader(true);
-    e.preventDefault();
+    
     if (
       (name.length > 3 &&
         password.length > 4 &&
@@ -164,7 +164,7 @@ const Account = () => {
         phone.length > 10) ||
       photo > 0
     ) {
-      e.preventDefault();
+      
       let user = {
         _id: id,
         user_name: name,
@@ -224,11 +224,11 @@ const Account = () => {
   };
   return (
     <>
-      <Fade cascade duration={3000}>
         <Toaster position="bottom-center" reverseOrder={true} />
+        <Fade cascade duration={3000}>
         {loader ? (
           <Fade>
-            <div className="mx-auto mt-[40vh] mb-[40vh] justify-items-center">
+            <div className=" mx-auto mt-[40vh] mb-[40vh] justify-items-center">
               <DotLoader
                 color="rgba(0,168,89,255)"
                 cssOverride={{}}
@@ -238,7 +238,7 @@ const Account = () => {
               />
               <br />
               <br />
-              <p className="font-bold sm:text-[18px] mm:text-[18px] lm:text-[20px] t:text-[22px] l:text-[27px] ll:text-[32px] k:text-[37px]">
+              <p className="font-bold sm:text-[18px] mm:text-[18px] lm:text-[20px] t:text-[22px] l:text-[27px] ll:text-[32px] k:text-[37px] mx-4">
                 Your Personal Data Is Collecting Please Wait !!
               </p>
             </div>
@@ -246,7 +246,7 @@ const Account = () => {
         ) : (
           <div
             spellCheck="true"
-            className="text-center m-2 justify-items-center "
+            className="min-h-screen content-center text-center m-2 justify-items-center "
           >
             <div
               spellCheck="true"

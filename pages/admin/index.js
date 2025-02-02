@@ -70,11 +70,11 @@ const Admin= ()=>{
     };
   
     return (
-      <><Slide triggerOnce duration={1500} direction="down">
-        <div className="">
-   <Toaster position="bottom-center" reverseOrder={true} />
+      <><Slide triggerOnce duration={1000} direction="down">
+         <Toaster position="bottom-center" reverseOrder={true} /><div className="">
   
-          <div className="sm:text-center mm:mt-[1rem] t:mt-[2rem]">
+  
+          <div className="min-h-screen content-center sm:text-center mm:mt-[1rem] t:mt-[1rem]">
             <div className="t:w-auto t:place-items-center t:mx-auto t:mt-[4rem]">
               <div className=" sm:text-center sm:font- my-2 pt-[3rem] bg-[---c8] rounded-[2rem] mx-[1rem] text-[---c4] sm:h-auto sm:space-y-[2rem] font-semibold items-center place-items-center place-content-start p-[2rem]   ">
                 <div>

@@ -89,11 +89,11 @@ const Login = () => {
 
   return (
     <>
-      <Fade cascade>
         <Toaster position="bottom-center" reverseOrder={true} />
+        <Fade cascade>
         {loader ? (
           <Fade>
-            <div className="mx-auto mt-[40vh] mb-[40vh] justify-items-center">
+            <div className=" mx-auto mt-[40vh] mb-[40vh] justify-items-center">
               <DotLoader
                 color="rgba(0,168,89,255)"
                 cssOverride={{}}
@@ -109,7 +109,7 @@ const Login = () => {
             </div>
           </Fade>
         ) : (
-          <div spellCheck="true" className="">
+          <div spellCheck="true" className="min-h-screen content-center">
             <div
               spellCheck="true"
               className="sm:text-center mm:mt-[1rem] t:mt-[2rem]"
