@@ -8,7 +8,6 @@ const Answers = ({ dataofanswer }) => {
   const router = useRouter();
   const { slug } = router.query;
   let [data] = dataofanswer;
-  console.log(data);
 
   return (
     <><Fade cascade> 

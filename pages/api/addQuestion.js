@@ -13,7 +13,7 @@ export default async function handler(req, res) {
       let question = new questionSchema(req.body);
       question.save()
     
-    try { console.log(question)
+    try { 
       await client.connect();
 
       // Choose a name for your database
@@ -26,7 +26,6 @@ export default async function handler(req, res) {
 
       res.status(201).json({success:true});
     } catch (error) {
-      console.log(error);
       res.status(500).json({ message: "Something went wrong!" }, error);
     } finally {
       await client.close();

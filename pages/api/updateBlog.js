@@ -18,7 +18,6 @@ export default async function handler(req, res) {
 
             // Choose a name for your collection
             const collection = database.collection("blogs");
-            console.log(req.body)
             const id = parseInt(req.body.blog_id);
             const content = req.body.blog_content;
             const title = req.body.blog_title;

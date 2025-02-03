@@ -73,7 +73,6 @@ const AddQuestion = ({allData}) => {
             View All Question
           </button>
         </Link>
-            {console.log(allData)}
         {allData.map ((item) => {
           return (
             <Slide triggerOnce duration={1500} direction="right">

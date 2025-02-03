@@ -42,7 +42,6 @@ export default async function handler(req, res) {
         process.env.JWTSECRET,
         { expiresIn: "30d" }
       );
-      console.log(phone);
       await collection.findOneAndReplace(
         { user_email: email },
         {

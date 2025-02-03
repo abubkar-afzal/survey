@@ -15,7 +15,6 @@ export default async function handler(req, res) {
     newuser.save();
 
     try {
-      console.log(newuser);
       await client.connect();
 
       // Choose a name for your database
@@ -43,7 +42,6 @@ export default async function handler(req, res) {
       );
       res.status(201).json({ success: true, token });
     } catch (error) {
-      console.log(error);
       res.status(500).json({ message: "Something went wrong!" }, error);
     } finally {
       await client.close();

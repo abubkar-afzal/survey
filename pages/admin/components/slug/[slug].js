@@ -64,7 +64,6 @@ export async function getServerSideProps(context) {
   let dataofanswer = await collection.findOne({
     _id: new ObjectId(context.query.slug),
   });
-  console.log(dataofanswer);
 
   return { props: { dataofanswer: JSON.parse(JSON.stringify(dataofanswer)) } };
 }

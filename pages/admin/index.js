@@ -38,7 +38,6 @@ const Admin= ()=>{
         body: JSON.stringify(p),
       });
       let response = await res.json();
-      console.log(response);
       if(response){
         if(response.success == true){
         router.push(`${process.env.NEXT_PUBLIC_HOST}/admin/components/goto`)    
@@ -56,7 +55,6 @@ const Admin= ()=>{
               color: "#ffffff",
               background: "#ff5959",
             },});
-          console.log("fail to loggin")
         }
       }else{
         toast("You are not Admin 😒", {
@@ -65,7 +63,6 @@ const Admin= ()=>{
             color: "#ffffff",
             background: "#ff5959",
           },});
-        console.log("fail to loggin")
       }
     };
   

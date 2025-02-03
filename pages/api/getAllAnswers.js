@@ -14,7 +14,6 @@ export default async function handler(req, res) {
     let userName = tokenData.name;
     let userEmail = tokenData.email;
    
-    console.log();
    
 
     try {
@@ -32,7 +31,6 @@ export default async function handler(req, res) {
       const answer = await collection.find({"answerStructure.user_name":userName,"answerStructure.user_email":userEmail}).toArray();
       res.status(201).json({ success: true ,answer});
     } catch (error) {
-      console.log(error);
       res.status(500).json({ message: "Something went wrong!" }, error);
     } finally {
       await client.close();

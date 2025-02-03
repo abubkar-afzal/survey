@@ -9,7 +9,6 @@ export default async function handler(req, res) {
       useUnifiedTopology: true,
     });
     //jwt
-    console.log(req.body.token)
     const token = req.body.token;
     const tokenData = jwt.verify(token, process.env.JWTSECRET);
     let userName = tokenData.name;
@@ -22,7 +21,6 @@ export default async function handler(req, res) {
     const questionAnswer = req.body.QA.question_answer;
     const questionLabel = req.body.QA.question_label;
     const questionTitle = req.body.QA.question_title;
-    console.log(questionTitle);
 
     try {
       
@@ -51,7 +49,6 @@ export default async function handler(req, res) {
 
       res.status(201).json({ success: true ,answer});
     } catch (error) {
-      console.log(error);
       res.status(500).json({ message: "Something went wrong!" }, error);
     } finally {
       await client.close();

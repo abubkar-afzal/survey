@@ -63,7 +63,6 @@ const UpdateQuestion = () => {
       body: JSON.stringify(question),
     });
     let response = await res.json();
-    console.log(response);
     toast("Qestion Updated Successfully 😉", {
       style: {
         padding: "16px",

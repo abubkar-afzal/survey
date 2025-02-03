@@ -212,7 +212,6 @@ const Account = () => {
           background: "#ff5959",
         },
       });
-      console.log("validation faild");
     }
     setLoader(false);
   };

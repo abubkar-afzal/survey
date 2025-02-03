@@ -30,7 +30,6 @@ const Forgot = () => {
       body: JSON.stringify({ email: email }),
     });
     let res = await d.json();
-    console.log(res.forgot);
    
 
     if (res) {

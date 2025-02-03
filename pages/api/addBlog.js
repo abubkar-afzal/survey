@@ -12,7 +12,7 @@ export default async function handler(req, res) {
       let newblog = new newblogSchema(req.body);
       newblog.save()
     
-    try { console.log(newblog)
+    try {
       await client.connect();
 
       // Choose a name for your database
@@ -25,7 +25,6 @@ export default async function handler(req, res) {
 
       res.status(201).json({ success : true });
     } catch (error) {
-      console.log(error);
       res.status(500).json({ message: "Something went wrong!" }, error);
     } finally {
       await client.close();

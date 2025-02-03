@@ -86,7 +86,6 @@ const AddBlog = () => {
           body: JSON.stringify(Blog),
         });
         let response = await res.json();
-        console.log(response);
         toast("Blog Added Successfully 😀", {
           style: {
             padding: "16px",

@@ -11,7 +11,6 @@ const PasswordChange = ({admin})=>{
     const [secretkey, setSecretkey] = useState("");
     const checkandchange =()=>{
         let [secret] = admin;
-        console.log(secret.secret)
         if(secret.secret == secretkey){
             router.push(`${process.env.NEXT_PUBLIC_HOST}/admin/components/changepass/${secretkey}`)
         }else{

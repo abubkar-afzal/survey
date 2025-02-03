@@ -23,7 +23,6 @@ export default async function handler(req, res) {
             let admin = await collection.find().toArray();
             let login = admin.map(p=>p.password).toString();
             
-            console.log(login)
             if(login){
                 
                     if(login===password){

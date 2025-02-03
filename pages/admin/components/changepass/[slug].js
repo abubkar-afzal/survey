@@ -37,7 +37,6 @@ const changePassAdmin = () => {
     setLoader(true);
 
     if(password == cpassword){
-      console.log(cpassword)
       if(newsecret){
         e.preventDefault();
         let admin = {
@@ -53,7 +52,6 @@ const changePassAdmin = () => {
           body: JSON.stringify(admin),
         });
         let response = await res.json();
-        console.log(response);
 
        if(response.success == true){
         toast("Password Updated Successfully 😉", {

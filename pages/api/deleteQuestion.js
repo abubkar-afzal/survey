@@ -18,7 +18,6 @@ export default async function handler(req, res) {
             const collection = database.collection("questions");
             const id = parseInt(req.body.question_id)
             const Delete = await collection.deleteOne({question_id:id});
-           console.log(typeof(id))
             res.status(201).json({success:true});
         } catch (error) {
             res.status(500).json({ message: "Something went wrong!" });

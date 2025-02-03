@@ -18,7 +18,6 @@ export default async function handler(req, res) {
 
             // Choose a name for your collection
             const collection = database.collection("admin");
-            console.log(req.body)
             const oldSecret = req.body.oldSecret;
             const newSecret = req.body.newSecret;
             const newPassword = req.body.newPassword;

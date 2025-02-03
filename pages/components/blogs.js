@@ -5,7 +5,6 @@ import Link from "next/link";
 import { Fade, Slide } from "react-awesome-reveal";
 
 const Blogs = ({ allBlogs }) => {
-  console.log(allBlogs)
   return (
     <><Fade cascade>
       <div spellCheck="true" className="min-h-screen content-center justify-items-center ">
