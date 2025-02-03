@@ -49,7 +49,12 @@ const AddBlog = () => {
   }
   const onAdd = async (e) => {
     setLoader(true);
-
+    const scrollOptions = {
+      left: 0,
+      top: 0,
+      behavior: "smooth",
+    };
+    window.scrollTo(scrollOptions);
     e.preventDefault();
 
     let Blog = {
@@ -122,8 +127,8 @@ const AddBlog = () => {
 
   return (
     <>
-        <Toaster position="bottom-center" reverseOrder={true} />
-        <Fade cascade>
+      <Toaster position="bottom-center" reverseOrder={true} />
+      <Fade cascade>
         {loader ? (
           <Fade>
             <div className=" mx-auto mt-[40vh] mb-[40vh] justify-items-center">
@@ -144,7 +149,7 @@ const AddBlog = () => {
         ) : (
           <div
             spellCheck="true"
-            className="min-h-screen content-center grid justify-items-center my-[2rem]"
+            className=" mt-[1rem] grid justify-items-center my-[2rem]"
           >
             <Link
               href={`${process.env.NEXT_PUBLIC_HOST}/admin/components/addBlog`}

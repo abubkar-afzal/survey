@@ -5,7 +5,7 @@ import { Fade, Slide } from "react-awesome-reveal";
 const AnswersDashboard=({allQuestions})=>{
    
     return(<><Fade cascade>
-        <div spellCheck="true" className="min-h-screen content-center text-center justify-items-center">
+        <div spellCheck="true" className=" mt-[1rem] text-center justify-items-center">
             <div spellCheck="true" className="mt-[2rem] text-[2rem] font-semibold mb-[1rem]">QUESTIONS</div>
             {allQuestions.map((item)=>{
                 return(

@@ -96,14 +96,19 @@ const Main = ({ allData, user }) => {
       let response = await res.json();
       if (response) {
         if (response.success == true) {
-          router.push(`${process.env.NEXT_PUBLIC_HOST}/`);
-          toast("Answer Has Been Send 🥰", {
-            style: {
-              padding: "16px",
-              color: "#ffffff",
-              background: "#5fff59",
+          router.push({
+            pathname: `${process.env.NEXT_PUBLIC_HOST}/`,
+            
             },
-          });
+            undefined, { shallow: true }
+            )
+         setTimeout(() => { toast("You Answer Has Been Send 🥰", {
+          style: {
+            padding: "16px",
+            color: "#ffffff",
+            background: "#5fff59",
+          },
+        }); }, 3000);
         } else {
           toast("Something went wrong 🙄", {
             style: {
@@ -203,7 +208,7 @@ const Main = ({ allData, user }) => {
            allData.map((item) => {
             
             return (
-              <Slide triggerOnce duration={3000}><div spellCheck="true" key={item._id} className="h-auto">
+              <Slide triggerOnce duration={2000}><div spellCheck="true" key={item._id} className="h-auto">
              <div spellCheck="true" className="my-[2rem] t:w-[30rem] l:w-[35rem] mx-auto text-center shadow-sm shadow-black rounded-[2rem] p-2 t:p-6 bg-[---c8] sm:text-[---c4] space-y-[10px] mm:space-y-[15px] lm:space-y-[20px] t:space-y-[22px] l:space-y-[27px] ll:space-y-[32px] k:space-y-[40px] ">
                <div spellCheck="true" className="font-bold sm:text-[20px] mm:text-[27px] lm:text-[30px] t:text-[28px] l:text-[33px] ll:text-[38px] k:text-[47px] break-all">
                  {item.question_title}

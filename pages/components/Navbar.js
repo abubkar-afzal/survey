@@ -190,7 +190,7 @@ const Navbar = ({ accountlogo }) => {
       >
         {/* for small screen  */}
         <div spellCheck="true" className="py-2 pl-2 grid grid-cols-2  ">
-          <div spellCheck="true" className="sm:relative sm:z-20 t:hidden">
+          <div spellCheck="true" className="sm:relative sm:z-20 t:hidden mt-[2px]">
             <div
               spellCheck="true"
               onClick={onepresscross}

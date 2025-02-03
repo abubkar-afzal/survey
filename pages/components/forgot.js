@@ -81,7 +81,7 @@ const Forgot = () => {
       <Fade cascade>
       
 
-        <div spellCheck="true" className="min-h-screen content-center">
+        <div spellCheck="true" className=" mt-[1rem]">
           <div
             spellCheck="true"
             className="sm:text-center mm:mt-[1rem] t:mt-[2rem]"

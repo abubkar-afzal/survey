@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import logo from "../../public/survey-logo.png";
 import { IoLogoWhatsapp } from "react-icons/io";
@@ -9,6 +9,7 @@ import { FaLinkedin } from "react-icons/fa6";
 import Link from "next/link";
 
 const Footer = () => {
+  
   return (
     <>
       <div spellCheck="true" className="sm:h-auto  mt-[10px] sm:content-center ml-4 t:text-center t:place-items-center mm:text-[18px] lm:text-[20px] t:text-[20px] l:text-[25px] ll:text-[30px] k:text-[35px]">
@@ -42,7 +43,7 @@ const Footer = () => {
             <br/>
             <br />
             <div spellCheck="true" className="t:flex t:flex-wrap t:place-content-center t:space-x-[2rem]">
-          <Link href={`https://wa.me/send?phone=923270972423&text=welcome`}>
+          <Link href={`https://wa.me/send?phone=923270972423&text=How Can I Help You ?`}>
             <span spellCheck="true" className="sm:flex px-2 sm:hover:underline sm:text-[---fo1] hover:text-[---wa]">
              <IoLogoWhatsapp className="sm:text-[22px] mr-2"/> +923270972423
             </span><br/></Link>

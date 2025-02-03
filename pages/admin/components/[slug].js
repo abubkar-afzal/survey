@@ -12,7 +12,7 @@ const Answers = ({ dataofanswer }) => {
   return (
     <><Fade cascade> 
     {dataofanswer.length == 0 ? <div className="text-center px-4 mt-[2rem] py-2 rounded-[2rem] shadow-lg w-auto h-auto ">There is no answer of this question 😞</div>: 
-      <div spellCheck="true" className="min-h-screen content-center flex-col flex-wrap p-4 space-y-[1rem] mt-[1rem] m-[2rem]">
+      <div spellCheck="true" className="  flex-col flex-wrap p-4 space-y-[1rem] mt-[1rem] m-[2rem]">
         <div spellCheck="true" className="justify-items-center">
           <div spellCheck="true" className="mt-[8px] pb-2 sm:text-[25px] mm:text-[28px] lm:text-[30px] t:text-[32px] l:text-[37px] ll:text-[42px] k:text-[47px] flex flex-wrap space-x-2 ">
             <p spellCheck="true" className="font-bold">Question #</p>

@@ -7,7 +7,7 @@ import { Fade, Slide } from "react-awesome-reveal";
 const Blogs = ({ allBlogs }) => {
   return (
     <><Fade cascade>
-      <div spellCheck="true" className="min-h-screen content-center justify-items-center ">
+      <div spellCheck="true" className=" mt-[1rem] justify-items-center ">
         <div spellCheck="true" className="sm:font-bold sm:text-[24px] mm:text-[28px] lm:text-[30px] t:text-[32px] l:text-[39px] ll:text-[45px] k:text-[65px] sm:mt-[1rem] k:my-[2rem]">
           BLOGS
         </div>

@@ -44,7 +44,12 @@ const Account = () => {
   useEffect(() => {
     const fetchuser = async () => {
       setLoader(true);
-      
+      const scrollOptions = {
+        left: 0,
+        top: 0,
+        behavior: 'smooth'
+    }
+    window.scrollTo(scrollOptions);
       let d = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/getAccount`, {
         method: "POST",
         headers: {
@@ -99,7 +104,12 @@ const Account = () => {
   }
   const DisableChanges = async () => {
     setLoader(true);
-    
+    const scrollOptions = {
+      left: 0,
+      top: 0,
+      behavior: 'smooth'
+  }
+  window.scrollTo(scrollOptions);
     let d = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/getAccount`, {
       method: "POST",
       headers: {
@@ -128,7 +138,12 @@ const Account = () => {
   };
   const logOut = () => {
     setLoader(true);
-    
+    const scrollOptions = {
+      left: 0,
+      top: 0,
+      behavior: 'smooth'
+  }
+  window.scrollTo(scrollOptions);
     localStorage.removeItem("token");
     window.location.reload();
     router.push("/");
@@ -155,7 +170,12 @@ const Account = () => {
   };
   const SaveChanges = async (e) => {
     setLoader(true);
-    
+    const scrollOptions = {
+      left: 0,
+      top: 0,
+      behavior: 'smooth'
+  }
+  window.scrollTo(scrollOptions);
     if (
       (name.length > 3 &&
         password.length > 4 &&
@@ -245,7 +265,7 @@ const Account = () => {
         ) : (
           <div
             spellCheck="true"
-            className="min-h-screen content-center text-center m-2 justify-items-center "
+            className=" mt-[1rem] text-center m-2 justify-items-center "
           >
             <div
               spellCheck="true"

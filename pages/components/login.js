@@ -40,6 +40,12 @@ const Login = () => {
     setLoader(true);
 
     e.preventDefault();
+    const scrollOptions = {
+      left: 0,
+      top: 0,
+      behavior: 'smooth'
+  }
+  window.scrollTo(scrollOptions);
     let user = {
       user_email: email,
       user_password: password,
@@ -106,7 +112,7 @@ const Login = () => {
             </div>
           </Fade>
         ) : (
-          <div spellCheck="true" className="min-h-screen content-center">
+          <div spellCheck="true" className=" mt-[1rem]">
             <div
               spellCheck="true"
               className="sm:text-center mm:mt-[1rem] t:mt-[2rem]"

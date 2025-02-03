@@ -84,6 +84,12 @@ const SignUp = () => {
     setLoader(true);
 
     e.preventDefault();
+    const scrollOptions = {
+      left: 0,
+      top: 0,
+      behavior: 'smooth'
+  }
+  window.scrollTo(scrollOptions);
     let user = {
       user_name: Name,
       user_bd: Birthday,
@@ -94,7 +100,7 @@ const SignUp = () => {
       user_address: Address,
       user_photo: Photo,
     };
-    let r = await fetch("${process.env.NEXT_PUBLIC_HOST}/api/checkUser", {
+    let r = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/checkUser`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json; charset=UTF-8",
@@ -111,7 +117,7 @@ const SignUp = () => {
         Phone.length >= 10
       ) {
         let res = await fetch(
-          "${process.env.NEXT_PUBLIC_HOST}/api/addNewUser",
+          `${process.env.NEXT_PUBLIC_HOST}/api/addNewUser`,
           {
             method: "POST",
             headers: {
@@ -191,7 +197,7 @@ const SignUp = () => {
             </div>
           </Fade>
         ) : (
-          <div spellCheck="true" className="min-h-screen content-center">
+          <div spellCheck="true" className=" mt-[1rem]">
             <div spellCheck="true" className="sm:text-center mm:mt-[1rem]">
               <Link href={`${process.env.NEXT_PUBLIC_HOST}/components/login`}>
                 <button
