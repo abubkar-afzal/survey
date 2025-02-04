@@ -417,6 +417,9 @@ const SignUp = () => {
                           Please Enter Your Country Code Also Otherwise You Face
                           Errors.
                         </p>
+                        <p className="sm:text-[---f1] font-thin sm:text-[11px] mm:text-[12px] lm:text-[13px] t:text-[14px] l:text-[15px] ll:text-[16px] k:text-[17px] text-wrap">
+                          Enter Like This 9232709...... 
+                        </p>
                       </div>
                     </div>
                     <div spellCheck="true" className="text-left">

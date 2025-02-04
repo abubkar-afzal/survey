@@ -61,11 +61,11 @@ return(<>
               
                 </div>
                
-                <button spellCheck="true" onClick={checkandchange} className="bg-[---c5] hover:bg-[---h5] p-2 mb-2 w-[8rem] rounded-[2rem] font-bold shadow-lg text-[---c4] sm:text-[16px] mm:text-[18px] lm:text-[22px] t:text-[27px] l:text-[32px] ll:text-[37px] k:text-[45px] t:mx-2">
+                <button spellCheck="true" onClick={checkandchange} className="bg-[---c5] hover:bg-[---h5] p-2 mb-2 w-[8rem] rounded-[2rem] font-bold shadow-lg text-[---c4] sm:text-[16px] mm:text-[18px] lm:text-[22px] t:text-[27px] l:text-[32px] ll:text-[37px] k:text-[45px] mx-2">
                     Check
                   </button>
                   
-                  <button spellCheck="true" onClick={back} className="bg-[---c5] hover:bg-[---h5] p-2 mb-2 w-[8rem] rounded-[2rem] font-bold shadow-lg text-[---c4] sm:text-[16px] mm:text-[18px] t:mx-2 lm:text-[22px] t:text-[27px] l:text-[32px] ll:text-[37px] k:text-[45px]">
+                  <button spellCheck="true" onClick={back} className="bg-[---c5] hover:bg-[---h5] p-2 mb-2 w-[8rem] rounded-[2rem] font-bold shadow-lg text-[---c4] sm:text-[16px] mm:text-[18px] mx-2 lm:text-[22px] t:text-[27px] l:text-[32px] ll:text-[37px] k:text-[45px]">
                     Back
                   </button>
               </div>

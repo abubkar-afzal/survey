@@ -12,7 +12,7 @@ const Footer = () => {
   
   return (
     <>
-      <div spellCheck="true" className="sm:h-auto  mt-[10px] sm:content-center ml-4 t:text-center t:place-items-center mm:text-[18px] lm:text-[20px] t:text-[20px] l:text-[25px] ll:text-[30px] k:text-[35px]">
+      <div spellCheck="true" className="sm:h-auto  mt-[10px] sm:content-center ml-4 t:text-center t:place-items-center sm:text-[12px] mm:text-[16px] lm:text-[20px] t:text-[20px] l:text-[25px] ll:text-[30px] k:text-[35px]">
         <hr className="h-[2px] t:h-[3px] ml-[-2rem] bg-black"/>
         <Link href={`${process.env.NEXT_PUBLIC_HOST}/`}>
         <div spellCheck="true" className="cursor-pointer sm:flex sm:space-x-1 sm:h-[70px] sm:m-2 t:ml-[2rem] ">

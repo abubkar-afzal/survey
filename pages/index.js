@@ -233,14 +233,14 @@ const Main = ({ allData, user }) => {
             return (
               <Slide triggerOnce duration={2000}><div spellCheck="true" key={item._id} className="h-auto">
              <div spellCheck="true" className="my-[2rem] t:w-[30rem] l:w-[35rem] mx-auto text-center shadow-sm shadow-black rounded-[2rem] p-2 t:p-6 bg-[---c8] sm:text-[---c4] space-y-[10px] mm:space-y-[15px] lm:space-y-[20px] t:space-y-[22px] l:space-y-[27px] ll:space-y-[32px] k:space-y-[40px] ">
-               <div spellCheck="true" className="font-bold sm:text-[20px] mm:text-[27px] lm:text-[30px] t:text-[28px] l:text-[33px] ll:text-[38px] k:text-[47px] break-all">
+               <div spellCheck="true" className="font-bold sm:text-[20px] mm:text-[27px] lm:text-[30px] t:text-[28px] l:text-[33px] ll:text-[38px] k:text-[47px] ">
                  {item.question_title}
                </div>
                <div spellCheck="true">
                  <hr className="text-[---c4] my-[2px]" />
                  <hr className="text-[---c4] my-[4px]" />
                </div>
-               <p spellCheck="true" className="text-[17px] sm:text-[18px] mm:text-[22px] lm:text-[25px] t:text-[22px] l:text-[27px] ll:text-[32px] k:text-[37px] font-semibold break-all">
+               <p spellCheck="true" className="text-[17px] sm:text-[18px] mm:text-[22px] lm:text-[25px] t:text-[22px] l:text-[27px] ll:text-[32px] k:text-[37px] font-semibold ">
                  {item.question_label}
                </p>
                <input spellCheck="true"
