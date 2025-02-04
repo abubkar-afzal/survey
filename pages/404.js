@@ -7,7 +7,7 @@ export default function Custom404() {
     return<>
     <Fade duration={2000} cascade>
         <Slide direction="down" duration={1000}>
-    <div className="min-h-screen content-center m-4 justify-items-center text-center space-y-[1rem]">
+    <div className="mt-[3rem] m-4 justify-items-center text-center space-y-[1rem]">
     <Link href={`${process.env.NEXT_PUBLIC_HOST}/`}>
                 <button
                   spellCheck="true"

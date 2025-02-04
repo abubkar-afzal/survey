@@ -27,6 +27,29 @@ const Main = ({ allData, user }) => {
     answerchange();
   }, [router.query]);
 
+  
+  
+  
+      Notification.requestPermission().then((result) => {
+      
+          if (result === "granted") {
+            const notifaiction = new Notification("New Question Is Added 🥰💖", {
+                body: "There is a new question added in survey",
+                icon: "/survey-logo.png",
+                vibrate: [200, 100, 200, 100, 200, 100, 200],
+                tag: "vibration-sample",
+              });
+             
+              notifaiction.onclick = function(event) {
+                event.preventDefault(); // Prevent the browser from focusing the Notification's tab
+                window.open(`${process.env.NEXT_PUBLIC_HOST}/`, "_blank"); // Open the link in a new tab
+              };
+      }
+    }
+ )
+
+  
+  
   const answerchange = async () => {
    
     if (token) {

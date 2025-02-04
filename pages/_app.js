@@ -27,11 +27,11 @@ export default function App({ Component, pageProps }) {
     router.events.on("routeChangeStart", () => {
       setLoader(true);
     });
-   
+
     router.events.on("routeChangeComplete", () => {
       setLoader(false);
     });
-    
+
     const token = localStorage.getItem("token");
 
     if (token) {
@@ -54,6 +54,13 @@ export default function App({ Component, pageProps }) {
         />
         <meta name="author" content="Abubakar Afzal" />
         <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+        <meta property="og:title" content="It's An Survey"></meta>
+        <meta
+          property="og:description"
+          content="There You Can Share Your Opinion 🥰"
+        ></meta>
+        <meta property="og:image" content="public/survey-logo.png"></meta>
+
         <meta name="theme-color" content="#1bb566" />
         <link rel="icon" href="./survey-logo.png" />
         <title> Survey</title>
@@ -78,10 +85,8 @@ export default function App({ Component, pageProps }) {
             <br />
             <br />
             <p className="font-bold sm:text-[18px] mm:text-[18px] lm:text-[20px] t:text-[22px] l:text-[27px] ll:text-[32px] k:text-[37px]">
-              
               Please Wait !!
             </p>
-            
           </div>
         </Fade>
       ) : (

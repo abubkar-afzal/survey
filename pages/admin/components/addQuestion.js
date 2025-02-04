@@ -90,6 +90,23 @@ const AddQuestion = () => {
         setId("");
         setTitle("");
         setLabel("");
+        Notification.requestPermission().then((result) => {
+      
+          if (result === "granted") {
+            const notifaiction = new Notification("New Question Is Added 🥰💖", {
+                body: "There is a new question added in survey",
+                icon: "/survey-logo.png",
+                vibrate: [200, 100, 200, 100, 200, 100, 200],
+                tag: "vibration-sample",
+              });
+             
+              notifaiction.onclick = function(event) {
+                event.preventDefault(); 
+                window.open(`${process.env.NEXT_PUBLIC_HOST}/`, "_blank"); 
+              };
+      }
+    }
+ )
       } else {
         toast("Id must be unique 🥱", {
           style: {
