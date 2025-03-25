@@ -43,28 +43,7 @@ input {
 .hidebar::-webkit-scrollbar {
     display: none;
   }
-  .typing-container {
-    display: inline;
-    border-right: 1px solid black; /* Cursor effect */
-    white-space: nowrap;
-    overflow: hidden;
-    
-}
-  .typing-text {
-    display: inline-block;
-    
-    animation: typing 3s steps(11, end), blink-caret 0.75s step-end infinite;
-}
-
-@keyframes typing {
-    from { width: 0; }
-    to { width: 90%; }
-}
-
-@keyframes blink-caret {
-    from, to { border-color: transparent; }
-    50% { border-color: black; }
-}
+  
 
 .blurred-background {
   filter: blur(5px); /* Adjust 5px to control the blur intensity */
