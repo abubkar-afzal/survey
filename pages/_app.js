@@ -59,7 +59,7 @@ export default function App({ Component, pageProps }) {
           property="og:description"
           content="There You Can Share Your Opinion 🥰"
         ></meta>
-        <meta property="og:image" content="public/survey-logo.png"></meta>
+        <meta property="og:image" content="./survey-logo.png"></meta>
 
         <meta name="theme-color" content="#1bb566" />
         <link rel="icon" href="./survey-logo.png" />

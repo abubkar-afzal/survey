@@ -7,6 +7,8 @@ import toast, { Toaster } from "react-hot-toast";
 import { DotLoader } from "react-spinners";
 import Head from "next/head";
 import { Fade, Slide } from "react-awesome-reveal";
+import { ReactTyped } from "react-typed";
+import Popup from "reactjs-popup";
 
 const Main = ({ allData, user }) => {
   const router = useRouter();
@@ -178,10 +180,41 @@ const Main = ({ allData, user }) => {
     ]);
   };
 
+  const [open, setOpen] = useState(false);
+  const [message, setmessage] = useState("");
+
+    useEffect(() => {
+      if(!localStorage.getItem("token")){
+          setOpen(true)
+        }
+    }, [])
+    
+    const closeModal = () => {setOpen(false) 
+     
+    };
+  if(open  == true){
+    document.body.style.overflow = "hidden";
+   
+}else{
+    document.body.style.overflow = "auto";
+   
+}
+
   return (
     <>
+    <Popup open={open} closeOnDocumentClick onClose={closeModal} contentStyle={{ background: 'rgba(255, 255, 255, 0)', border: 'none', width:500,  }}  >
+              <div className="items-center text-center rounded-[2rem] bg-[---c2] xsm:mx-[2rem] sm:mx-[1px] shadow-lg">
+              <iframe className="rounded-[2rem] w-full sm:h-[40vh] xsm:h-[25vh]"
+src="https://www.youtube.com/embed/HUX6JvHrE5g?autoplay=1&mute=1" frameborder="0" 
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+allowfullscreen>
+</iframe>
+                <h2 className=" text-white font-black p-4 rounded-[2rem] sm:text-[20px] xsm:text-[16px] m-4 ">This is Tutorial That How to Give Answer First Time ..!!</h2>
+                <button onClick={closeModal} className="bg-[---c7] text-white font-black p-4 rounded-[1.5rem] sm:text-[20px] xsm:text-[14px] m-4">Ok..!!</button>
+              </div>
+            </Popup>
         <Toaster position="bottom-center" reverseOrder={true} />
-        <Fade cascade>
+        <Fade cascade className={`${open  ? "blurred-background":null}`}>
         <div spellCheck="true" className="">
 
         <div spellCheck="true" className=" m-4 space-y-2 ll:space-y-[1.5rem] k:space-y-[2rem]  text-justify t:p-4  k:p-10  l:text-center l:place-items-center l:p-10  k:text-center k:place-items-center ">
@@ -189,8 +222,13 @@ const Main = ({ allData, user }) => {
             HI! There It's
           </div>
           <div spellCheck="true" className="font-bold sm:mb-[2rem] sm:text-[2rem] text-center">
-            <a className="sm:text-[---c5] font-black strocktext sm:text-[30px] mm:text-[35px] lm:text-[40px] t:text-[42px] l:text-[49px] ll:text-[57px] k:text-[80px] typing-text typing-container">
-              Abubakar Afzal
+            <a className="sm:text-[---c5] font-black strocktext sm:text-[30px] mm:text-[35px] lm:text-[40px] t:text-[42px] l:text-[49px] ll:text-[57px] k:text-[80px] ">
+            <ReactTyped
+                  strings={["Abubakar Afzal"]}
+                  typeSpeed={100}
+                  backSpeed={50}
+                  loop
+                />
             </a>
           </div>
           <div spellCheck="true" className="sm:bg-[---c2] sm:text-[---c4] sm:font-bold p-2 sm:h-[8rem] sm:overflow-y-scroll text-center scroll-auto mm:text-[18px] lm:text-[20px] t:text-[20px] l:text-[25px] ll:text-[30px] k:text-[35px] ll:w-[70rem] t:mx-auto hidebar">

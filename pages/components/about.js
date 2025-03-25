@@ -5,6 +5,7 @@ import { SiGithub } from "react-icons/si";
 import { RiInstagramFill } from "react-icons/ri";
 import Link from "next/link";
 import { Fade } from "react-awesome-reveal";
+import { ReactTyped } from "react-typed";
 
 const About = () => {
   return (
@@ -12,8 +13,13 @@ const About = () => {
       <div spellCheck="true" className=" mt-[1rem] m-4 space-y-2 ll:space-y-[1.5rem] k:space-y-[2rem]  text-justify t:p-4  k:p-10  l:text-center l:place-items-center l:p-10  k:text-center k:place-items-center ">
         <div spellCheck="true" className="text-center sm:text-[22px] mm:text-[24px] lm:text-[29px] t:text-[34px] l:text-[39px] ll:text-[44px] k:text-[64px]  font-sans font-bold">
           It's</div><div spellCheck="true" className="font-bold sm:mb-[2rem] sm:text-[2rem] text-center">
-            <a className="sm:text-[---c5] font-black strocktext sm:text-[30px] mm:text-[35px] lm:text-[40px] t:text-[42px] l:text-[49px] ll:text-[57px] k:text-[80px] typing-text typing-container">
-              Abubakar Afzal
+            <a className="sm:text-[---c5] font-black strocktext sm:text-[30px] mm:text-[35px] lm:text-[40px] t:text-[42px] l:text-[49px] ll:text-[57px] k:text-[80px] ">
+              <ReactTyped
+                                strings={["Abubakar Afzal"]}
+                                typeSpeed={100}
+                                backSpeed={50}
+                                loop
+                              />
             </a>
           </div>
         
