@@ -115,12 +115,16 @@ const Main = ({ allData, user }) => {
       let response = await res.json();
       if (response) {
         if (response.success == true) {
+          const scrollOptions = {
+      left: 0,
+      top: 0,
+      behavior: 'smooth'
+  }
+  window.scrollTo(scrollOptions);
           router.push(
             {
               pathname: `${process.env.NEXT_PUBLIC_HOST}/`,
-            },
-            undefined,
-            { shallow: true }
+            }
           );
           setTimeout(() => {
             toast("You Answer Has Been Send 🥰", {
